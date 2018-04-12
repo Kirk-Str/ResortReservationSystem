@@ -41,21 +41,26 @@ if(Input::get('type') == 'add')
 
     $contentData->assign('id', '');
     $contentData->assign('room_id', '');
+    $contentData->assign('room_name', '');
     $contentData->assign('room_door_no', '');
     $contentData->assign('room_status', '');
+
+    $contentData->assign('vacant', '');
+    $contentData->assign('occupied', '');
+    $contentData->assign('dirty', '');
 
 }
 else
 {
        
-    if(Input::get('type') == 'delete')
-    {
+    if(Input::get('type') == 'delete'){
+
         $pageTitle = "ARE YOU SURE WANT TO DELETE THIS ROOM?";
         $buttonName = "Delete";
 
-    }else
-    {
-        $pageTitle = "EDIT ROOM ALLOCATION";
+    }else{
+
+        $pageTitle = "EDIT ROOM";
         $buttonName = "Save";
     }
 
@@ -63,7 +68,16 @@ else
     $contentData->assign('room_id', $row->room_id);
     $contentData->assign('room_name', $row->room_name);
     $contentData->assign('room_door_no', $row->room_door_no);
-    $contentData->assign('room_status', $row->room_status);
+
+    $roomStatus = $row->room_status;
+
+    if($roomStatus == 1){
+        $contentData->assign('vacant', 'selected');
+    }elseif($roomStatus == 2){
+        $contentData->assign('occupied', 'selected');
+    }elseif($roomStatus == 3){
+        $contentData->assign('dirty', 'selected');
+    }
 
 }
 

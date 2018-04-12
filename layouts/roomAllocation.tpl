@@ -15,11 +15,11 @@
                     </ul>
                 </div>
                 <div class="form-group">
-                    <label for="room_category" class="col-md-2 control-label">Room Category</label>
+                    <label for="room_name" class="col-md-2 control-label">Room Category</label>
                     <div class="col-md-4">
-                        <input class="form-control" type="text" data-val="true" data-val-required="The Room Category field is required." id="room_category"
-                            name="room_category" value="{$room_category}">
-                        <span class="text-danger field-validation-valid" data-valmsg-for="room_category" data-valmsg-replace="true"></span>
+                        <input class="form-control" type="text" data-val="true" data-val-required="The Room Category field is required." id="room_name"
+                            name="room_name" value="{$room_name}">
+                        <span class="text-danger field-validation-valid" data-valmsg-for="room_name" data-valmsg-replace="true"></span>
                     </div>
                 </div>
                 <div class="form-group">
@@ -34,9 +34,9 @@
                     <label for="room_status" class="col-md-2 control-label">Room Status</label>
                     <div class="col-md-4">
                         <select class="form-control" name="room_status" id="room_status" data-val="true" data-val-required="The Room Status field is required.">
-                            <option value="1">Vacant</option>
-                            <option value="2">Occupied</option>
-                            <option value="3">Dirty</option>
+                            <option {$vacant} value="1">Vacant</option>
+                            <option {$occupied} value="2">Occupied</option>
+                            <option {$dirty} value="3">Dirty</option>
                         </select>
                         <span class="text-danger field-validation-valid" data-valmsg-for="room_status" data-valmsg-replace="true"></span>
                     </div>
