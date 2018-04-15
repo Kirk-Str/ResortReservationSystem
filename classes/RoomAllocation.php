@@ -8,7 +8,7 @@ class RoomAllocation {
 		$this->_db = DB::getInstance();
 	}
 
-	public function update($fields = array(),$id=null){
+	public function update($fields = array(), $id = array()){
 
 		if(!$this->_db->update('roomAllocation',$id,$fields)){
 			throw new Exception('There was a problem updating the record.');
@@ -31,11 +31,21 @@ class RoomAllocation {
 		
 	}
 
-	public function find($room){
+	public function find($id, $roomId){
 
-		if(!is_null($room)){
-			$field = 'room_id';
-			$data = $this ->_db->get('room',array($field, "=", $room));
+		if(!is_null($id) && !is_null($roomId)){
+
+			$where = array(
+				array('room_allocation.id', "=", $id),
+				'AND',
+				array('room_allocation.room_id', "=", $roomId)
+			);
+
+			$select = 'SELECT room_allocation.id, room_allocation.room_id, room_allocation.door_no, room_allocation.room_status, room.room_name';
+
+			$table = 'room_allocation INNER JOIN room ON (room_allocation.room_id = room.room_id)';
+
+			$data = $this ->_db->action($select, $table, $where);
 
 			if($data->count()){
 				$this->_data = $data->first();
@@ -61,12 +71,8 @@ class RoomAllocation {
 	}
 
 
-	public function getAvailableRooms($checkIn, $checkOut, $occupancy){
+	public function getAllRooms(){
 		
-		$_check_in = (new DateTime($checkIn))->format('Y-m-d');
-		$_check_out = (new DateTime($checkOut))->format('Y-m-d');
-		$_occupancy = $occupancy;
-
 		$where = null;
 		
 		$select = 'SELECT R.room_id, R.room_name, R.thumbnail, R.caption, R.occupancy, R.total_room, COALESCE(R.total_room - B.Occupied, R.total_room) AS available, R.size, R.rate, R.view';

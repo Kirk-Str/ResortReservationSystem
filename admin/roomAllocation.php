@@ -14,13 +14,19 @@ $request_type;
 $pageTitle;
 $row;
 $buttonName;
-$id = Input::get('roomId');
+$id = Input::get('Id');
+$roomId = Input::get('RoomId');
 
+if(empty($id) || empty($roomId)){
 
-if(!empty($id)){
+    clearMessage();
+        
+    Redirect::to('../message.php');
+    
+}else{
 
-    $room = new Room();
-    $row = $room->find($id);
+    $roomAllocation = new RoomAllocation();
+    $row = $roomAllocation->find($id, $roomId);
 
     if(!$row){
 
@@ -29,26 +35,28 @@ if(!empty($id)){
         Redirect::to('../message.php');
 
     }
-    
+
 }
 
+$room = new Room();
+$rows = $room->selectAll();
+
 $contentData = new Dwoo\Data();
+
+$contentData->assign('id', '');
+$contentData->assign('door_id', '');
+$contentData->assign('door_no', '');
+$contentData->assign('room_status', '');
+$contentData->assign('vacant', '');
+$contentData->assign('occupied', '');
+$contentData->assign('dirty', '');
+
+$contentData->assign('roomCategoryList', objectToArray($rows));
 
 if(Input::get('type') == 'add')
 {
     $pageTitle = "ADD NEW ROOM";
     $buttonName = "Save";
-
-    $contentData->assign('id', '');
-    $contentData->assign('room_id', '');
-    $contentData->assign('room_name', '');
-    $contentData->assign('room_door_no', '');
-    $contentData->assign('room_status', '');
-
-    $contentData->assign('vacant', '');
-    $contentData->assign('occupied', '');
-    $contentData->assign('dirty', '');
-
 }
 else
 {
@@ -67,7 +75,7 @@ else
     $contentData->assign('id', $id);
     $contentData->assign('room_id', $row->room_id);
     $contentData->assign('room_name', $row->room_name);
-    $contentData->assign('room_door_no', $row->room_door_no);
+    $contentData->assign('door_no', $row->door_no);
 
     $roomStatus = $row->room_status;
 

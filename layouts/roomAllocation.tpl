@@ -4,7 +4,7 @@
 
 <div class="row">
     <div class="col-md-10">
-        <form method="POST" action="<?php echo Config::get('application_path') .'admin/actions/roomdetail.php'?>" enctype="multipart/form-data">
+        <form method="POST" action="<?php echo Config::get('application_path') .'admin/actions/roomAllocation.php'?>">
             <input type="hidden" name="type" value="{$request_type}">
             <input type="hidden" name="id" value="{$id}">
             <div class="form-horizontal">
@@ -14,25 +14,46 @@
                         <li style="display:none"></li>
                     </ul>
                 </div>
+
+                {if $request_type == 'add'}
+
                 <div class="form-group">
-                    <label for="room_name" class="col-md-2 control-label">Room Category</label>
+                    <label for="room_name" class="col-md-2 control-label">Room Type</label>
                     <div class="col-md-4">
-                        <input class="form-control" type="text" data-val="true" data-val-required="The Room Category field is required." id="room_name"
-                            name="room_name" value="{$room_name}">
+                        <select class="form-control" name="room_name" id="room_name" data-val="true" data-val-required="The Room Category field is required.">
+                            
+                            {foreach $roomCategoryList row}
+                                <option {$row.id} value="{$row.room_id}">{$row.room_name}</option>
+                            {/foreach}
+                            
+                        </select>
                         <span class="text-danger field-validation-valid" data-valmsg-for="room_name" data-valmsg-replace="true"></span>
                     </div>
                 </div>
+
+                {else}
+
+                    <div class="form-group">
+                        <label for="room_name_readonly" class="col-md-2 control-label">Room Type</label>
+                        <div class="col-md-4">
+                        <input type="hidden" name="room_id" value="{$room_id}">
+                            <input class="form-control" type="text" id="room_name_readonly" name="room_name_readonly" value="{$room_name}" readonly>
+                        </div>
+                    </div>
+
+                {/if}
+
                 <div class="form-group">
-                    <label for="room_door_no" class="col-md-2 control-label">Door No.</label>
-                    <div class="col-md-4">
-                    <input class="form-control" type="text" data-val="true" data-val-required="The Door No. field is required." id="room_door_no"
-                            name="room_door_no" value="{$room_door_no}">
-                        <span class="text-danger field-validation-valid" data-valmsg-for="room_door_no" data-valmsg-replace="true"></span>
+                    <label for="door_no" class="col-md-2 control-label">Door No.</label>
+                    <div class="col-md-2">
+                    <input class="form-control" type="text" data-val="true" data-val-required="The Door No. field is required." id="door_no"
+                            name="door_no" value="{$door_no}">
+                        <span class="text-danger field-validation-valid" data-valmsg-for="door_no" data-valmsg-replace="true"></span>
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="room_status" class="col-md-2 control-label">Room Status</label>
-                    <div class="col-md-4">
+                    <div class="col-md-2">
                         <select class="form-control" name="room_status" id="room_status" data-val="true" data-val-required="The Room Status field is required.">
                             <option {$vacant} value="1">Vacant</option>
                             <option {$occupied} value="2">Occupied</option>

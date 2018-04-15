@@ -145,34 +145,52 @@ class DB{
 		return false;
 	}
 
-	public function update($table, $id, $fields){
+	public function update($table, $where, $fields){
+
 		$set = '';
+		$whereParam = '';
 		$x = 1;
 
-		if(is_array($id)){
-			
-			$updateRecordField = key($id);
-			$updateRecordValue = current($id);
+		if(is_array($where)){
+
+			foreach($where as $args){
+
+				if(!is_array($args)){
+
+					$whereParam .= ' ' . $args . ' ';
+
+				}else{
+
+					$whereParam .= $args[0] . ' ' . $args[1] . ' ? ';
+					
+					array_push($fields, $args[2]);
+				}
+
+			}
 
 		}else{
 
-			$updateRecordField = 'id';
-			$updateRecordValue = $id;
-			
-		}
-	
-		foreach($fields as $name => $value){
-			$set .= "{$name} = ?";
-			if($x < count($fields)){
-				$set .= ', ';
+				$updateRecordField = key($where);
+				$updateRecordValue = current($where);
+
 			}
-			$x++;
-		}
-		$sql = "UPDATE {$table} SET {$set} WHERE {$updateRecordField} = {$updateRecordValue}";
+	
+			foreach($fields as $name => $value){
+				$set .= "{$name} = ?";
+				if($x < count($fields)){
+					$set .= ', ';
+				}
+				$x++;
+			}
+
+		$sql = "UPDATE {$table} SET {$set} WHERE {$whereParam}";
+
 		if(!$this->query($sql, $fields)->error()){
 			return true;
 		}
+
 		return false;
+
 	}
 
 
