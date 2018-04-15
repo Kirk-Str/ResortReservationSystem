@@ -39,11 +39,10 @@ if (Input::exists()){
 						
 						$roomAllocation->update(array(
 								'door_no' => Input::get('door_no'), 
-								'room_status' => Input::get('room_status'),
-						),
-							array('id' => Input::get('id'),
-							'room_id' => Input::get('room_id')
-						));
+								'room_status' => Input::get('room_status')),
+								array('id' => Input::get('id'),
+								'room_id' => Input::get('room_id'))
+						);
 						
 					}
 					else if(Input::get('type') == "delete")

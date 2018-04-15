@@ -151,39 +151,55 @@ class DB{
 		$whereParam = '';
 		$x = 1;
 
-		if(is_array($where)){
+		if(is_array($where[0])){
 
 			foreach($where as $args){
 
 				if(!is_array($args)){
 
-					$whereParam .= ' ' . $args . ' ';
+					$set .= ' ' . $args . ' ';
 
 				}else{
 
-					$whereParam .= $args[0] . ' ' . $args[1] . ' ? ';
+					$set .= $args[0] . ' ' . $args[1] . ' ? ';
 					
 					array_push($fields, $args[2]);
 				}
 
 			}
 
+			$sql = "{$action} FROM {$table} WHERE $set";
+			if(!$this->query($sql, $param)->error()){
+				return $this;
+			}
+
+			$sql = "UPDATE {$table} SET {$set} WHERE {$whereParam}";
+
 		}else{
+
+			if(is_array($where)){
 
 				$updateRecordField = key($where);
 				$updateRecordValue = current($where);
 
-			}
-	
-			foreach($fields as $name => $value){
-				$set .= "{$name} = ?";
-				if($x < count($fields)){
-					$set .= ', ';
-				}
-				$x++;
-			}
+			}else{
 
-		$sql = "UPDATE {$table} SET {$set} WHERE {$whereParam}";
+				$updateRecordField = 'id';
+				$updateRecordValue = $id;
+
+			}				
+
+				foreach($fields as $name => $value){
+					$set .= "{$name} = ?";
+					if($x < count($fields)){
+						$set .= ', ';
+					}
+					$x++;
+				}
+
+				$sql = "UPDATE {$table} SET {$set} WHERE {$updateRecordField} = {$updateRecordValue}";
+
+		}
 
 		if(!$this->query($sql, $fields)->error()){
 			return true;

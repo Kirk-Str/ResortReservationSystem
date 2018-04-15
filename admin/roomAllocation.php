@@ -13,6 +13,7 @@ if($userType != 1 || empty($_GET) || empty(Input::get('type'))){
 $request_type;
 $pageTitle;
 $row;
+$roomRows;
 $buttonName;
 $id = Input::get('Id');
 $roomId = Input::get('RoomId');
@@ -38,9 +39,6 @@ if(empty($id) || empty($roomId)){
 
 }
 
-$room = new Room();
-$rows = $room->selectAll();
-
 $contentData = new Dwoo\Data();
 
 $contentData->assign('id', '');
@@ -51,12 +49,16 @@ $contentData->assign('vacant', '');
 $contentData->assign('occupied', '');
 $contentData->assign('dirty', '');
 
-$contentData->assign('roomCategoryList', objectToArray($rows));
+
 
 if(Input::get('type') == 'add')
 {
     $pageTitle = "ADD NEW ROOM";
     $buttonName = "Save";
+
+    $room = new Room();
+    $roomRows = $room->selectAll();
+    $contentData->assign('roomCategoryList', objectToArray($romRows));
 }
 else
 {
