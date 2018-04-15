@@ -33,16 +33,21 @@ if (Input::exists()){
 							'door_no' => Input::get('door_no'), 
 							'room_status' => Input::get('room_status'),
 						));
+
 					}
 					else if(Input::get('type') == "edit")
 					{
 						
-						$roomAllocation->update(array(
-								'door_no' => Input::get('door_no'), 
-								'room_status' => Input::get('room_status')),
-								array('id' => Input::get('id'),
-								'room_id' => Input::get('room_id'))
-						);
+						$fields = array(
+							'door_no' => Input::get('door_no'), 
+							'room_status' => Input::get('room_status'));
+
+						$where = array(
+							array('id', '=', Input::get('id')),
+							'AND',
+							array('room_id', '=', Input::get('room_id')));
+
+						$roomAllocation->update($fields, $where);
 						
 					}
 					else if(Input::get('type') == "delete")
@@ -54,7 +59,7 @@ if (Input::exists()){
 					die($e->getMessage());
 				}
 
-				Redirect::to(Config::get('application_path') . 'admin/roomAllocation.php');
+				Redirect::to(Config::get('application_path') . 'admin/rooms.php');
 
 			} else {
 				foreach($validation->errors() as $error){

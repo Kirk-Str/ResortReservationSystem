@@ -147,30 +147,38 @@ class DB{
 
 	public function update($table, $where, $fields){
 
+		$x = 1;
 		$set = '';
 		$whereParam = '';
-		$x = 1;
-
+		$param = array();
+		
 		if(is_array($where[0])){
+
+			foreach($fields as $name => $value){
+				$set .= "{$name} = ?";
+				if($x < count($fields)){
+					$set .= ', ';
+				}
+				$x++;
+
+				array_push($param, $value);
+
+			}
 
 			foreach($where as $args){
 
 				if(!is_array($args)){
 
-					$set .= ' ' . $args . ' ';
+					$whereParam .= ' ' . $args . ' ';
 
 				}else{
 
-					$set .= $args[0] . ' ' . $args[1] . ' ? ';
+					$whereParam .= $args[0] . ' ' . $args[1] . ' ? ';
 					
-					array_push($fields, $args[2]);
+					array_push($param, $args[2]);
+
 				}
 
-			}
-
-			$sql = "{$action} FROM {$table} WHERE $set";
-			if(!$this->query($sql, $param)->error()){
-				return $this;
 			}
 
 			$sql = "UPDATE {$table} SET {$set} WHERE {$whereParam}";
@@ -195,13 +203,16 @@ class DB{
 						$set .= ', ';
 					}
 					$x++;
+
+					array_push($param, $value);
+
 				}
 
 				$sql = "UPDATE {$table} SET {$set} WHERE {$updateRecordField} = {$updateRecordValue}";
 
 		}
 
-		if(!$this->query($sql, $fields)->error()){
+		if(!$this->query($sql, $param)->error()){
 			return true;
 		}
 
