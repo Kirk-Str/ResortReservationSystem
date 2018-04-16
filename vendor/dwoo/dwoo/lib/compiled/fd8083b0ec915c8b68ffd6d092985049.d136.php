@@ -33,7 +33,6 @@
                     
                     <?php if ((isset($this->scope["userType"]) ? $this->scope["userType"] : null) == 1) {
 ?>
-
                      
                         <li><a href="<?php echo Config::get('application_path') . 'admin/index.php?dashboard=opt-filter-new'; ?>">DASHBOARD</a></li>
                         <li><a href="<?php echo Config::get('application_path') . 'admin/confirmationList.php?type=opt-filter-occupied'; ?>">ROOM RESERVATIONS</a></li>
@@ -42,7 +41,8 @@
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true">MASTERS<span class="caret"></span></a>
                             <ul class="dropdown-menu">
-                                <li><a href="<?php echo Config::get('application_path') . 'admin/rooms.php'; ?>">ROOMS</a></li>
+                                <li><a href="<?php echo Config::get('application_path') . 'admin/roomTypes.php'; ?>">ROOM TYPES</a></li>
+                                <li><a href="<?php echo Config::get('application_path') . 'admin/roomsOverview.php'; ?>">ROOM OVERVIEW</a></li>
                                 <li><a href="<?php echo Config::get('application_path') . 'admin/offers.php'; ?>">OFFERS</a></li>
                                 <li role="presentation" class="divider"></li>
                                 <li><a href="<?php echo Config::get('application_path') . 'admin/users.php?type=opt-filter-all'; ?>">USERS</a></li>
@@ -53,7 +53,6 @@
 }
 else {
 ?>
-
 
                         <li><a href="<?php echo Config::get('application_path') . 'index.php'?>">HOME</a></li>
                         <li><a href="<?php echo Config::get('application_path') . 'reservation.php'?>">RESERVATION</a></li>
@@ -66,14 +65,12 @@ else {
                     <?php 
 }?>
 
-
                 </ul>
 
                 <ul class="nav navbar-nav navbar-right">
 
                 <?php if (! (isset($this->scope["username"]) ? $this->scope["username"] : null) == '') {
 ?>
-
 
                     <li class="dropdown">
                         <span>
@@ -87,13 +84,11 @@ else {
                                                 <div class="form-group">
                                                 <label>Hello, </label><br> 
                                                     <?php echo $this->scope["username"];?>
-
                                                 </div>
                                                 <div class="form-group button">
                                                     <?php if ((isset($this->scope["userType"]) ? $this->scope["userType"] : null) == 2) {
 ?><div class="help-block text-right"><a href="./myReservations.php?type=opt-filter-new">My Reservations</a></div><?php 
 }?>
-
                                                     <div class="help-block text-right"><a href="">Change Password</a></div>
                                                     <div class="help-block text-right">
                                                         <a href="<?php echo Config::get('application_path') . 'logout.php' ?>">Log Out</a>
@@ -111,7 +106,6 @@ else {
 }
 else {
 ?>
-
 
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">LOGIN</a>
@@ -151,20 +145,16 @@ else {
                     </li>
                     <?php 
 }?>
-
                 </ul>
             </div>
         </div>
     </div>
     <div class="container body-content">
         <?php echo $this->scope["content"];?>
-
     </div>
     <?php echo $this->scope["footer"];?>
-
 </body>
     <?php echo $this->scope["scripts"];?>
-
 </html><?php  /* end template body */
 return $this->buffer . ob_get_clean();
 ?>

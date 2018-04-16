@@ -4,7 +4,7 @@
 
 <div class="row">
     <div class="col-md-10">
-        <form method="POST" action="<?php echo Config::get('application_path') .'admin/actions/roomdetail.php'?>" enctype="multipart/form-data">
+        <form method="POST" action="<?php echo Config::get('application_path') .'admin/actions/roomTypeDetail.php'?>" enctype="multipart/form-data">
             <input type="hidden" name="type" value="{$request_type}">
             <input type="hidden" name="id" value="{$id}">
             <div class="form-horizontal">

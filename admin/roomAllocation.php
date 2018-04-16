@@ -2,7 +2,7 @@
 // Include the main class, the rest will be automatically loaded
 require_once  $_SERVER['DOCUMENT_ROOT']  . '/core/init.php';
 
-if($userType != 1 || empty($_GET) || empty(Input::get('type'))){
+if($userType != 1 || Input::get('id') || Input::get('roomId') || empty(Input::get('type'))){
 
     clearMessage();
     
@@ -15,29 +15,8 @@ $pageTitle;
 $row;
 $roomRows;
 $buttonName;
-$id = Input::get('Id');
-$roomId = Input::get('RoomId');
-
-if(empty($id) || empty($roomId)){
-
-    clearMessage();
-        
-    Redirect::to('../message.php');
-    
-}else{
-
-    $roomAllocation = new RoomAllocation();
-    $row = $roomAllocation->find($id, $roomId);
-
-    if(!$row){
-
-        clearMessage();
-        
-        Redirect::to('../message.php');
-
-    }
-
-}
+$id = Input::get('id');
+$roomId = Input::get('roomId');
 
 $contentData = new Dwoo\Data();
 
@@ -50,6 +29,16 @@ $contentData->assign('occupied', '');
 $contentData->assign('dirty', '');
 
 
+$roomAllocation = new RoomAllocation();
+$row = $roomAllocation->find($id, $roomId);
+
+if(!$row){
+
+    clearMessage();
+    
+    Redirect::to('../message.php');
+
+}
 
 if(Input::get('type') == 'add')
 {

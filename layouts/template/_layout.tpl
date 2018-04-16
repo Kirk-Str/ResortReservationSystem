@@ -38,7 +38,8 @@
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true">MASTERS<span class="caret"></span></a>
                             <ul class="dropdown-menu">
-                                <li><a href="<?php echo Config::get('application_path') . 'admin/rooms.php'; ?>">ROOMS</a></li>
+                                <li><a href="<?php echo Config::get('application_path') . 'admin/roomTypes.php'; ?>">ROOM TYPES</a></li>
+                                <li><a href="<?php echo Config::get('application_path') . 'admin/roomsOverview.php'; ?>">ROOM OVERVIEW</a></li>
                                 <li><a href="<?php echo Config::get('application_path') . 'admin/offers.php'; ?>">OFFERS</a></li>
                                 <li role="presentation" class="divider"></li>
                                 <li><a href="<?php echo Config::get('application_path') . 'admin/users.php?type=opt-filter-all'; ?>">USERS</a></li>

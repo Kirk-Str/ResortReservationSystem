@@ -5,11 +5,11 @@
 ?>
 
 <div>
-    <h3>ROOMS</h3>
+    <h3>ROOM TYPES</h3>
 </div>
 <hr> 
 <div class="form-group">
-    <form action="roomdetail.php?type=add" method="POST">
+    <form action="roomTypeDetail.php?type=add" method="POST">
         <input type="submit" value="Add New"  class="btn btn-info" />
     </form>
 </div>

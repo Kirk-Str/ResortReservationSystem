@@ -97,7 +97,7 @@ if (Input::exists()){
 					die($e->getMessage());
 				}
 
-				Redirect::to(Config::get('application_path') . 'admin/rooms.php');
+				Redirect::to(Config::get('application_path') . 'admin/roomTypes.php');
 
 			} else {
 				foreach($validation->errors() as $error){

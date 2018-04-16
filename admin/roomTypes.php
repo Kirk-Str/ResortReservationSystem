@@ -20,7 +20,7 @@ $rows = $room->selectAll();
 $core = new Dwoo\Core();
 
 // Load a template file, this is reusable if you want to render multiple times the same template with different data
-$roomsTemplate = new Dwoo\Template\File('../layouts/rooms.tpl');
+$roomsTemplate = new Dwoo\Template\File('../layouts/roomTypes.tpl');
 $footerTemplate = new Dwoo\Template\File('../layouts/template/_footer.tpl');
 $scriptTemplate = new Dwoo\Template\File('../layouts/template/_scripts.tpl');
 $validationScriptTemplate = new Dwoo\Template\File('../layouts/template/_validationScripts.tpl');
