@@ -1,5 +1,7 @@
 <?php
 /* template head */
+if (class_exists('Dwoo\Plugins\Functions\PluginTruncate')===false)
+	$this->getLoader()->loadPlugin('PluginTruncate');
 /* end template head */ ob_start(); /* template body */ ?><?php
 
     //require '..\vendor\autoload.php';
@@ -26,7 +28,14 @@ if ($this->isTraversable($_fh0_data) == true)
 ?>
     <div class="col-xs-2 col-sm-2 col-md-2 clear-padding">
       <div class="thumbnail">
-        
+      
+      <button type="button" class="close pull-left" data-dismiss="alert" aria-label="Close">
+          <span class="glyphicon glyphicon-edit"></span>
+        </button>
+        <button type="button" class="close pull-left" data-dismiss="alert" aria-label="Close">
+          <span class="glyphicon glyphicon-remove"></span>
+        </button>
+
         <?php if ((isset($this->scope["row"]["room_status"]) ? $this->scope["row"]["room_status"]:null) == 1) {
 ?>
           <span class="label label-default pull-right">
@@ -51,10 +60,8 @@ else {
         <div class="caption clear-padding">
           <h3 class="text-center"><?php echo $this->scope["row"]["door_no"];?></h3>
         </div>
-        <button type="button" class="close pull-right" data-dismiss="alert" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-        <p class="lead text-center"><?php echo $this->scope["row"]["room_type"];?></p>
+        <p class="lead text-center"><?php echo $this->classCall('Dwoo\Plugins\Functions\Plugintruncate', 
+                        array((isset($this->scope["row"]["room_type"]) ? $this->scope["row"]["room_type"]:null), 18, '...', false, false));?></p>
       </div>
     </div>
   <?php 

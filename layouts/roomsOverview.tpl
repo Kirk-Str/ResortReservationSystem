@@ -17,7 +17,14 @@
   {foreach $roomAllocationRow row}
     <div class="col-xs-2 col-sm-2 col-md-2 clear-padding">
       <div class="thumbnail">
-        
+      
+      <button type="button" class="close pull-left" data-dismiss="alert" aria-label="Close">
+          <span class="glyphicon glyphicon-edit"></span>
+        </button>
+        <button type="button" class="close pull-left" data-dismiss="alert" aria-label="Close">
+          <span class="glyphicon glyphicon-remove"></span>
+        </button>
+
         {if $row.room_status == 1}
           <span class="label label-default pull-right">
             Vacant
@@ -34,10 +41,7 @@
         <div class="caption clear-padding">
           <h3 class="text-center">{$row.door_no}</h3>
         </div>
-        <button type="button" class="close pull-right" data-dismiss="alert" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-        <p class="lead text-center">{$row.room_type}</p>
+        <p class="lead text-center">{truncate $row.room_type 18 }</p>
       </div>
     </div>
   {/foreach}
