@@ -20,14 +20,14 @@
                 <div class="form-group">
                     <label for="room_name" class="col-md-2 control-label">Room Type</label>
                     <div class="col-md-4">
-                        <select class="form-control" name="room_name" id="room_name" data-val="true" data-val-required="The Room Category field is required.">
+                        <select class="form-control" name="room_id" id="room_id" data-val="true" data-val-required="The Room Category field is required.">
                             
-                            {foreach $roomCategoryList row}
-                                <option {$row.id} value="{$row.room_id}">{$row.room_name}</option>
+                            {foreach $roomTypeList row}
+                                <option value="{$row.room_id}">{$row.room_name}</option>
                             {/foreach}
                             
                         </select>
-                        <span class="text-danger field-validation-valid" data-valmsg-for="room_name" data-valmsg-replace="true"></span>
+                        <span class="text-danger field-validation-valid" data-valmsg-for="room_id" data-valmsg-replace="true"></span>
                     </div>
                 </div>
 

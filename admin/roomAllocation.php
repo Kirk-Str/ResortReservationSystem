@@ -29,17 +29,6 @@ $contentData->assign('occupied', '');
 $contentData->assign('dirty', '');
 
 
-$roomAllocation = new RoomAllocation();
-$row = $roomAllocation->find($id, $roomId);
-
-if(!$row){
-
-    clearMessage();
-    
-    Redirect::to('../message.php');
-
-}
-
 if(Input::get('type') == 'add')
 {
     $pageTitle = "ADD NEW ROOM";
@@ -47,10 +36,21 @@ if(Input::get('type') == 'add')
 
     $room = new Room();
     $roomRows = $room->selectAll();
-    $contentData->assign('roomCategoryList', objectToArray($romRows));
+    $contentData->assign('roomTypeList', objectToArray($roomRows));
 }
 else
 {
+    
+    $roomAllocation = new RoomAllocation();
+    $row = $roomAllocation->find($id, $roomId);
+
+    if(!$row){
+
+        clearMessage();
+        
+        Redirect::to('../message.php');
+
+    }
        
     if(Input::get('type') == 'delete'){
 

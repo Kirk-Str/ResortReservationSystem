@@ -57,6 +57,23 @@ class RoomAllocation {
 
 	}
 
+	public function selectAll(){
+
+		$select = 'SELECT room_allocation.id, room_allocation.room_id, room_allocation.door_no, room_allocation.room_status, room.room_name as room_type';
+	
+		$table = 'room_allocation INNER JOIN room ON (room_allocation.room_id = room.room_id)';
+
+		$data = $this ->_db->action($select, $table);
+
+		if($data->count()){
+			$this->_data = $data->results();
+			return $this->_data;
+		}
+
+		return false;
+
+	}
+
 	public function data(){
 		return $this->_data;
 	}

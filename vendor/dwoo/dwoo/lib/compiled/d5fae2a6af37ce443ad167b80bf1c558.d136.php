@@ -23,24 +23,24 @@
                 <div class="form-group">
                     <label for="room_name" class="col-md-2 control-label">Room Type</label>
                     <div class="col-md-4">
-                        <select class="form-control" name="room_name" id="room_name" data-val="true" data-val-required="The Room Category field is required.">
+                        <select class="form-control" name="room_id" id="room_id" data-val="true" data-val-required="The Room Category field is required.">
                             
                             <?php 
-$_fh0_data = (isset($this->scope["roomCategoryList"]) ? $this->scope["roomCategoryList"] : null);
+$_fh0_data = (isset($this->scope["roomTypeList"]) ? $this->scope["roomTypeList"] : null);
 if ($this->isTraversable($_fh0_data) == true)
 {
 	foreach ($_fh0_data as $this->scope['row'])
 	{
 /* -- foreach start output */
 ?>
-                                <option <?php echo $this->scope["row"]["id"];?> value="<?php echo $this->scope["row"]["room_id"];?>"><?php echo $this->scope["row"]["room_name"];?></option>
+                                <option value="<?php echo $this->scope["row"]["room_id"];?>"><?php echo $this->scope["row"]["room_name"];?></option>
                             <?php 
 /* -- foreach end output */
 	}
 }?>
                             
                         </select>
-                        <span class="text-danger field-validation-valid" data-valmsg-for="room_name" data-valmsg-replace="true"></span>
+                        <span class="text-danger field-validation-valid" data-valmsg-for="room_id" data-valmsg-replace="true"></span>
                     </div>
                 </div>
 

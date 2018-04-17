@@ -13,8 +13,8 @@ if($userType != 1){
 
 }
 
-$room = new Room();
-$rows = $room->selectAll();
+$roomAllocation = new RoomAllocation();
+$rows = $roomAllocation->selectAll();
 
 // Create the controller, it is reusable and can render multiple templates
 $core = new Dwoo\Core();
@@ -31,7 +31,7 @@ $validationScriptPage = new Dwoo\Data();
 $validationScriptPage->assign('validationScripts', $core->get($validationScriptTemplate));
 
 $roomsPageData = new Dwoo\Data();
-$roomsPageData->assign('roomList', objectToArray($rows));
+$roomsPageData->assign('roomAllocationRow', objectToArray($rows));
 
 $mainPage = new Dwoo\Data();
 $mainPage->assign('pageTitle', 'Rooms');

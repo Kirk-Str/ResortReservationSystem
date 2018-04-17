@@ -27,7 +27,6 @@ if (Input::exists()){
 
 					if(Input::get('type') == "add")
 					{
-
 						$roomAllocation->create(array(
 							'room_id' => Input::get('room_id'),
 							'door_no' => Input::get('door_no'), 
@@ -59,7 +58,7 @@ if (Input::exists()){
 					die($e->getMessage());
 				}
 
-				Redirect::to(Config::get('application_path') . 'admin/rooms.php');
+				Redirect::to(Config::get('application_path') . 'admin/roomsOverview.php');
 
 			} else {
 				foreach($validation->errors() as $error){

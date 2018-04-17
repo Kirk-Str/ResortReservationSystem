@@ -8,16 +8,37 @@
     <h3>ROOM OVERVIEW</h3>
 </div>
 <hr> 
-
- <div class="row text-lg-left">
-
-  <div class="col-md-2 col-xs-6 clear-padding">
-    <a href="#" class="d-block mb-1 h-100">
-      <div class=" img-thumbnail">
-        <div style="height: 200px;width:400px">R0215</div>
+<div class="form-group">
+    <form action="roomAllocation.php?type=add" method="POST">
+        <input type="submit" value="Add New"  class="btn btn-info" />
+    </form>
+</div>
+<div id="room-overview" class="flex-row row">
+  {foreach $roomAllocationRow row}
+    <div class="col-xs-2 col-sm-2 col-md-2 clear-padding">
+      <div class="thumbnail">
+        
+        {if $row.room_status == 1}
+          <span class="label label-default pull-right">
+            Vacant
+          </span>
+        {elseif $row.room_status == 2}
+          <span class="label label-success pull-right">
+            Occupied
+          </span>
+        {else}
+          <span class="label label-warning pull-right">
+            Dirty
+          </span>
+        {/if}
+        <div class="caption clear-padding">
+          <h3 class="text-center">{$row.door_no}</h3>
+        </div>
+        <button type="button" class="close pull-right" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <p class="lead text-center">{$row.room_type}</p>
       </div>
-    </a>
-  </div>
-
-  
+    </div>
+  {/foreach}
 </div>
