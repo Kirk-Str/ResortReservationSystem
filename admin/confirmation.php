@@ -22,6 +22,7 @@ $adults = "";
 $children = "";
 $guests = "";
 $type = 0;
+$rows;
 
 $reservation = new Reservation();
 
@@ -103,6 +104,9 @@ if($reservation->find(Input::get('requestId'))){
             $disabledAdditionalCharges = 'disabled=disabled';
             $checkActionButton = 'Check In';
 
+            $roomAllocation = new RoomAllocation();
+            $rows = $roomAllocation->selectAll($reservation->data()->roomId);
+
         }
 
         if(!empty($reservation->data()->check_in_actual)){
@@ -157,7 +161,6 @@ if($reservation->find(Input::get('requestId'))){
 
         }
 }
-
 
     // Create the controller, it is reusable and can render multiple templates
     $core = new Dwoo\Core();
@@ -216,6 +219,8 @@ if($reservation->find(Input::get('requestId'))){
     $confirmationData->assign('disabledAdditionalCharges', $disabledAdditionalCharges);
     $confirmationData->assign('checkActionButton', $checkActionButton);
     $confirmationData->assign('cancelled', $cancelled);
+
+    $confirmationData->assign('roomList', objectToArray($rows));
 
     $validationScriptPage = new Dwoo\Data();
     $validationScriptPage->assign('validationScripts', $core->get($validationScriptTemplate));

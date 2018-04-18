@@ -100,7 +100,7 @@ $(function () {
     $('#room-list tbody').on( 'click', 'tr', function () {
         
           var id = this.cells[0].id;
-          location.href="./roomdetail.php?type=edit&roomId=" + id;
+          location.href="./roomTypeDetail.php?type=edit&roomId=" + id;
   
       });
 

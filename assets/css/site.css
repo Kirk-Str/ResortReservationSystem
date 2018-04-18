@@ -378,7 +378,7 @@ input[name="daterange"]{
 
 #room-overview .thumbnail{
     margin: 2px 2px !important;
-    cursor: pointer;
+    --cursor: pointer;
 }
 
 #room-overview > .close{

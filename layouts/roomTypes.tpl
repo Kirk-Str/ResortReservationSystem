@@ -36,7 +36,7 @@
 
         <tr>
     
-            <td id="{$row.room_id}"><a href="./roomdetail.php?type=edit&roomId={$row.room_id}">{$row.room_id}</a></td>
+            <td id="{$row.room_id}"><a href="./roomTypeDetail.php?type=edit&roomId={$row.room_id}">{$row.room_id}</a></td>
             <td>{$row.room_name}</td>
             <td>{if $row.thumbnail != ""}<img height="80" width="80" src="data:image;base64,{$row.thumbnail}" />{/if}</td>
             <td>{$row.total_room}</td>
@@ -45,7 +45,7 @@
             <td>{$row.rate}</td>
             <td>{$row.caption}</td>
             <td>{$row.description}</td>
-            <td><a href="./roomdetail.php?type=delete&roomId={$row.room_id}">Delete</a></td>
+            <td><a href="./roomTypeDetail.php?type=delete&roomId={$row.room_id}">Delete</a></td>
 
         </tr>
     

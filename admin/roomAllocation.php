@@ -2,7 +2,7 @@
 // Include the main class, the rest will be automatically loaded
 require_once  $_SERVER['DOCUMENT_ROOT']  . '/core/init.php';
 
-if($userType != 1 || Input::get('id') || Input::get('roomId') || empty(Input::get('type'))){
+if($userType != 1 || empty(Input::get('type'))){
 
     clearMessage();
     
@@ -41,16 +41,27 @@ if(Input::get('type') == 'add')
 else
 {
     
-    $roomAllocation = new RoomAllocation();
-    $row = $roomAllocation->find($id, $roomId);
-
-    if(!$row){
+    if (empty(Input::get('id')) || empty(Input::get('roomId'))){
 
         clearMessage();
-        
+            
         Redirect::to('../message.php');
 
+    }else{
+
+        $roomAllocation = new RoomAllocation();
+        $row = $roomAllocation->find($id, $roomId);
+
+        if(!$row){
+
+            clearMessage();
+            
+            Redirect::to('../message.php');
+
+        }
+
     }
+
        
     if(Input::get('type') == 'delete'){
 

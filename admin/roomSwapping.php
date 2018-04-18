@@ -2,7 +2,7 @@
 // Include the main class, the rest will be automatically loaded
 require_once  $_SERVER['DOCUMENT_ROOT']  . '/core/init.php';
 
-if($userType != 1 || empty($_GET) || empty(Input::get('type'))){
+if($userType != 1 || empty(Input::get('type'))){
 
     clearMessage();
     
@@ -13,63 +13,81 @@ if($userType != 1 || empty($_GET) || empty(Input::get('type'))){
 $request_type;
 $pageTitle;
 $row;
+$roomRows;
 $buttonName;
-$id = Input::get('roomId');
-
-
-if(!empty($id)){
-
-    $room = new Room();
-    $row = $room->find($id);
-
-    if(!$row){
-
-        clearMessage();
-        
-        Redirect::to('../message.php');
-
-    }
-    
-}
+$id = Input::get('id');
+$roomId = Input::get('roomId');
 
 $contentData = new Dwoo\Data();
 
+$contentData->assign('id', '');
+$contentData->assign('door_id', '');
+$contentData->assign('door_no', '');
+$contentData->assign('room_status', '');
+$contentData->assign('vacant', '');
+$contentData->assign('occupied', '');
+$contentData->assign('dirty', '');
+
+
 if(Input::get('type') == 'add')
 {
-    $pageTitle = "ADD NEW ROOM TYPE";
+    $pageTitle = "ADD NEW ROOM";
     $buttonName = "Save";
 
-    $contentData->assign('id', '');
-    $contentData->assign('room_name', '');
-    $contentData->assign('total_room', '');
-    $contentData->assign('occupancy', '');
-    $contentData->assign('size', '');
-    $contentData->assign('rate', '');
-    $contentData->assign('caption', '');
-    $contentData->assign('description', '');
+    $room = new Room();
+    $roomRows = $room->selectAll();
+    $contentData->assign('roomTypeList', objectToArray($roomRows));
 }
 else
 {
+    
+    if (empty(Input::get('id')) || empty(Input::get('roomId'))){
+
+        clearMessage();
+            
+        Redirect::to('../message.php');
+
+    }else{
+
+        $roomAllocation = new RoomAllocation();
+        $row = $roomAllocation->find($id, $roomId);
+
+        if(!$row){
+
+            clearMessage();
+            
+            Redirect::to('../message.php');
+
+        }
+
+    }
+
        
-    if(Input::get('type') == 'delete')
-    {
-        $pageTitle = "ARE YOU SURE WANT TO DELETE THIS ROOM TYPE?";
+    if(Input::get('type') == 'delete'){
+
+        $pageTitle = "ARE YOU SURE WANT TO DELETE THIS ROOM?";
         $buttonName = "Delete";
 
-    }else
-    {
-        $pageTitle = "EDIT ROOM TYPE";
+    }else{
+
+        $pageTitle = "EDIT ROOM";
         $buttonName = "Save";
     }
 
     $contentData->assign('id', $id);
+    $contentData->assign('room_id', $row->room_id);
     $contentData->assign('room_name', $row->room_name);
-    $contentData->assign('total_room', $row->total_room);
-    $contentData->assign('occupancy', $row->occupancy);
-    $contentData->assign('size', $row->size);
-    $contentData->assign('rate', $row->rate);
-    $contentData->assign('caption', $row->caption);
-    $contentData->assign('description', $row->description);
+    $contentData->assign('door_no', $row->door_no);
+
+    $roomStatus = $row->room_status;
+
+    if($roomStatus == 1){
+        $contentData->assign('vacant', 'selected');
+    }elseif($roomStatus == 2){
+        $contentData->assign('occupied', 'selected');
+    }elseif($roomStatus == 3){
+        $contentData->assign('dirty', 'selected');
+    }
 
 }
 
@@ -81,7 +99,7 @@ $contentData->assign('buttonName', $buttonName);
 $core = new Dwoo\Core();
 
 // Load a template file, this is reusable if you want to render multiple times the same template with different data
-$roomdetailTemplate = new Dwoo\Template\File('../layouts/roomTypeDetail.tpl');
+$roomdetailTemplate = new Dwoo\Template\File('../layouts/roomSwapping.tpl');
 $footerTemplate = new Dwoo\Template\File('../layouts/template/_footer.tpl');
 $scriptTemplate = new Dwoo\Template\File('../layouts/template/_scripts.tpl');
 $validationScriptTemplate = new Dwoo\Template\File('../layouts/template/_validationScripts.tpl');

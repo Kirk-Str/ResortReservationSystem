@@ -45,7 +45,7 @@ if ($this->isTraversable($_fh0_data) == true)
 
         <tr>
     
-            <td id="<?php echo $this->scope["row"]["room_id"];?>"><a href="./roomdetail.php?type=edit&roomId=<?php echo $this->scope["row"]["room_id"];?>"><?php echo $this->scope["row"]["room_id"];?></a></td>
+            <td id="<?php echo $this->scope["row"]["room_id"];?>"><a href="./roomTypeDetail.php?type=edit&roomId=<?php echo $this->scope["row"]["room_id"];?>"><?php echo $this->scope["row"]["room_id"];?></a></td>
             <td><?php echo $this->scope["row"]["room_name"];?></td>
             <td><?php if ((isset($this->scope["row"]["thumbnail"]) ? $this->scope["row"]["thumbnail"]:null) != "") {
 ?><img height="80" width="80" src="data:image;base64,<?php echo $this->scope["row"]["thumbnail"];?>" /><?php 
@@ -56,7 +56,7 @@ if ($this->isTraversable($_fh0_data) == true)
             <td><?php echo $this->scope["row"]["rate"];?></td>
             <td><?php echo $this->scope["row"]["caption"];?></td>
             <td><?php echo $this->scope["row"]["description"];?></td>
-            <td><a href="./roomdetail.php?type=delete&roomId=<?php echo $this->scope["row"]["room_id"];?>">Delete</a></td>
+            <td><a href="./roomTypeDetail.php?type=delete&roomId=<?php echo $this->scope["row"]["room_id"];?>">Delete</a></td>
 
         </tr>
     
