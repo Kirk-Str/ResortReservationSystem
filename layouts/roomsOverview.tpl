@@ -14,19 +14,21 @@
     </form>
 </div>
 <div id="room-overview" class="flex-row row">
-  {foreach $roomAllocationRow row}
 
-  <a href="./roomSwapping.php">
+  {foreach $roomAllocationRow row}
 
     <div class="col-xs-2 col-sm-2 col-md-2 clear-padding">
       
+      <input type="hidden" name="room_no" value="={$row.room_no}" >
+      <input type="hidden" name="room_id" value="={$row.room_id}" >
+
         <div class="thumbnail">
 
-          <a href="./roomAllocation.php?type=edit&id={$row.id}&roomId={$row.room_id}" class="close pull-left">
+          <a href="./roomAllocation.php?type=edit&id={$row.room_no}&roomId={$row.room_id}" class="close pull-left">
             <span class="glyphicon glyphicon-edit"></span>
           </a>
           
-          <a href="./roomAllocation.php?type=delete&id={$row.id}&roomId={$row.room_id}" class="close pull-left">
+          <a href="./roomAllocation.php?type=delete&id={$row.room_no}&roomId={$row.room_id}" class="close pull-left">
             <span class="glyphicon glyphicon-remove"></span>
           </a>
 
@@ -51,6 +53,6 @@
       
     </div>
 
-    </a>
   {/foreach}
+
 </div>

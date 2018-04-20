@@ -61,9 +61,9 @@ else {
 }?>
 
                 <div class="form-group">
-                    <label for="door_no" class="col-md-2 control-label">Door No.</label>
+                    <label for="door_no" class="col-md-2 control-label">Room No.</label>
                     <div class="col-md-2">
-                    <input class="form-control" type="text" data-val="true" data-val-required="The Door No. field is required." id="door_no"
+                    <input class="form-control" type="text" data-val="true" data-val-required="The Room No. field is required." id="door_no"
                             name="door_no" value="<?php echo $this->scope["door_no"];?>">
                         <span class="text-danger field-validation-valid" data-valmsg-for="door_no" data-valmsg-replace="true"></span>
                     </div>

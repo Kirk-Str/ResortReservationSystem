@@ -33,11 +33,11 @@ if ($this->isTraversable($_fh0_data) == true)
       
         <div class="thumbnail">
 
-          <a href="./roomAllocation.php?type=edit&id=<?php echo $this->scope["row"]["id"];?>&roomId=<?php echo $this->scope["row"]["room_id"];?>" class="close pull-left">
+          <a href="./roomAllocation.php?type=edit&id=<?php echo $this->scope["row"]["room_no"];?>&roomId=<?php echo $this->scope["row"]["room_id"];?>" class="close pull-left">
             <span class="glyphicon glyphicon-edit"></span>
           </a>
           
-          <a href="./roomAllocation.php?type=delete&id=<?php echo $this->scope["row"]["id"];?>&roomId=<?php echo $this->scope["row"]["room_id"];?>" class="close pull-left">
+          <a href="./roomAllocation.php?type=delete&id=<?php echo $this->scope["row"]["room_no"];?>&roomId=<?php echo $this->scope["row"]["room_id"];?>" class="close pull-left">
             <span class="glyphicon glyphicon-remove"></span>
           </a>
 

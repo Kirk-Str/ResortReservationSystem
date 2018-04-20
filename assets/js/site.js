@@ -125,6 +125,13 @@ $(function () {
 
       });
 
+      $('#room-overview').on( 'click', 'div.thumbnail', function (){
+
+        //var id = this.
+        //location.href="./roomSwapping.php?requestId=" + id;
+
+  });
+
 
 
 });

@@ -66,19 +66,35 @@
                                 </div>
                             </div>
                             <hr>
-                            <div class="form-group">
-                                <label for="room_no" class="col-md-3 control-label">Room No.</label>
-                                <div class="col-md-3">
-                                    <select class="form-control" name="room_no" id="room_no" data-val="true" data-val-required="The Room No. field is required.">
 
-                                    {foreach $roomList row}
-                                        <option value="{$row.id}">{$row.door_no}</option>
-                                    {/foreach}
+                            {if $visibleOnCheckIn }
 
-                                    </select>
-                                    <span class="text-danger field-validation-valid" data-valmsg-for="room_no" data-valmsg-replace="true"></span>
+                                <div class="form-group">
+                                    <label for="room_no" class="col-md-3 control-label">Room No.</label>
+                                    <div class="col-md-3">
+                                        <select class="form-control" name="room_no" id="room_no" data-val="true" data-val-required="The Room No. field is required.">
+
+                                        {foreach $roomList row}
+                                            <option value="{$row.id}">{$row.door_no}</option>
+                                        {/foreach}
+
+                                        </select>
+                                        <span class="text-danger field-validation-valid" data-valmsg-for="room_no" data-valmsg-replace="true"></span>
+                                    </div>
                                 </div>
-                            </div>
+
+                            
+                            {else}
+
+                                <div class="form-group">
+                                    <label for="room_name_readonly" class="col-md-3 control-label">Room No.</label>
+                                    <div class="col-md-3">
+                                        <input class="form-control" type="text" id="room_no_x" name="room_no" value="{$roomNo}" readonly>
+                                    </div>
+                                </div>
+
+                            {/if}
+
                             <hr>
                             <div class="form-group">
                                 <label for="{$disabled}" class="col-md-3 control-label">Total Payable</label>

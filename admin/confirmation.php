@@ -23,6 +23,7 @@ $children = "";
 $guests = "";
 $type = 0;
 $rows;
+$visibleOnCheckIn = false;
 
 $reservation = new Reservation();
 
@@ -45,6 +46,7 @@ if($reservation->find(Input::get('requestId'))){
     
     $nightStay = $checkOut->diff($checkIn)->format('%a')+1;
     $roomId = $reservation->data()->room_id;
+    $roomNo = $reservation->data()->room_no;
     $roomSelected = $reservation->data()->room_name;
     $roomRate = $reservation->data()->rate;
 
@@ -98,6 +100,7 @@ if($reservation->find(Input::get('requestId'))){
 
         if(empty($reservation->data()->check_in_actual)){
 
+            $visibleOnCheckIn = true;
             $formHeader = 'Reservation - Check-In';
 
             $disabledCheckOut = 'disabled=disabled';
@@ -105,7 +108,7 @@ if($reservation->find(Input::get('requestId'))){
             $checkActionButton = 'Check In';
 
             $roomAllocation = new RoomAllocation();
-            $rows = $roomAllocation->selectAll($reservation->data()->roomId);
+            $rows = $roomAllocation->selectAll($roomId);
 
         }
 
@@ -190,6 +193,7 @@ if($reservation->find(Input::get('requestId'))){
     $confirmationData->assign('roomSelected', $roomSelected);
     $confirmationData->assign('roomRate', number_format($roomRate, 2));
     $confirmationData->assign('roomId', $roomId);
+    $confirmationData->assign('roomNo', $roomNo);
 
     $confirmationData->assign('totalAmount', number_format($totalAmount, 2));
     $confirmationData->assign('minPayable', number_format($minPayable, 2));
@@ -220,7 +224,12 @@ if($reservation->find(Input::get('requestId'))){
     $confirmationData->assign('checkActionButton', $checkActionButton);
     $confirmationData->assign('cancelled', $cancelled);
 
-    $confirmationData->assign('roomList', objectToArray($rows));
+    if($visibleOnCheckIn){
+        $confirmationData->assign('roomList', objectToArray($rows));
+    }else{
+
+    }
+    
 
     $validationScriptPage = new Dwoo\Data();
     $validationScriptPage->assign('validationScripts', $core->get($validationScriptTemplate));

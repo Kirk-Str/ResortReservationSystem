@@ -36,12 +36,12 @@ class RoomAllocation {
 		if(!is_null($id) && !is_null($roomId)){
 
 			$where = array(
-				array('room_allocation.id', "=", $id),
+				array('room_allocation.room_no', "=", $id),
 				'AND',
 				array('room_allocation.room_id', "=", $roomId)
 			);
 
-			$select = 'SELECT room_allocation.id, room_allocation.room_id, room_allocation.door_no, room_allocation.room_status, room.room_name';
+			$select = 'SELECT room_allocation.room_no, room_allocation.room_id, room_allocation.door_no, room_allocation.room_status, room.room_name';
 
 			$table = 'room_allocation INNER JOIN room ON (room_allocation.room_id = room.room_id)';
 
@@ -59,7 +59,7 @@ class RoomAllocation {
 
 	public function selectAll($roomTypeId = null){
 
-		$select = 'SELECT room_allocation.id, room_allocation.room_id, room_allocation.door_no, room_allocation.room_status, room.room_name as room_type';
+		$select = 'SELECT room_allocation.room_no, room_allocation.room_id, room_allocation.door_no, room_allocation.room_status, room.room_name as room_type';
 	
 		$table = 'room_allocation INNER JOIN room ON (room_allocation.room_id = room.room_id)';
 

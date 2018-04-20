@@ -2,7 +2,7 @@
 // Include the main class, the rest will be automatically loaded
 require_once  $_SERVER['DOCUMENT_ROOT']  . '/core/init.php';
 
-if($userType != 1 || empty(Input::get('type'))){
+if($userType != 1 || empty(Input::get('reservationId'))){
 
     clearMessage();
     
@@ -15,8 +15,7 @@ $pageTitle;
 $row;
 $roomRows;
 $buttonName;
-$id = Input::get('id');
-$roomId = Input::get('roomId');
+$reservationId = Input::get('reservationId');
 
 $contentData = new Dwoo\Data();
 
@@ -29,69 +28,19 @@ $contentData->assign('occupied', '');
 $contentData->assign('dirty', '');
 
 
-if(Input::get('type') == 'add')
-{
-    $pageTitle = "ADD NEW ROOM";
-    $buttonName = "Save";
+$pageTitle = "ADD NEW ROOM";
+$buttonName = "Save";
 
-    $room = new Room();
-    $roomRows = $room->selectAll();
-    $contentData->assign('roomTypeList', objectToArray($roomRows));
-}
-else
-{
-    
-    if (empty(Input::get('id')) || empty(Input::get('roomId'))){
+$room = new RoomAllocation();
+$roomRows = $room->selectAll();
 
-        clearMessage();
-            
-        Redirect::to('../message.php');
+$contentData->assign('roomTypeList', objectToArray($roomRows));  
+$contentData->assign('id', $id);
+$contentData->assign('current_room_name', $row->room_id);
+$contentData->assign('current_room_no', $row->room_name);
+//$contentData->assign('new_room_no', $row->door_no);
 
-    }else{
 
-        $roomAllocation = new RoomAllocation();
-        $row = $roomAllocation->find($id, $roomId);
-
-        if(!$row){
-
-            clearMessage();
-            
-            Redirect::to('../message.php');
-
-        }
-
-    }
-
-       
-    if(Input::get('type') == 'delete'){
-
-        $pageTitle = "ARE YOU SURE WANT TO DELETE THIS ROOM?";
-        $buttonName = "Delete";
-
-    }else{
-
-        $pageTitle = "EDIT ROOM";
-        $buttonName = "Save";
-    }
-
-    $contentData->assign('id', $id);
-    $contentData->assign('room_id', $row->room_id);
-    $contentData->assign('room_name', $row->room_name);
-    $contentData->assign('door_no', $row->door_no);
-
-    $roomStatus = $row->room_status;
-
-    if($roomStatus == 1){
-        $contentData->assign('vacant', 'selected');
-    }elseif($roomStatus == 2){
-        $contentData->assign('occupied', 'selected');
-    }elseif($roomStatus == 3){
-        $contentData->assign('dirty', 'selected');
-    }
-
-}
-
-$contentData->assign('request_type', Input::get('type'));
 $contentData->assign('pageTitle', $pageTitle);
 $contentData->assign('buttonName', $buttonName);
 

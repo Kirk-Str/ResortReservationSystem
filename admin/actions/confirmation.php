@@ -44,6 +44,9 @@ if (Input::exists()){
 						'check_in_single' => array(
 							'required' => true
 						),
+						'room_no' => array(
+							'required' => true
+						),
 					)); 
 
 				}else if($reservationStatus == 2){
@@ -78,6 +81,7 @@ if (Input::exists()){
 								'adults_actual' => Input::get('actual_adults'),
 								'children_actual' => Input::get('actual_children') ?? NULL,
 								'check_in_actual' => Input::get('check_in_single'),
+								'room_no' => Input::get('room_no'),
 							), array('reservation_id' => $reservationId));
 
 						}

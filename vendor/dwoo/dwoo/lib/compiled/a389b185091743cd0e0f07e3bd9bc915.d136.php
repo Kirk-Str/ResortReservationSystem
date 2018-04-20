@@ -68,12 +68,16 @@
                                 </div>
                             </div>
                             <hr>
-                            <div class="form-group">
-                                <label for="room_no" class="col-md-3 control-label">Room No.</label>
-                                <div class="col-md-3">
-                                    <select class="form-control" name="room_no" id="room_no" data-val="true" data-val-required="The Room No. field is required.">
 
-                                    <?php 
+                            <?php if ((isset($this->scope["visibleOnCheckIn"]) ? $this->scope["visibleOnCheckIn"] : null)) {
+?>
+
+                                <div class="form-group">
+                                    <label for="room_no" class="col-md-3 control-label">Room No.</label>
+                                    <div class="col-md-3">
+                                        <select class="form-control" name="room_no" id="room_no" data-val="true" data-val-required="The Room No. field is required.">
+
+                                        <?php 
 $_fh0_data = (isset($this->scope["roomList"]) ? $this->scope["roomList"] : null);
 if ($this->isTraversable($_fh0_data) == true)
 {
@@ -81,16 +85,33 @@ if ($this->isTraversable($_fh0_data) == true)
 	{
 /* -- foreach start output */
 ?>
-                                        <option value="<?php echo $this->scope["row"]["id"];?>"><?php echo $this->scope["row"]["door_no"];?></option>
-                                    <?php 
+                                            <option value="<?php echo $this->scope["row"]["id"];?>"><?php echo $this->scope["row"]["door_no"];?></option>
+                                        <?php 
 /* -- foreach end output */
 	}
 }?>
 
-                                    </select>
-                                    <span class="text-danger field-validation-valid" data-valmsg-for="room_no" data-valmsg-replace="true"></span>
+                                        </select>
+                                        <span class="text-danger field-validation-valid" data-valmsg-for="room_no" data-valmsg-replace="true"></span>
+                                    </div>
                                 </div>
-                            </div>
+
+                            
+                            <?php 
+}
+else {
+?>
+
+                                <div class="form-group">
+                                    <label for="room_name_readonly" class="col-md-3 control-label">Room No.</label>
+                                    <div class="col-md-3">
+                                        <input class="form-control" type="text" id="room_no_x" name="room_no" value="<?php echo $this->scope["roomNo"];?>" readonly>
+                                    </div>
+                                </div>
+
+                            <?php 
+}?>
+
                             <hr>
                             <div class="form-group">
                                 <label for="<?php echo $this->scope["disabled"];?>" class="col-md-3 control-label">Total Payable</label>

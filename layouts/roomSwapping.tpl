@@ -15,51 +15,25 @@
                     </ul>
                 </div>
 
-                {if $request_type == 'add'}
-
                 <div class="form-group">
-                    <label for="room_name" class="col-md-2 control-label">Room Type</label>
-                    <div class="col-md-4">
-                        <select class="form-control" name="room_id" id="room_id" data-val="true" data-val-required="The Room Category field is required.">
-                            
-                            {foreach $roomTypeList row}
-                                <option value="{$row.room_id}">{$row.room_name}</option>
-                            {/foreach}
-                            
-                        </select>
-                        <span class="text-danger field-validation-valid" data-valmsg-for="room_id" data-valmsg-replace="true"></span>
-                    </div>
-                </div>
-
-                {else}
-
-                    <div class="form-group">
-                        <label for="room_name_readonly" class="col-md-2 control-label">Room Type</label>
-                        <div class="col-md-4">
-                        <input type="hidden" name="room_id" value="{$room_id}">
-                            <input class="form-control" type="text" id="room_name_readonly" name="room_name_readonly" value="{$room_name}" readonly>
-                        </div>
-                    </div>
-
-                {/if}
-
-                <div class="form-group">
-                    <label for="door_no" class="col-md-2 control-label">Door No.</label>
+                    <label for="current_room_name" class="col-md-2 control-label">Current Room No.</label>
                     <div class="col-md-2">
-                    <input class="form-control" type="text" data-val="true" data-val-required="The Door No. field is required." id="door_no"
-                            name="door_no" value="{$door_no}">
-                        <span class="text-danger field-validation-valid" data-valmsg-for="door_no" data-valmsg-replace="true"></span>
+                        <input class="form-control" type="text" id="current_room_name" name="current_room_name" value="{$current_room_name}" readonly>
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="room_status" class="col-md-2 control-label">Room Status</label>
+                    <label for="current_room_no" class="col-md-2 control-label">Current Room No.</label>
                     <div class="col-md-2">
-                        <select class="form-control" name="room_status" id="room_status" data-val="true" data-val-required="The Room Status field is required.">
-                            <option {$vacant} value="1">Vacant</option>
-                            <option {$occupied} value="2">Occupied</option>
-                            <option {$dirty} value="3">Dirty</option>
-                        </select>
-                        <span class="text-danger field-validation-valid" data-valmsg-for="room_status" data-valmsg-replace="true"></span>
+                        <input class="form-control" type="text" id="current_room_no" name="current_room_no" value="{$current_room_no}" readonly>
+                    </div>
+                </div>
+                <hr>
+                <div class="form-group">
+                    <label for="new_room_no" class="col-md-2 control-label">New Room No.</label>
+                    <div class="col-md-2">
+                    <input class="form-control" type="text" data-val="true" data-val-required="The New Room No. field is required." id="new_room_no"
+                            name="new_room_no" value="{$new_room_no}">
+                        <span class="text-danger field-validation-valid" data-valmsg-for="new_room_no" data-valmsg-replace="true"></span>
                     </div>
                 </div>
                 <div class="form-group">
