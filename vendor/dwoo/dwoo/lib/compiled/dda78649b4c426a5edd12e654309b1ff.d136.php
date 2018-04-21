@@ -23,15 +23,15 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="current_room_no" class="col-md-3 control-label">Current Room No.</label>
+                    <label for="current_room_door_no" class="col-md-3 control-label">Current Room No.</label>
                     <div class="col-md-3">
-                        <input class="form-control" type="text" id="current_room_no" name="current_room_no" value="<?php echo $this->scope["current_room_no"];?>" readonly>
+                        <input class="form-control" type="text" id="current_room_door_no" name="current_room_door_no" value="<?php echo $this->scope["current_room_door_no"];?>" readonly>
                     </div>
                 </div>
                 <hr>
 
                 <div class="form-group">
-                    <label for="new_room_no" class="col-md-3 control-label">Room No.</label>
+                    <label for="new_room_no" class="col-md-3 control-label">Swapping To Room No.</label>
                     <div class="col-md-3">
                         <select class="form-control" name="new_room_no" id="new_room_no" data-val="true" data-val-required="The Room No. field is required.">
 
@@ -43,7 +43,7 @@ if ($this->isTraversable($_fh0_data) == true)
 	{
 /* -- foreach start output */
 ?>
-                            <option value="<?php echo $this->scope["row"]["id"];?>"><?php echo $this->scope["row"]["door_no"];?></option>
+                            <option value="<?php echo $this->scope["row"]["room_id"];?>"><?php echo $this->scope["row"]["door_no"];?></option>
                         <?php 
 /* -- foreach end output */
 	}

@@ -18,6 +18,7 @@ if (class_exists('Dwoo\Plugins\Functions\PluginTruncate')===false)
     </form>
 </div>
 <div id="room-overview" class="flex-row row">
+
   <?php 
 $_fh0_data = (isset($this->scope["roomAllocationRow"]) ? $this->scope["roomAllocationRow"] : null);
 if ($this->isTraversable($_fh0_data) == true)
@@ -27,10 +28,11 @@ if ($this->isTraversable($_fh0_data) == true)
 /* -- foreach start output */
 ?>
 
-  <a href="./roomSwapping.php">
-
     <div class="col-xs-2 col-sm-2 col-md-2 clear-padding">
       
+      <input type="hidden" name="room_no" value="=<?php echo $this->scope["row"]["room_no"];?>" >
+      <input type="hidden" name="room_id" value="=<?php echo $this->scope["row"]["room_id"];?>" >
+
         <div class="thumbnail">
 
           <a href="./roomAllocation.php?type=edit&id=<?php echo $this->scope["row"]["room_no"];?>&roomId=<?php echo $this->scope["row"]["room_id"];?>" class="close pull-left">
@@ -71,11 +73,11 @@ else {
       
     </div>
 
-    </a>
   <?php 
 /* -- foreach end output */
 	}
 }?>
+
 </div><?php  /* end template body */
 return $this->buffer . ob_get_clean();
 ?>

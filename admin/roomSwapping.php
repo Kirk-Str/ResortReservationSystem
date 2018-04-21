@@ -34,17 +34,17 @@ $buttonName = "Save";
 $reservation = new Reservation();
 $reservation->find($reservationId);
 $reservedRoomId = $reservation->data()->room_id;
+$reservedRoomName = $reservation->data()->room_name;
 $reservedRoomNo = $reservation->data()->room_no;
+$reservedRoomDoorNo = $reservation->data()->door_no;
 
 $roomAllocation = new RoomAllocation();
 $roomRows = $roomAllocation->availableForSwapping($reservedRoomId, $reservedRoomNo);
 
-$contentData->assign('roomTypeList', objectToArray($roomRows));  
+$contentData->assign('roomList', objectToArray($roomRows));  
 $contentData->assign('id', $reservationId );
-$contentData->assign('current_room_name', $row->room_id);
-$contentData->assign('current_room_no', $row->room_name);
-//$contentData->assign('new_room_no', $row->door_no);
-
+$contentData->assign('current_room_name', $reservedRoomName);
+$contentData->assign('current_room_door_no', $reservedRoomDoorNo);
 
 $contentData->assign('pageTitle', $pageTitle);
 $contentData->assign('buttonName', $buttonName);

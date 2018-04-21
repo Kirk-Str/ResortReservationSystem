@@ -21,20 +21,20 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="current_room_no" class="col-md-3 control-label">Current Room No.</label>
+                    <label for="current_room_door_no" class="col-md-3 control-label">Current Room No.</label>
                     <div class="col-md-3">
-                        <input class="form-control" type="text" id="current_room_no" name="current_room_no" value="{$current_room_no}" readonly>
+                        <input class="form-control" type="text" id="current_room_door_no" name="current_room_door_no" value="{$current_room_door_no}" readonly>
                     </div>
                 </div>
                 <hr>
 
                 <div class="form-group">
-                    <label for="new_room_no" class="col-md-3 control-label">Room No.</label>
+                    <label for="new_room_no" class="col-md-3 control-label">Swapping To Room No.</label>
                     <div class="col-md-3">
                         <select class="form-control" name="new_room_no" id="new_room_no" data-val="true" data-val-required="The Room No. field is required.">
 
                         {foreach $roomList row}
-                            <option value="{$row.id}">{$row.door_no}</option>
+                            <option value="{$row.room_id}">{$row.door_no}</option>
                         {/foreach}
 
                         </select>
