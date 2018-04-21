@@ -28,14 +28,19 @@ $contentData->assign('occupied', '');
 $contentData->assign('dirty', '');
 
 
-$pageTitle = "ADD NEW ROOM";
+$pageTitle = "SWAP ROOMS";
 $buttonName = "Save";
 
-$room = new RoomAllocation();
-$roomRows = $room->selectAll();
+$reservation = new Reservation();
+$reservation->find($reservationId);
+$reservedRoomId = $reservation->data()->room_id;
+$reservedRoomNo = $reservation->data()->room_no;
+
+$roomAllocation = new RoomAllocation();
+$roomRows = $roomAllocation->availableForSwapping($reservedRoomId, $reservedRoomNo);
 
 $contentData->assign('roomTypeList', objectToArray($roomRows));  
-$contentData->assign('id', $id);
+$contentData->assign('id', $reservationId );
 $contentData->assign('current_room_name', $row->room_id);
 $contentData->assign('current_room_no', $row->room_name);
 //$contentData->assign('new_room_no', $row->door_no);

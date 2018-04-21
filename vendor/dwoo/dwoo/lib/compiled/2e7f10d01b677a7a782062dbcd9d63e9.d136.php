@@ -115,7 +115,6 @@
                 <?php if ((isset($this->scope["userType"]) ? $this->scope["userType"] : null) == 1) {
 ?>
 
-
                     <div class="form-group">
                         <label for="email_id" class="col-md-3 control-label">User Role
                             <span class="validation">*</span>
@@ -132,7 +131,6 @@
 
                 <?php 
 }?>
-
 
                 <div class="form-group">
                     <label for="avatar-image" class="col-md-3 control-label">Avatar</label>
