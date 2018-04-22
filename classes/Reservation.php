@@ -59,9 +59,22 @@ class Reservation {
 
 	}
 
-	public function findAvailableRoom($roomId, $stardDate, $endDate){
+	public function listRequestExist($roomNo){
 
-		
+		$select = 'SELECT COUNT(room_reservation.reservation_id) as records';
+
+		$table = 'room_reservation';
+
+		$where = array('room_reservation.room_no',  '=',  $roomNo);
+
+		$data = $this ->_db->action($select, $table, $where);
+
+		if($data->count()){
+			$this->_data = $data->results();
+			return $this->_data;
+		}
+
+		return false;
 
 	}
 

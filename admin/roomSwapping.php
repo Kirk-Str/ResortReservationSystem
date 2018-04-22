@@ -22,10 +22,6 @@ $contentData = new Dwoo\Data();
 $contentData->assign('id', '');
 $contentData->assign('door_id', '');
 $contentData->assign('door_no', '');
-$contentData->assign('room_status', '');
-$contentData->assign('vacant', '');
-$contentData->assign('occupied', '');
-$contentData->assign('dirty', '');
 
 
 $pageTitle = "SWAP ROOMS";
@@ -42,7 +38,7 @@ $roomAllocation = new RoomAllocation();
 $roomRows = $roomAllocation->availableForSwapping($reservedRoomId, $reservedRoomNo);
 
 $contentData->assign('roomList', objectToArray($roomRows));  
-$contentData->assign('id', $reservationId );
+$contentData->assign('reservationId', $reservationId );
 $contentData->assign('current_room_name', $reservedRoomName);
 $contentData->assign('current_room_door_no', $reservedRoomDoorNo);
 

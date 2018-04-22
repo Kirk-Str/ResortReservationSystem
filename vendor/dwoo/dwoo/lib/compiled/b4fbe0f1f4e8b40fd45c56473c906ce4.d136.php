@@ -56,10 +56,8 @@ if ($this->isTraversable($_fh0_data) == true)
 /* -- foreach start output */
 ?>
 
-
     <?php if ((isset($this->globals["foreach"]["default"]["index"]) ? $this->globals["foreach"]["default"]["index"]:null)%2 == 0) {
 ?>
-
         <div class="row featurette wow fadeInRight" data-wow-duration="500ms" data-wow-delay="400ms">
             <div class="col-md-8 col-md-push-4">
                 <h2 class="featurette-heading"><?php echo $this->scope["val"]["room_name"];?> <span class="text-muted"><?php echo $this->scope["val"]["caption"];?></span></h2>
@@ -73,7 +71,6 @@ if ($this->isTraversable($_fh0_data) == true)
 }
 else {
 ?>
-
         <div class="row featurette wow fadeInRight" data-wow-duration="500ms" data-wow-delay="400ms">
         <div class="col-md-8">
             <h2 class="featurette-heading"><?php echo $this->scope["val"]["room_name"];?> <span class="text-muted"><?php echo $this->scope["val"]["caption"];?></span></h2>
@@ -86,7 +83,6 @@ else {
     <?php 
 }?>
 
-
 <?php 
 /* -- implode */
 if (!$_fh0_glob["last"]) {
@@ -97,7 +93,6 @@ if (!$_fh0_glob["last"]) {
 		$_fh0_glob["iteration"]+=1;
 	}
 }?>
-
 
 
 <?php echo $this->scope["explore"];

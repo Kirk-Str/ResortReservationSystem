@@ -404,6 +404,10 @@ input[name="daterange"]{
     margin: 0 4px 0 0;
 }
 
+#room-overview a:hover{
+    text-decoration: #3b5998 !important;
+}
+
 p.para{
     font-size: 20px;
     font-family: "OpenSans",Georgia, serif !important;

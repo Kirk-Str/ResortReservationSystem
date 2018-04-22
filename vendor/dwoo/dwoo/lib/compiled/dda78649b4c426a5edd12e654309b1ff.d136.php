@@ -6,8 +6,8 @@
 
 <div class="row">
     <div class="col-md-10">
-        <form method="POST" action="<?php echo Config::get('application_path') .'admin/actions/roomAllocation.php'?>">
-            <input type="hidden" name="id" value="<?php echo $this->scope["id"];?>">
+        <form method="POST" action="<?php echo Config::get('application_path') .'admin/actions/roomSwapping.php'?>">
+            <input type="hidden" name="reservation_id" value="<?php echo $this->scope["reservationId"];?>">
             <div class="form-horizontal">
                 <hr>
                 <div class="text-danger validation-summary-valid" data-valmsg-summary="true">
@@ -43,7 +43,7 @@ if ($this->isTraversable($_fh0_data) == true)
 	{
 /* -- foreach start output */
 ?>
-                            <option value="<?php echo $this->scope["row"]["room_id"];?>"><?php echo $this->scope["row"]["door_no"];?></option>
+                            <option value="<?php echo $this->scope["row"]["room_no"];?>"><?php echo $this->scope["row"]["door_no"];?></option>
                         <?php 
 /* -- foreach end output */
 	}
@@ -55,7 +55,7 @@ if ($this->isTraversable($_fh0_data) == true)
                 </div>
 
                 <div class="form-group">
-                        <div class="col-md-offset-2 col-md-4">
+                        <div class="col-md-offset-3 col-md-4">
                             <input type="submit" value="<?php echo $this->scope["buttonName"];?>" class="btn btn-info" />
                         </div>
                     </div>

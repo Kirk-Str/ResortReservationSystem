@@ -8,51 +8,52 @@ if (Input::exists()){
 
 		$validate = new Validate();
 		$validation = $validate->check($_POST,array(
-			'room_id' => array(
+			'reservation_id' => array(
 				'required' => true,
 			),
-			"door_no" => array(
-				'required' => true
-			),
-			'room_status' => array(
+			"new_room_no" => array(
 				'required' => true
 			),
 		)); 
 		
 			if($validation->passed()){
 
+				$reservationId = Input::get('reservation_id');
+				$newRoomNo = Input::get('new_room_no');
+				$reservation = new Reservation();
 				$roomAllocation = new RoomAllocation();
 				
+				$reservation->find($reservationId);
+				$roomId = $reservation->data()->room_id;
+				$oldRoomNo = $reservation->data()->room_no;
+
 				try{
 
-					if(Input::get('type') == "add")
-					{
-						$roomAllocation->create(array(
-							'room_id' => Input::get('room_id'),
-							'door_no' => Input::get('door_no'), 
-							'room_status' => Input::get('room_status'),
-						));
+					$reservation->update(array(
+						'room_no' => $newRoomNo
+					),array(
+						'reservation_id' => $reservationId
+					));
+					
+					$fields = array(
+						'room_status' => 3);
 
-					}
-					else if(Input::get('type') == "edit")
-					{
-						
-						$fields = array(
-							'door_no' => Input::get('door_no'), 
-							'room_status' => Input::get('room_status'));
+					$where = array(
+						array('room_no', '=', $oldRoomNo),
+						'AND',
+						array('room_id', '=',  $roomId));
 
-						$where = array(
-							array('id', '=', Input::get('id')),
-							'AND',
-							array('room_id', '=', Input::get('room_id')));
+					$roomAllocation->update($fields, $where);
 
-						$roomAllocation->update($fields, $where);
-						
-					}
-					else if(Input::get('type') == "delete")
-					{
-						$roomAllocation->delete(Input::get('id'));
-					}
+					$fields = array(
+						'room_status' => 2);
+
+					$where = array(
+						array('room_no', '=', $newRoomNo),
+						'AND',
+						array('room_id', '=',  $roomId));
+
+					$roomAllocation->update($fields, $where);
 
 				} catch(Exception $e){
 					die($e->getMessage());

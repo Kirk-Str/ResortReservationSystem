@@ -65,8 +65,18 @@ else
        
     if(Input::get('type') == 'delete'){
 
-        $pageTitle = "ARE YOU SURE WANT TO DELETE THIS ROOM?";
-        $buttonName = "Delete";
+        $reservation = new Reservation();
+        $reservation->listRequestExist($id);
+//$reservation->data()->room_no
+        if(intval($reservation->data()->records) > 0){
+            $pageTitle = "RECORD EXIST, CANNOT BE DELETED!";
+            $buttonName = "Ok";
+        }else{
+            $pageTitle = "ARE YOU SURE WANT TO DELETE THIS ROOM?";
+            $buttonName = "Delete";
+        }
+
+        
 
     }else{
 

@@ -117,7 +117,7 @@
                                             </div>
                                             <div class="checkbox">
                                                 <label>
-                                                    <input type="checkbox" id="remember_me" name="remember_me"> keep me logged-in
+                                                    <input type="checkbox" id="remember_me" name="remember_me" value="keep me logged-in">
                                                 </label>
                                             </div>
                                             <input type="hidden" name="token" value="<?php echo Token::generate();?>">

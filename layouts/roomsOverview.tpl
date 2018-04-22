@@ -1,9 +1,3 @@
-<?php
-
-    //require '..\vendor\autoload.php';
-
-?>
-
 <div>
     <h3>ROOM OVERVIEW</h3>
 </div>
@@ -46,7 +40,21 @@
             </span>
           {/if}
           <div class="caption clear-padding">
-            <h3 class="text-center">{$row.door_no}</h3>
+
+            {if $row.reservation_id != NULL}
+
+              <a href="./roomSwapping.php?reservationId={$row.reservation_id}">
+                <h3 class="text-center">
+                  {$row.door_no}
+                </h3>
+              </a>
+            {else}
+
+              <h3 class="text-center">
+                  {$row.door_no}
+              </h3>
+
+            {/if}
           </div>
           <p class="lead text-center">{truncate $row.room_type 18 }</p>
         </div>

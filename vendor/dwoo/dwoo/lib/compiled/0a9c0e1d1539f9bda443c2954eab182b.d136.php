@@ -6,7 +6,6 @@
 
 ?>
 
-
 <div>
     <h3>DASHBOARD</h3>
 </div>
@@ -17,7 +16,6 @@
             <div class="inner">
                 <h3>
                     <?php echo $this->scope["newBookings"];?>
-
                 </h3>
                 <p>
                     New Bookings
@@ -36,7 +34,6 @@
             <div class="inner">
                 <h3>
                     <?php echo $this->scope["newOccupiedReservation"];?>
-
                 </h3>
                 <p>
                     Currently Occupied 
@@ -55,7 +52,6 @@
             <div class="inner">
                 <h3>
                     <?php echo $this->scope["newRequests"];?>
-
                 </h3>
                 <p>
                     Offers
@@ -77,7 +73,6 @@
 
 <?php if ((isset($this->scope["dashboardFor"]) ? $this->scope["dashboardFor"] : null) != 'New Offer Reqests') {
 ?>
-
 
     <table id="reservation-list" class="table table-hover">
 
@@ -102,7 +97,6 @@ if ($this->isTraversable($_fh0_data) == true)
 	{
 /* -- foreach start output */
 ?>
-
         
             
         
@@ -123,7 +117,6 @@ if ($this->isTraversable($_fh0_data) == true)
 /* -- foreach end output */
 	}
 }?>
-
         </tbody>
     </table>
 
@@ -131,7 +124,6 @@ if ($this->isTraversable($_fh0_data) == true)
 }
 else {
 ?>
-
 
     <table id="request-list" class="table table-hover">
 
@@ -155,7 +147,6 @@ if ($this->isTraversable($_fh1_data) == true)
 	{
 /* -- foreach start output */
 ?>
-
 
         <tr>
 
@@ -181,7 +172,6 @@ else {
 /* -- foreach end output */
 	}
 }?>
-
 
     </table>
 

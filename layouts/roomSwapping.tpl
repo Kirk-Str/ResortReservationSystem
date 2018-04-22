@@ -4,8 +4,8 @@
 
 <div class="row">
     <div class="col-md-10">
-        <form method="POST" action="<?php echo Config::get('application_path') .'admin/actions/roomAllocation.php'?>">
-            <input type="hidden" name="id" value="{$id}">
+        <form method="POST" action="<?php echo Config::get('application_path') .'admin/actions/roomSwapping.php'?>">
+            <input type="hidden" name="reservation_id" value="{$reservationId}">
             <div class="form-horizontal">
                 <hr>
                 <div class="text-danger validation-summary-valid" data-valmsg-summary="true">
@@ -34,7 +34,7 @@
                         <select class="form-control" name="new_room_no" id="new_room_no" data-val="true" data-val-required="The Room No. field is required.">
 
                         {foreach $roomList row}
-                            <option value="{$row.room_id}">{$row.door_no}</option>
+                            <option value="{$row.room_no}">{$row.door_no}</option>
                         {/foreach}
 
                         </select>
@@ -43,7 +43,7 @@
                 </div>
 
                 <div class="form-group">
-                        <div class="col-md-offset-2 col-md-4">
+                        <div class="col-md-offset-3 col-md-4">
                             <input type="submit" value="{$buttonName}" class="btn btn-info" />
                         </div>
                     </div>

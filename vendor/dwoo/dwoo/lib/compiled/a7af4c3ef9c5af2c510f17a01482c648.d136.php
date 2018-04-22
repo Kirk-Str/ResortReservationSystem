@@ -2,13 +2,7 @@
 /* template head */
 if (class_exists('Dwoo\Plugins\Functions\PluginTruncate')===false)
 	$this->getLoader()->loadPlugin('PluginTruncate');
-/* end template head */ ob_start(); /* template body */ ?><?php
-
-    //require '..\vendor\autoload.php';
-
-?>
-
-<div>
+/* end template head */ ob_start(); /* template body */ ?><div>
     <h3>ROOM OVERVIEW</h3>
 </div>
 <hr> 
@@ -65,7 +59,26 @@ else {
           <?php 
 }?>
           <div class="caption clear-padding">
-            <h3 class="text-center"><?php echo $this->scope["row"]["door_no"];?></h3>
+
+            <?php if ((isset($this->scope["row"]["reservation_id"]) ? $this->scope["row"]["reservation_id"]:null) != null) {
+?>
+
+              <a href="./roomSwapping.php?reservationId=<?php echo $this->scope["row"]["reservation_id"];?>">
+                <h3 class="text-center">
+                  <?php echo $this->scope["row"]["door_no"];?>
+                </h3>
+              </a>
+            <?php 
+}
+else {
+?>
+
+              <h3 class="text-center">
+                  <?php echo $this->scope["row"]["door_no"];?>
+              </h3>
+
+            <?php 
+}?>
           </div>
           <p class="lead text-center"><?php echo $this->classCall('Dwoo\Plugins\Functions\Plugintruncate', 
                         array((isset($this->scope["row"]["room_type"]) ? $this->scope["row"]["room_type"]:null), 18, '...', false, false));?></p>

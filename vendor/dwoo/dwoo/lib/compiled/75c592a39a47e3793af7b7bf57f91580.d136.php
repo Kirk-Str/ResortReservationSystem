@@ -50,7 +50,6 @@
     </div>
 </div>
 <?php echo $this->scope["explore"];?>
-
 <?php  /* end template body */
 return $this->buffer . ob_get_clean();
 ?>

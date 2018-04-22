@@ -50,7 +50,6 @@ if ($this->isTraversable($_fh0_data) == true)
 /* -- foreach start output */
 ?>
 
-
     <tr>
 
         <td id="<?php echo $this->scope["row"]["user_id"];?>"><a href="./userDetail.php?type=edit&userId=<?php echo $this->scope["row"]["user_id"];?>"><?php echo $this->scope["row"]["email_id"];?></a></td>
@@ -67,7 +66,6 @@ if ($this->isTraversable($_fh0_data) == true)
 /* -- foreach end output */
 	}
 }?>
-
 
 </table><?php  /* end template body */
 return $this->buffer . ob_get_clean();

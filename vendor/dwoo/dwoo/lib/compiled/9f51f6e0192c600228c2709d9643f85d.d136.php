@@ -86,7 +86,6 @@ if ($this->isTraversable($_fh0_data) == true)
 /* -- foreach start output */
 ?>
 
-
     <div class="col-md-4 col-sm-1">
         <section class="card">
             <img class="featurette-image img-responsive card-img-top center-block" src="data:image;base64,<?php echo $this->scope["row"]["thumbnail"];?>" data-holder-rendered="true">
@@ -95,17 +94,14 @@ if ($this->isTraversable($_fh0_data) == true)
             <p>
             <?php if ((isset($this->scope["userType"]) ? $this->scope["userType"] : null) == 2) {
 ?>
-
                 <a href="./offerRequest.php?type=add&offerId=<?php echo $this->scope["row"]["offer_id"];?>" class="btn btn-submit">Book Now</a>
             <?php 
 }
 else {
 ?>
-
                 <a href="#" class="btn btn-submit" data-toggle="modal" data-target=".bs-example-modal-lg">Book Now</a>
             <?php 
 }?>
-
 
             </p>
             <hr class="goldenbreak-5px" />
@@ -116,7 +112,6 @@ else {
 /* -- foreach end output */
 	}
 }?>
-
 </div>
 
 <div class="row featurette wow fadeInRight" data-wow-duration="500ms" data-wow-delay="400ms">

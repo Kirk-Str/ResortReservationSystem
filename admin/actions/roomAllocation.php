@@ -42,7 +42,7 @@ if (Input::exists()){
 							'room_status' => Input::get('room_status'));
 
 						$where = array(
-							array('id', '=', Input::get('id')),
+							array('room_no', '=', Input::get('id')),
 							'AND',
 							array('room_id', '=', Input::get('room_id')));
 

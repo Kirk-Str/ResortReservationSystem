@@ -59,9 +59,9 @@ class RoomAllocation {
 
 	public function selectAll($roomId = null){
 
-		$select = 'SELECT room_allocation.room_no, room_allocation.room_id, room_allocation.door_no, room_allocation.room_status, room.room_name as room_type';
+		$select = 'SELECT room_allocation.room_no, room_allocation.room_id, room_allocation.door_no, room_allocation.room_status, room.room_name as room_type, room_reservation.reservation_id';
 	
-		$table = 'room_allocation INNER JOIN room ON (room_allocation.room_id = room.room_id)';
+		$table = 'room_allocation INNER JOIN room ON (room_allocation.room_id = room.room_id) LEFT JOIN room_reservation ON room_reservation.room_id = room_allocation.room_id AND room_reservation.room_no = room_allocation.room_no';
 
 		if($roomId){
 
