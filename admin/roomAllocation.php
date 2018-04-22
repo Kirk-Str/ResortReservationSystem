@@ -15,7 +15,7 @@ $pageTitle;
 $row;
 $roomRows;
 $buttonName;
-$id = Input::get('id');
+$id = Input::get('roomNo');
 $roomId = Input::get('roomId');
 
 $contentData = new Dwoo\Data();
@@ -41,7 +41,7 @@ if(Input::get('type') == 'add')
 else
 {
     
-    if (empty(Input::get('id')) || empty(Input::get('roomId'))){
+    if (empty($id) || empty($roomId)){
 
         clearMessage();
             
@@ -66,17 +66,19 @@ else
     if(Input::get('type') == 'delete'){
 
         $reservation = new Reservation();
-        $reservation->listRequestExist($id);
-//$reservation->data()->room_no
+        $reservation->listRequestExist(5);
+
         if(intval($reservation->data()->records) > 0){
+
             $pageTitle = "RECORD EXIST, CANNOT BE DELETED!";
             $buttonName = "Ok";
+
         }else{
+
             $pageTitle = "ARE YOU SURE WANT TO DELETE THIS ROOM?";
             $buttonName = "Delete";
-        }
 
-        
+        }     
 
     }else{
 

@@ -7,15 +7,39 @@ if (Input::exists()){
 	//if(Token::check(Input::get('token'))){
 
 		$validate = new Validate();
-		$validation = $validate->check($_POST,array(
-			'reservation_id' => array(
-				'required' => true,
-			),
-			"new_room_no" => array(
-				'required' => true
-			),
-		)); 
-		
+
+		if(Input::get('type') == "delete"){
+
+			$validation = $validate->check($_POST,array(
+				'room_no' => array(
+					'required' => true,
+				),
+				'room_id' => array(
+					'required' => true,
+				),
+			)); 
+
+			$roomAllocation = new RoomAllocation();
+
+			$where = array(
+				array('room_no', '=', $oldRoomNo),
+				'AND',
+				array('room_id', '=',  $roomId));
+
+			$roomAllocation->delete($where);
+
+		}else{
+
+			
+			$validation = $validate->check($_POST,array(
+				'reservation_id' => array(
+					'required' => true,
+				),
+				"new_room_no" => array(
+					'required' => true
+				),
+			)); 
+			
 			if($validation->passed()){
 
 				$reservationId = Input::get('reservation_id');
@@ -66,6 +90,7 @@ if (Input::exists()){
 					echo $error, '<br>';
 				}
 			}
+		}
 	//}
 
 }

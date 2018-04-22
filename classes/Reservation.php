@@ -70,7 +70,7 @@ class Reservation {
 		$data = $this ->_db->action($select, $table, $where);
 
 		if($data->count()){
-			$this->_data = $data->results();
+			$this->_data = $data->first();
 			return $this->_data;
 		}
 

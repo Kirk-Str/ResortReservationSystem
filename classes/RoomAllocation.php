@@ -23,9 +23,9 @@ class RoomAllocation {
 		
 	}
 
-	public function delete($id){
+	public function delete($id = array()){
 
-		if(!$this->_db->delete('roomAllocation',array('room_id', '=', $id))){
+		if(!$this->_db->delete('roomAllocation', $id)){
 			throw new Exception('There was a problem deleting the record.');
 		}
 		

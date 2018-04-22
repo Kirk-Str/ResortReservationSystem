@@ -1,15 +1,17 @@
-<div>
+<?php
+/* template head */
+/* end template head */ ob_start(); /* template body */ ?><div>
     <h3>CONFIRM RESERVATION</h3>
 </div>
 
-<div class="row block {$inputBlockStyle} col-md-7">
+<div class="row block <?php echo $this->scope["inputBlockStyle"];?> col-md-7">
     <div class="col-md-12  text-center clear-padding">
-        <div class="header {$inputHeaderStyle}"><h4>{$formHeader}</h4></div>
+        <div class="header <?php echo $this->scope["inputHeaderStyle"];?>"><h4><?php echo $this->scope["formHeader"];?></h4></div>
         <div class="body">
             <div class="row">
                 <div class="col-md-12">
-                    <form method="POST" action="./actions/confirmation.php?requestId={$reservationId}" novalidate="novalidate">
-                        <input type="hidden" name="type" id="type" value="{$type}" />
+                    <form method="POST" action="./actions/confirmation.php?requestId=<?php echo $this->scope["reservationId"];?>" novalidate="novalidate">
+                        <input type="hidden" name="type" id="type" value="<?php echo $this->scope["type"];?>" />
                         <div class="form-horizontal">
                             <div class="text-danger validation-summary-valid" data-valmsg-summary="true">
                                 <ul>
@@ -19,64 +21,75 @@
                             <div class="form-group">
                                 <label for="email_id" class="col-md-3 control-label">Reservation Id</label>
                                 <div class="col-md-2">
-                                    <input class="form-control" type="text" value="{$reservationId}" id="reservation_id" name="reservation_id" {$disabled}>
+                                    <input class="form-control" type="text" value="<?php echo $this->scope["reservationId"];?>" id="reservation_id" name="reservation_id" <?php echo $this->scope["disabled"];?>>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="firstname" class="col-md-3 control-label">Firstname</label>
                                 <div class="col-md-6">
-                                    <input class="form-control" type="text" value="{$firstname}" id="firstname" name="firstname" {$disabled}>
+                                    <input class="form-control" type="text" value="<?php echo $this->scope["firstname"];?>" id="firstname" name="firstname" <?php echo $this->scope["disabled"];?>>
                                 </div>
                             </div>
                             <div class="form-group">
 
                                 <label for="lastname" class="col-md-3 control-label">Lastname</label>
                                 <div class="col-md-6">
-                                    <input class="form-control" type="text" value="{$lastname}" id="lastname" name="lastname" {$disabled}>
+                                    <input class="form-control" type="text" value="<?php echo $this->scope["lastname"];?>" id="lastname" name="lastname" <?php echo $this->scope["disabled"];?>>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="actual_adults" class="col-md-3 control-label">Adults</label>
                                 <div class="col-md-2">
-                                    <input class="form-control" type="text" value="{$actualAdults}" id="actual_adults" name="actual_adults" {$disabledAdults}>
+                                    <input class="form-control" type="text" value="<?php echo $this->scope["actualAdults"];?>" id="actual_adults" name="actual_adults" <?php echo $this->scope["disabledAdults"];?>>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="actual_children" class="col-md-3 control-label">Children</label>
                                 <div class="col-md-2">
-                                    <input class="form-control" type="text" value="{$actualChildren}" id="actual_children" name="actual_children" {$disabledChildren}>
+                                    <input class="form-control" type="text" value="<?php echo $this->scope["actualChildren"];?>" id="actual_children" name="actual_children" <?php echo $this->scope["disabledChildren"];?>>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="check_in_single" class="col-md-3 control-label">Check In</label>
                                 <div class="col-md-3">
-                                    <input name="check_in_single" class="form-control" id="check_in_single" type="text" value="{$actualCheckIn}" data-val="true" data-val-required="The Check In field is required." {$requiredCheckIn} {$disabledCheckIn}/>
+                                    <input name="check_in_single" class="form-control" id="check_in_single" type="text" value="<?php echo $this->scope["actualCheckIn"];?>" data-val="true" data-val-required="The Check In field is required." <?php echo $this->scope["requiredCheckIn"];?> <?php echo $this->scope["disabledCheckIn"];?>/>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="check_out_single" class="col-md-3 control-label">Check Out</label>
                                 <div class="col-md-3">
-                                    <input name="check_out_single" data-val="true" data-val-required="The Check Out field is required." class="form-control" id="check_out_single" type="text" value="{$actualCheckOut}" {$requiredCheckOut} {$disabledCheckOut}/>
+                                    <input name="check_out_single" data-val="true" data-val-required="The Check Out field is required." class="form-control" id="check_out_single" type="text" value="<?php echo $this->scope["actualCheckOut"];?>" <?php echo $this->scope["requiredCheckOut"];?> <?php echo $this->scope["disabledCheckOut"];?>/>
                                 </div>
                             </div>
                             <div class="form-group"> 
                                 <label for="actualStayNights" class="col-md-3 control-label">Actual Night Stay(s)</label>
                                 <div class="col-md-3">
-                                    <input class="form-control" type="number" id="actualStayNights" name="actualStayNights" value="{$actualNightStays}" {$disabled}>
+                                    <input class="form-control" type="number" id="actualStayNights" name="actualStayNights" value="<?php echo $this->scope["actualNightStays"];?>" <?php echo $this->scope["disabled"];?>>
                                 </div>
                             </div>
                             <hr>
 
-                            {if $visibleOnCheckIn }
+                            <?php if ((isset($this->scope["visibleOnCheckIn"]) ? $this->scope["visibleOnCheckIn"] : null)) {
+?>
 
                                 <div class="form-group">
                                     <label for="room_no" class="col-md-3 control-label">Room No.</label>
                                     <div class="col-md-3">
                                         <select class="form-control" name="room_no" id="room_no" data-val="true" data-val-required="The Room No. field is required.">
 
-                                        {foreach $roomList row}
-                                            <option value="{$row.id}">{$row.door_no}</option>
-                                        {/foreach}
+                                        <?php 
+$_fh0_data = (isset($this->scope["roomList"]) ? $this->scope["roomList"] : null);
+if ($this->isTraversable($_fh0_data) == true)
+{
+	foreach ($_fh0_data as $this->scope['row'])
+	{
+/* -- foreach start output */
+?>
+                                            <option value="<?php echo $this->scope["row"]["id"];?>"><?php echo $this->scope["row"]["door_no"];?></option>
+                                        <?php 
+/* -- foreach end output */
+	}
+}?>
 
                                         </select>
                                         <span class="text-danger field-validation-valid" data-valmsg-for="room_no" data-valmsg-replace="true"></span>
@@ -84,49 +97,55 @@
                                 </div>
 
                             
-                            {else}
+                            <?php 
+}
+else {
+?>
 
                                 <div class="form-group">
                                     <label for="door_no_x" class="col-md-3 control-label">Room No.</label>
                                     <div class="col-md-3">
-                                        <input class="form-control" type="text" id="door_no_x" name="door_no_x" value="{$doorNo}" readonly>
+                                        <input class="form-control" type="text" id="door_no_x" name="door_no_x" value="<?php echo $this->scope["doorNo"];?>" readonly>
                                     </div>
                                 </div>
 
-                            {/if}
+                            <?php 
+}?>
 
                             <hr>
                             <div class="form-group">
-                                <label for="{$disabled}" class="col-md-3 control-label">Total Payable</label>
+                                <label for="<?php echo $this->scope["disabled"];?>" class="col-md-3 control-label">Total Payable</label>
                                 <div class="col-md-3">
-                                    <input class="form-control text-right" type="text" value="{$totalPayable}" data-val="false" id="total-payable" name="total-payable" {$disabled}>
+                                    <input class="form-control text-right" type="text" value="<?php echo $this->scope["totalPayable"];?>" data-val="false" id="total-payable" name="total-payable" <?php echo $this->scope["disabled"];?>>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="additional-charges" class="col-md-3 control-label">Additional Charges</label>
                                 <div class="col-md-3">
-                                    <input class="form-control text-right" type="text" value="{$additionalCharges}" data-val="false" id="additional-charges" name="additional-charges" {$disabledAdditionalCharges}>
+                                    <input class="form-control text-right" type="text" value="<?php echo $this->scope["additionalCharges"];?>" data-val="false" id="additional-charges" name="additional-charges" <?php echo $this->scope["disabledAdditionalCharges"];?>>
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label for="balance-amount" class="col-md-3 control-label">{$balanceAmountLabel}</label>
+                                <label for="balance-amount" class="col-md-3 control-label"><?php echo $this->scope["balanceAmountLabel"];?></label>
                                 <div class="col-md-3">
-                                    <input class="form-control text-right" type="text" value="{$balanceAmount}" data-val="false" id="balance-amount" name="balance-amount" {$disabled}>
+                                    <input class="form-control text-right" type="text" value="<?php echo $this->scope["balanceAmount"];?>" data-val="false" id="balance-amount" name="balance-amount" <?php echo $this->scope["disabled"];?>>
                                 </div>
                             </div>
                             <div class="form-group">
 
                                 <div class="col-md-3 col-md-offset-3">
-                                    <input type="submit" name="action" value="{$checkActionButton}" class="btn btn-block btn-info" />
+                                    <input type="submit" name="action" value="<?php echo $this->scope["checkActionButton"];?>" class="btn btn-block btn-info" />
                                 </div>
 
-                                {if $cancelled }
+                                <?php if ((isset($this->scope["cancelled"]) ? $this->scope["cancelled"] : null)) {
+?>
 
                                     <div class="col-md-3">
                                         <input type="submit" name="action" value="Cancel" class="btn btn-block btn-danger" formnovalidate/>
                                     </div>
                                
-                                {/if}
+                                <?php 
+}?>
 
                             </div>
 
@@ -146,56 +165,56 @@
             <table class="margin-offset-1 text-left">
                 <tr>
                 <td class="label-1" style="width: 200px">Booked Date: </td>
-                <td class="label-1-sub">{$requestedDate}</td>
+                <td class="label-1-sub"><?php echo $this->scope["requestedDate"];?></td>
                 </tr>
             </table>
             <hr class="featurette-divider">
             <table class="margin-offset-1 text-left">
                 <tr>
                     <td class="label-1" style="width: 200px">Check In: </td>
-                    <td class="label-1-sub">{$checkIn}</td>
+                    <td class="label-1-sub"><?php echo $this->scope["checkIn"];?></td>
                 </tr>
                 <tr>
                     <td class="label-1">Check Out: </td>
-                    <td class="label-1-sub">{$checkOut}</td>
+                    <td class="label-1-sub"><?php echo $this->scope["checkOut"];?></td>
                 </tr>
                 <tr>
                     <td class="label-1">Night Stay(s):</td>
-                    <td class="label-1-sub">{$nightStay}</td>
+                    <td class="label-1-sub"><?php echo $this->scope["nightStay"];?></td>
                 </tr>
                 <tr>
                     <td class="label-1">Adults:</td>
-                    <td class="label-1-sub">{$adults}</td>
+                    <td class="label-1-sub"><?php echo $this->scope["adults"];?></td>
                 </tr>
                 <tr>
                     <td class="label-1">Children:</td>
-                    <td class="label-1-sub">{$children}</td>
+                    <td class="label-1-sub"><?php echo $this->scope["children"];?></td>
                 </tr>
             </table>
             <hr class="featurette-divider">
             <table class="margin-offset-1 text-left">
                 <tr>
                     <td class="label-1" style="width: 200px">Room Selected: </td>
-                    <td class="label-1-sub">{$roomSelected}</td>
+                    <td class="label-1-sub"><?php echo $this->scope["roomSelected"];?></td>
                 </tr>
                 <tr>
                     <td class="label-1" style="width: 200px">Rate per Night: </td>
-                    <td id="roomRate" class="label-1-sub">{$roomRate}</td>
+                    <td id="roomRate" class="label-1-sub"><?php echo $this->scope["roomRate"];?></td>
                 </tr>
             </table>
             <hr class="featurette-divider">
             <table class="margin-offset-1 text-left">
                 <tr>
                     <td class="label-1 font-weight-bold" style="width: 200px">Total Amount: </td>
-                    <td class="label-1-sub font-weight-bold text-right">{$totalAmount}</td>
+                    <td class="label-1-sub font-weight-bold text-right"><?php echo $this->scope["totalAmount"];?></td>
                 </tr>
                 <tr>
                     <td class="label-1" style="width: 200px">Amount Paid: </td>
-                    <td class="label-1-sub text-right">{$minPayable}</td>
+                    <td class="label-1-sub text-right"><?php echo $this->scope["minPayable"];?></td>
                 </tr>
                 <!-- <tr>
                     <td class="label-1" style="width: 200px">Balance To be Paid: </td>
-                    <td class="label-1-sub text-right">{$balanceToBePaid}</td>
+                    <td class="label-1-sub text-right"><?php echo $this->scope["balanceToBePaid"];?></td>
                 </tr> -->
             </table>
 
@@ -208,3 +227,6 @@
 
 
 
+<?php  /* end template body */
+return $this->buffer . ob_get_clean();
+?>

@@ -18,11 +18,11 @@
 
         <div class="thumbnail">
 
-          <a href="./roomAllocation.php?type=edit&id={$row.room_no}&roomId={$row.room_id}" class="close pull-left">
+          <a href="./roomAllocation.php?type=edit&roomNo={$row.room_no}&roomId={$row.room_id}" class="close pull-left">
             <span class="glyphicon glyphicon-edit"></span>
           </a>
           
-          <a href="./roomAllocation.php?type=delete&id={$row.room_no}&roomId={$row.room_id}" class="close pull-left">
+          <a href="./roomAllocation.php?type=delete&roomNo={$row.room_no}&roomId={$row.room_id}" class="close pull-left">
             <span class="glyphicon glyphicon-remove"></span>
           </a>
 

@@ -46,7 +46,7 @@ if($reservation->find(Input::get('requestId'))){
     
     $nightStay = $checkOut->diff($checkIn)->format('%a')+1;
     $roomId = $reservation->data()->room_id;
-    $roomNo = $reservation->data()->room_no;
+    $doorNo = $reservation->data()->door_no;
     $roomSelected = $reservation->data()->room_name;
     $roomRate = $reservation->data()->rate;
 
@@ -193,7 +193,7 @@ if($reservation->find(Input::get('requestId'))){
     $confirmationData->assign('roomSelected', $roomSelected);
     $confirmationData->assign('roomRate', number_format($roomRate, 2));
     $confirmationData->assign('roomId', $roomId);
-    $confirmationData->assign('roomNo', $roomNo);
+    $confirmationData->assign('doorNo', $doorNo);
 
     $confirmationData->assign('totalAmount', number_format($totalAmount, 2));
     $confirmationData->assign('minPayable', number_format($minPayable, 2));
