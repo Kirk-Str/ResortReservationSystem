@@ -224,10 +224,11 @@ if($reservation->find(Input::get('requestId'))){
     $confirmationData->assign('checkActionButton', $checkActionButton);
     $confirmationData->assign('cancelled', $cancelled);
 
+    $confirmationData->assign('visibleOnCheckIn', $visibleOnCheckIn);
     if($visibleOnCheckIn){
         $confirmationData->assign('roomList', objectToArray($rows));
     }else{
-
+        $confirmationData->assign('doorNo', $reservation->data()->door_no);
     }
     
 

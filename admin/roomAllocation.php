@@ -27,7 +27,7 @@ $contentData->assign('room_status', '');
 $contentData->assign('vacant', '');
 $contentData->assign('occupied', '');
 $contentData->assign('dirty', '');
-
+$request_type = Input::get('type');
 
 if(Input::get('type') == 'add')
 {
@@ -66,12 +66,13 @@ else
     if(Input::get('type') == 'delete'){
 
         $reservation = new Reservation();
-        $reservation->listRequestExist(5);
+        $reservation->listRequestExist($id);
 
         if(intval($reservation->data()->records) > 0){
 
             $pageTitle = "RECORD EXIST, CANNOT BE DELETED!";
             $buttonName = "Ok";
+            $request_type = '';
 
         }else{
 
@@ -103,7 +104,7 @@ else
 
 }
 
-$contentData->assign('request_type', Input::get('type'));
+$contentData->assign('request_type', $request_type);
 $contentData->assign('pageTitle', $pageTitle);
 $contentData->assign('buttonName', $buttonName);
 

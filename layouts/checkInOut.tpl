@@ -8,7 +8,7 @@
         <div class="body">
             <div class="row">
                 <div class="col-md-12">
-                    <form method="POST" action="./actions/confirmation.php?requestId={$reservationId}" novalidate="novalidate">
+                    <form method="POST" action="./actions/confirmation.php?requestId={$reservationId}" >
                         <input type="hidden" name="type" id="type" value="{$type}" />
                         <div class="form-horizontal">
                             <div class="text-danger validation-summary-valid" data-valmsg-summary="true">
@@ -75,14 +75,13 @@
                                         <select class="form-control" name="room_no" id="room_no" data-val="true" data-val-required="The Room No. field is required.">
 
                                         {foreach $roomList row}
-                                            <option value="{$row.id}">{$row.door_no}</option>
+                                            <option value="{$row.room_id}">{$row.door_no}</option>
                                         {/foreach}
 
                                         </select>
                                         <span class="text-danger field-validation-valid" data-valmsg-for="room_no" data-valmsg-replace="true"></span>
                                     </div>
                                 </div>
-
                             
                             {else}
 
@@ -128,9 +127,7 @@
                                
                                 {/if}
 
-                            </div>
-
-                            
+                            </div>                            
                         </div>
                     </form>
                 </div>

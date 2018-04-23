@@ -15,6 +15,8 @@ if (Input::exists()){
 			$validation = '';
 
 			$reservation = new Reservation();
+			$roomAllocation = new RoomAllocation();
+			
 			$reservationStatus = 0;
 
 			if($reservation->find($reservationId)){
@@ -77,6 +79,16 @@ if (Input::exists()){
 						else if(Input::get('type') == "0")
 						{
 
+							//Updating Occupied Room Record
+							$roomAllocation->update(
+								array(
+									'room_status' => 3), 
+								array(
+									array('room_no', '=', $reservation->data()->room_no),
+									'AND',
+									array('room_id', '=', $reservation->data()->room_id)));
+
+							//Updating Reservation Record
 							$reservation->update(array(
 								'adults_actual' => Input::get('actual_adults'),
 								'children_actual' => Input::get('actual_children') ?? NULL,
@@ -117,13 +129,26 @@ if (Input::exists()){
 					
 							}
 
+							//Updating Occupied Room Record
+							$roomAllocation->update(
+								array(
+									'room_status' => 3), 
+								array(
+									array('room_no', '=', $reservation->data()->room_no),
+									'AND',
+									array('room_id', '=', $reservation->data()->room_id)));
 
+
+							//Updating Reservation Record
 							$reservation->update(array(
 								'check_out_actual' => Input::get('check_out_single'),
 								'additional_amount' => $additionalAmount,
 								'balance_amount' => $balanceAmount,
 								'check_out_datetime' => $checkoutDateTime,
 							), array('reservation_id' => $reservationId));
+		
+
+						
 
 						}
 

@@ -10,7 +10,7 @@
         <div class="body">
             <div class="row">
                 <div class="col-md-12">
-                    <form method="POST" action="./actions/confirmation.php?requestId=<?php echo $this->scope["reservationId"];?>" novalidate="novalidate">
+                    <form method="POST" action="./actions/confirmation.php?requestId=<?php echo $this->scope["reservationId"];?>" >
                         <input type="hidden" name="type" id="type" value="<?php echo $this->scope["type"];?>" />
                         <div class="form-horizontal">
                             <div class="text-danger validation-summary-valid" data-valmsg-summary="true">
@@ -85,7 +85,7 @@ if ($this->isTraversable($_fh0_data) == true)
 	{
 /* -- foreach start output */
 ?>
-                                            <option value="<?php echo $this->scope["row"]["id"];?>"><?php echo $this->scope["row"]["door_no"];?></option>
+                                            <option value="<?php echo $this->scope["row"]["room_id"];?>"><?php echo $this->scope["row"]["door_no"];?></option>
                                         <?php 
 /* -- foreach end output */
 	}
@@ -95,7 +95,6 @@ if ($this->isTraversable($_fh0_data) == true)
                                         <span class="text-danger field-validation-valid" data-valmsg-for="room_no" data-valmsg-replace="true"></span>
                                     </div>
                                 </div>
-
                             
                             <?php 
 }
@@ -147,9 +146,7 @@ else {
                                 <?php 
 }?>
 
-                            </div>
-
-                            
+                            </div>                            
                         </div>
                     </form>
                 </div>

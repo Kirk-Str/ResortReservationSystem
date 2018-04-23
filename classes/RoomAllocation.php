@@ -25,7 +25,7 @@ class RoomAllocation {
 
 	public function delete($id = array()){
 
-		if(!$this->_db->delete('roomAllocation', $id)){
+		if(!$this->_db->delete('room_allocation', $id)){
 			throw new Exception('There was a problem deleting the record.');
 		}
 		
@@ -57,6 +57,8 @@ class RoomAllocation {
 
 	}
 
+
+	//Selects only cleaned and vacant rooms
 	public function selectAll($roomId = null){
 
 		$select = 'SELECT room_allocation.room_no, room_allocation.room_id, room_allocation.door_no, room_allocation.room_status, room.room_name as room_type, room_reservation.reservation_id';
@@ -65,7 +67,11 @@ class RoomAllocation {
 
 		if($roomId){
 
-			$where = array('room_allocation.room_id', '=', $roomId);
+			$where = array(
+				array('room_allocation.room_id', '=', $roomId),
+				'AND',
+				array('room_allocation.room_status', '=', 1)
+			);
 
 			$data = $this ->_db->action($select, $table, $where);
 
@@ -92,7 +98,9 @@ class RoomAllocation {
 
 		$where = array(array('room_allocation.room_id', '=', $roomId),
 					'AND',
-					array('room_allocation.room_no', '<>', $roomNo)
+					array('room_allocation.room_no', '<>', $roomNo),
+					'AND',
+					array('room_allocation.room_status', '=', 1)
 				);
 
 		$data = $this ->_db->action($select, $table, $where);
