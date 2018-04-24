@@ -98,6 +98,7 @@ if($reservation->find(Input::get('requestId'))){
         $inputBlockStyle = 'block-active';
         $inputHeaderStyle = 'header-active';
 
+        //Room Check-In Function
         if(empty($reservation->data()->check_in_actual)){
 
             $visibleOnCheckIn = true;
@@ -112,6 +113,7 @@ if($reservation->find(Input::get('requestId'))){
 
         }
 
+        //Room Check-Out Function
         if(!empty($reservation->data()->check_in_actual)){
 
             $formHeader = 'Reservation - Check-Out';

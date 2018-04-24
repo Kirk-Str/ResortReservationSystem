@@ -29,6 +29,7 @@ if (Input::exists()){
 					$reservationStatus = 2;
 				}
 
+				//Cancel Val Function
 				if(Input::get('action') == 'Cancel'){
 
 					$validation = $validate->check($_POST,array(
@@ -37,6 +38,7 @@ if (Input::exists()){
 						),
 					)); 
 
+				//Check-In Val Function
 				}else if($reservationStatus == 1){
 
 					$validation = $validate->check($_POST,array(
@@ -51,6 +53,7 @@ if (Input::exists()){
 						),
 					)); 
 
+				//Check-Out Val Function
 				}else if($reservationStatus == 2){
 					
 
@@ -69,6 +72,7 @@ if (Input::exists()){
 
 					try{
 
+						//Cancel Val Function
 						if(Input::get('action') == 'Cancel'){
 
 							$reservation->update(array(
@@ -76,15 +80,17 @@ if (Input::exists()){
 							), array('reservation_id' => $reservationId));
 
 						}
+
+						//Check-In Val Function
 						else if(Input::get('type') == "0")
 						{
 
 							//Updating Occupied Room Record
 							$roomAllocation->update(
 								array(
-									'room_status' => 3), 
+									'room_status' => 1), 
 								array(
-									array('room_no', '=', $reservation->data()->room_no),
+									array('room_no', '=', Input::get('room_no')),
 									'AND',
 									array('room_id', '=', $reservation->data()->room_id)));
 
@@ -97,6 +103,8 @@ if (Input::exists()){
 							), array('reservation_id' => $reservationId));
 
 						}
+						
+						//Check-Out Val Function
 						else if(Input::get('type') == "1")
 						{
 
@@ -146,9 +154,7 @@ if (Input::exists()){
 								'balance_amount' => $balanceAmount,
 								'check_out_datetime' => $checkoutDateTime,
 							), array('reservation_id' => $reservationId));
-		
-
-						
+	
 
 						}
 
@@ -183,7 +189,7 @@ if (Input::exists()){
 					Session::put('message_title', 'There seems to be a problem :(');
 					Session::put('message', 'There seems to be a problem :(');
 					Session::put('sub_message', $error);
-					Redirect::to('../message.php');
+					Redirect::to(Config::get('application_path') . 'message.php');
 
 				}
 		//}
@@ -193,7 +199,7 @@ if (Input::exists()){
 			Session::put('message', 'Oops!');
 			Session::put('sub_message', '404 or whatever, Page not available.');
 		
-			Redirect::to('../message.php');
+			Redirect::to(Config::get('application_path') . 'message.php');
 
 		}
 
