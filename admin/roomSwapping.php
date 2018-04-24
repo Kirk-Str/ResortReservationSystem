@@ -35,7 +35,7 @@ $reservedRoomNo = $reservation->data()->room_no;
 $reservedRoomDoorNo = $reservation->data()->door_no;
 
 $roomAllocation = new RoomAllocation();
-$roomRows = $roomAllocation->availableForSwapping($reservedRoomId, $reservedRoomNo);
+$roomRows = $roomAllocation->availableRooms($reservedRoomId, $reservedRoomNo);
 
 $contentData->assign('roomList', objectToArray($roomRows));  
 $contentData->assign('reservationId', $reservationId );

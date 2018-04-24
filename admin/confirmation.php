@@ -109,7 +109,7 @@ if($reservation->find(Input::get('requestId'))){
             $checkActionButton = 'Check In';
 
             $roomAllocation = new RoomAllocation();
-            $rows = $roomAllocation->selectAll($roomId);
+            $rows = $roomAllocation->availableRooms($roomId);
 
         }
 

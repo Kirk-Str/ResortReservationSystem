@@ -93,7 +93,7 @@ if ($this->isTraversable($_fh0_data) == true)
 	{
 /* -- foreach start output */
 ?>
-                                            <option value="<?php echo $this->scope["row"]["room_id"];?>"><?php echo $this->scope["row"]["door_no"];?></option>
+                                            <option value="<?php echo $this->scope["row"]["room_no"];?>"><?php echo $this->scope["row"]["door_no"];?></option>
                                         <?php 
 /* -- foreach end output */
 	}

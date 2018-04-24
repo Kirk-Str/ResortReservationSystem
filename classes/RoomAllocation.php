@@ -57,29 +57,13 @@ class RoomAllocation {
 
 	}
 
-
-	//Selects only cleaned and vacant rooms
-	public function selectAll($roomId = null){
+	public function selectAll(){
 
 		$select = 'SELECT room_allocation.room_no, room_allocation.room_id, room_allocation.door_no, room_allocation.room_status, room.room_name as room_type, room_reservation.reservation_id';
 	
 		$table = 'room_allocation INNER JOIN room ON (room_allocation.room_id = room.room_id) LEFT JOIN room_reservation ON room_reservation.room_id = room_allocation.room_id AND room_reservation.room_no = room_allocation.room_no';
 
-		if($roomId){
-
-			$where = array(
-				array('room_allocation.room_id', '=', $roomId),
-				'AND',
-				array('room_allocation.room_status', '=', 1)
-			);
-
-			$data = $this ->_db->action($select, $table, $where);
-
-		}else{
-
-			$data = $this ->_db->action($select, $table);
-
-		}
+		$data = $this ->_db->action($select, $table);
 
 		if($data->count()){
 			$this->_data = $data->results();
@@ -90,18 +74,34 @@ class RoomAllocation {
 
 	}
 
-	public function availableForSwapping($roomId, $roomNo){
+	//RoomId = Yes, RoomNo = No : Selects same type and vacant room list
+	//RoomId = Yes, RoomNo = Yes : Selects same type and vacant rooms except explicite room mentioned in RoomNo
+	public function availableRooms($roomId, $roomNo = null){
 
-		$select = 'SELECT room_allocation.room_no, room_allocation.room_id, room_allocation.door_no, room_allocation.room_status, room.room_name as room_type';
+		$select = 'SELECT room_allocation.room_no, room_allocation.door_no';
 	
-		$table = 'room_allocation INNER JOIN room ON (room_allocation.room_id = room.room_id)';
+		$table = 'room_allocation';
 
-		$where = array(array('room_allocation.room_id', '=', $roomId),
-					'AND',
-					array('room_allocation.room_no', '<>', $roomNo),
-					'AND',
-					array('room_allocation.room_status', '=', 1)
-				);
+		$where = '';
+
+		if(is_null($roomId)){
+
+				$where = array(array('room_allocation.room_id', '=', $roomId),
+				'AND',
+				array('room_allocation.room_no', '<>', $roomNo),
+				'AND',
+				array('room_allocation.room_status', '=', 1)
+			);
+		}else{
+
+			$where = array(
+				array('room_allocation.room_id', '=', $roomId),
+				'AND',
+				array('room_allocation.room_status', '=', 1)
+			);
+
+		}
+		
 
 		$data = $this ->_db->action($select, $table, $where);
 

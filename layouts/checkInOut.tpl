@@ -83,7 +83,7 @@
                                         <select class="form-control" name="room_no" id="room_no" data-val="true" data-val-required="The Room No. field is required.">
 
                                         {foreach $roomList row}
-                                            <option value="{$row.room_id}">{$row.door_no}</option>
+                                            <option value="{$row.room_no}">{$row.door_no}</option>
                                         {/foreach}
 
                                         </select>

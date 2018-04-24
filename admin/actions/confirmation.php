@@ -88,7 +88,7 @@ if (Input::exists()){
 							//Updating Occupied Room Record
 							$roomAllocation->update(
 								array(
-									'room_status' => 1), 
+									'room_status' => 2), 
 								array(
 									array('room_no', '=', Input::get('room_no')),
 									'AND',
