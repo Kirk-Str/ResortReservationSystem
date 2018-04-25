@@ -48,6 +48,7 @@
                   {$row.door_no}
                 </h3>
               </a>
+
             {else}
 
               <h3 class="text-center">
@@ -55,6 +56,7 @@
               </h3>
 
             {/if}
+            
           </div>
           <p class="lead text-center">{truncate $row.room_type 18 }</p>
         </div>

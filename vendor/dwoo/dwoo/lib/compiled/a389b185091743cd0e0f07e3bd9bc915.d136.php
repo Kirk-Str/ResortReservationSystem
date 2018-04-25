@@ -10,7 +10,7 @@
         <div class="body">
             <div class="row">
                 <div class="col-md-12">
-                    <form method="POST" action="./actions/confirmation.php?requestId=<?php echo $this->scope["reservationId"];?>">
+                    <form id="check-in-form" method="POST" action="./actions/confirmation.php?requestId=<?php echo $this->scope["reservationId"];?>">
                         <input type="hidden" name="type" id="type" value="<?php echo $this->scope["type"];?>" />
                         <div class="form-horizontal">
                             <div class="text-danger validation-summary-valid" data-valmsg-summary="true">
@@ -40,8 +40,9 @@
                             <div class="form-group">
                                 <label for="actual_adults" class="col-md-3 control-label">Adults</label>
                                 <div class="col-md-2">
-                                    <input class="form-control" type="text" value="<?php echo $this->scope["actualAdults"];?>" id="actual_adults" name="actual_adults" data-val="true" data-val-required="The Adults field is required." <?php echo $this->scope["disabledAdults"];?>>
-                                    
+                                    <input class="form-control" type="number" value="<?php echo $this->scope["actualAdults"];?>" id="actual_adults" name="actual_adults" data-val="true" data-val-required="The Adults field is required." 
+                                    min="1" max="6" data-val-min="Minimum 1 guest should present"
+                                    <?php echo $this->scope["disabledAdults"];?>>
                                 </div>
                                 <div class="d-block">
                                 <span class="text-danger field-validation-valid" data-valmsg-for="actual_adults" data-valmsg-replace="true"></span>
@@ -50,8 +51,7 @@
                             <div class="form-group">
                                 <label for="actual_children" class="col-md-3 control-label">Children</label>
                                 <div class="col-md-2">
-                                    <input class="form-control" type="text" value="<?php echo $this->scope["actualChildren"];?>" id="actual_children" name="actual_children" <?php echo $this->scope["disabledChildren"];?>>
-                                     
+                                    <input class="form-control" type="number" value="<?php echo $this->scope["actualChildren"];?>" id="actual_children" name="actual_children" max="6" data-val-max="Minimum 6 children should present" <?php echo $this->scope["disabledChildren"];?>>
                                 </div>
                                 <div>
                                <span class="text-danger field-validation-valid" data-valmsg-for="actual_children" data-valmsg-replace="true"></span>
@@ -62,11 +62,17 @@
                                 <div class="col-md-3">
                                     <input name="check_in_single" class="form-control" id="check_in_single" type="text" value="<?php echo $this->scope["actualCheckIn"];?>" data-val="true" data-val-required="The Check In field is required." <?php echo $this->scope["requiredCheckIn"];?> <?php echo $this->scope["disabledCheckIn"];?>/>
                                 </div>
+                                <div class="d-block">
+                                <span class="text-danger field-validation-valid" data-valmsg-for="check_in_single" data-valmsg-replace="true"></span>
+                                </div>
                             </div>
                             <div class="form-group">
                                 <label for="check_out_single" class="col-md-3 control-label">Check Out</label>
                                 <div class="col-md-3">
                                     <input name="check_out_single" data-val="true" data-val-required="The Check Out field is required." class="form-control" id="check_out_single" type="text" value="<?php echo $this->scope["actualCheckOut"];?>" <?php echo $this->scope["requiredCheckOut"];?> <?php echo $this->scope["disabledCheckOut"];?>/>
+                                </div>
+                                  <div class="d-block">
+                                <span class="text-danger field-validation-valid" data-valmsg-for="check_out_single" data-valmsg-replace="true"></span>
                                 </div>
                             </div>
                             <div class="form-group"> 
@@ -100,9 +106,11 @@ if ($this->isTraversable($_fh0_data) == true)
 }?>
 
                                         </select>
-                                        <span class="text-danger field-validation-valid" data-valmsg-for="room_no" data-valmsg-replace="true"></span>
+                                       
                                     </div>
-                                    
+                                    <div class="d-block">
+                                <span class="text-danger field-validation-valid" data-valmsg-for="room_no" data-valmsg-replace="true"></span>
+                                </div>
                                 </div>
                             
                             <?php 

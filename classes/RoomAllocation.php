@@ -63,7 +63,14 @@ class RoomAllocation {
 	
 		$table = 'room_allocation INNER JOIN room ON (room_allocation.room_id = room.room_id) LEFT JOIN room_reservation ON room_reservation.room_id = room_allocation.room_id AND room_reservation.room_no = room_allocation.room_no';
 
-		$data = $this ->_db->action($select, $table);
+		$where = array(
+			array('room_reservation.check_in_actual',  'IS NOT', NULL ),
+			'AND',
+			array('room_reservation.check_out_actual',  'IS', NULL ),
+			'AND',
+			array('room_reservation.cancelled',  'IS',  NULL));
+
+		$data = $this ->_db->action($select, $table, $where);
 
 		if($data->count()){
 			$this->_data = $data->results();

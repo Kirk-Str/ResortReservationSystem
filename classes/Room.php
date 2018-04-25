@@ -69,6 +69,15 @@ class Room {
 
 		$where = null;
 		
+
+		SELECT R.room_id, R.room_name, R.thumbnail, R.caption, R.occupancy, COUNT(RX.room_id) AS TotalRoom, COUNT(room_id) - IFNULL(RX.Count, 0) AS AvaiableRoom, R.size, R.rate, R.view FROM room_allocation AS A INNER JOIN R room USING (room_id) LEFT JOIN (
+			SELECT room_id, COUNT(room_id) AS Count FROM room_reservation 
+			WHERE (room_reservation.check_in  >= '2018-04-24' AND room_reservation.check_in <= '2018-04-26') 
+			OR (room_reservation.check_in <= '2018-04-26' AND room_reservation.check_out >= '2018-04-26') 
+			OR (room_reservation.check_in >= '2018-04-24' AND room_reservation.check_out <= '2018-04-26')
+			) AS RX USING (room_id) GROUP BY room_id
+			
+
 		$select = 'SELECT R.room_id, R.room_name, R.thumbnail, R.caption, R.occupancy, R.total_room, COALESCE(R.total_room - B.Occupied, R.total_room) AS available, R.size, R.rate, R.view';
 		
 		$table = 'room AS R LEFT JOIN (SELECT COUNT(room_id) AS Occupied, room_id FROM room_reservation WHERE (room_reservation.check_in  >= \'' . $_check_in . '\' AND room_reservation.check_in <= \'' . $_check_out . '\') OR (room_reservation.check_in <= \'' . $_check_out . '\' AND room_reservation.check_out >= \'' . $_check_out . '\') OR (room_reservation.check_in >= \'' . $_check_in . '\' AND room_reservation.check_out <= \'' . $_check_out . '\') GROUP BY room_id) AS B ON (R.room_id = B.room_id) WHERE R.occupancy >= ' . $_occupancy . ' AND COALESCE(R.total_room - B.Occupied, R.total_room) > 0' ;

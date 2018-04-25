@@ -55,8 +55,8 @@ if ($this->isTraversable($_fh0_data) == true)
                 </div>
 
                 <div class="form-group">
-                        <div class="col-md-offset-3 col-md-4">
-                            <input type="submit" value="<?php echo $this->scope["buttonName"];?>" class="btn btn-info" />
+                        <div class="col-md-4 col-md-offset-3">
+                            <input type="submit" value="<?php echo $this->scope["buttonName"];?>" class="btn btn-block btn-info" />
                         </div>
                     </div>
                 <input type="hidden" name="token" value="<?php echo Token::generate();?>">

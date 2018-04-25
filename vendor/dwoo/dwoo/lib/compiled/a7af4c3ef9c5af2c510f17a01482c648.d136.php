@@ -68,6 +68,7 @@ else {
                   <?php echo $this->scope["row"]["door_no"];?>
                 </h3>
               </a>
+
             <?php 
 }
 else {
@@ -79,6 +80,7 @@ else {
 
             <?php 
 }?>
+            
           </div>
           <p class="lead text-center"><?php echo $this->classCall('Dwoo\Plugins\Functions\Plugintruncate', 
                         array((isset($this->scope["row"]["room_type"]) ? $this->scope["row"]["room_type"]:null), 18, '...', false, false));?></p>
