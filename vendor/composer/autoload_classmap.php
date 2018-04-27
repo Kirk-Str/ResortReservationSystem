@@ -9,6 +9,7 @@ return array(
     'Config' => $baseDir . '/classes/Config.php',
     'Cookie' => $baseDir . '/classes/Cookie.php',
     'DB' => $baseDir . '/classes/DB.php',
+    'Email' => $baseDir . '/classes/Email.php',
     'Hash' => $baseDir . '/classes/Hash.php',
     'Input' => $baseDir . '/classes/Input.php',
     'Offer' => $baseDir . '/classes/Offer.php',
