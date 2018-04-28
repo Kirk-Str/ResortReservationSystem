@@ -97,12 +97,23 @@ if ($this->isTraversable($_fh0_data) == true)
                                     </td>
                                 </tr> -->
 
-                                <?php if ((isset($this->scope["val"]["available"]) ? $this->scope["val"]["available"]:null) <= 2) {
+                                <?php if ((isset($this->scope["val"]["available_room"]) ? $this->scope["val"]["available_room"]:null) == 0) {
+?>
+
+                                   <tr>
+                                        <td colspan="2">
+                                            <label name="warning-label" class="text-danger">No rooms available!</label>
+                                        </td>
+                                    </tr>
+
+                                <?php 
+}
+elseif ((isset($this->scope["val"]["available_room"]) ? $this->scope["val"]["available_room"]:null) <= 2) {
 ?>
 
                                     <tr>
                                         <td colspan="2">
-                                            <label name="warning-label" class="text-danger">Only <?php echo $this->scope["val"]["available"];?>(s) left!</label>
+                                            <label name="warning-label" class="text-danger">Only <?php echo $this->scope["val"]["available_room"];?>(s) Room left!</label>
                                         </td>
                                     </tr>
 
@@ -125,9 +136,17 @@ if ($this->isTraversable($_fh0_data) == true)
                                 </tr> -->
                             </table>
                         </div>
-                        <div class="col-md-12">
-                            <button type="submit" class="btn btn-block btn-lg btn-submit pull-right" style="width: 200px;">Select</button>
-                        </div>
+
+                        <?php if ((isset($this->scope["val"]["available_room"]) ? $this->scope["val"]["available_room"]:null) != 0) {
+?>
+
+                            <div class="col-md-12">
+                                <button type="submit" class="btn btn-block btn-lg btn-submit pull-right" style="width: 200px;">Select</button>
+                            </div>
+
+                        <?php 
+}?>
+
                     </div>
                     <div class="col-md-4 col-md-pull-8">
                         <?php if ((isset($this->scope["val"]["thumbnail"]) ? $this->scope["val"]["thumbnail"]:null) != "") {
