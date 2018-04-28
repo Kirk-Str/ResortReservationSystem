@@ -33,6 +33,7 @@ class ComposerStaticInitf53cafaede392927695eca28c32c4e8c
         'Config' => __DIR__ . '/../..' . '/classes/Config.php',
         'Cookie' => __DIR__ . '/../..' . '/classes/Cookie.php',
         'DB' => __DIR__ . '/../..' . '/classes/DB.php',
+        'Email' => __DIR__ . '/../..' . '/classes/Email.php',
         'Hash' => __DIR__ . '/../..' . '/classes/Hash.php',
         'Input' => __DIR__ . '/../..' . '/classes/Input.php',
         'Offer' => __DIR__ . '/../..' . '/classes/Offer.php',
