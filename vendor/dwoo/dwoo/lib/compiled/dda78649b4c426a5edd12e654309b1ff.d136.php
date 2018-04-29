@@ -55,7 +55,7 @@ if ($this->isTraversable($_fh0_data) == true)
                 </div>
 
                 <div class="form-group">
-                        <div class="col-md-4 col-md-offset-3">
+                        <div class="col-md-2 col-md-offset-3">
                             <input type="submit" value="<?php echo $this->scope["buttonName"];?>" class="btn btn-block btn-info" />
                         </div>
                     </div>

@@ -56,7 +56,8 @@ if (Input::exists()){
 				'max' => 16,
             ),
 			'card_holders_name' => array(
-                'required' => true,
+				'required' => true,
+				'max' => 50,
             ),
 			'expiry_month' => array(
 				'required' => true,
