@@ -33,11 +33,7 @@
   <tbody>
   <tr>
     <td bordercolor="#fefcf5" colspan="2" width="616" valign="top" bgcolor="#fefcf5" align="left">
-      <p style="MARGIN: 10px 6px 5px"><font size="1" face="Verdana" color="#001F3E">
-      Dear&nbsp;Mr. and Mrs. Smith, <br><br>Thank you for your 
-      reservation request at the Sample Resort and Golf Club. We are pleased to 
-      confirm that we are holding the following accommodations for you. Please 
-      review this information to insure your understanding is the same as ours.<br><br> 
+      <p style="MARGIN: 10px 6px 5px"><font size="1" face="Verdana" color="#001F3E">{$summary}<br><br> 
       </font></p></td></tr>
   <tr>
     <td rowspan="4" width="466" bgcolor="#fefcf5">

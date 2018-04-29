@@ -7,9 +7,9 @@ class Email{
     private static $_senderEmail;
     private static $_emailConfirmationMessage;
 
-    public function initialize(){
+    public static function initialize(){
 
-        $_senderEmail = Config::get('sender_email');
+        self::$_senderEmail = Config::get('sender_email');
         $_emailConfirmationMessage = '';
 
     }
