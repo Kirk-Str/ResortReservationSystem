@@ -20,7 +20,7 @@ $GLOBALS['config'] = array (
 					'token_name' => 'token'
 			),
 			'application_path' => '/',
-			'sender_email' => 'kamalraj@bluechip-comp.com',
+			'sender_email' => 'noreply@happyholiday.ezyro.com',
 	);
 
 if(Cookie::exists(Config::get('remember/cookie_name')) && !Session::exists(Config::get('session/session_name'))){

@@ -204,7 +204,7 @@
                                                     <span class="validation">*</span>
                                                 </label>
                                                 <div class="col-md-6">
-                                                    <input class="form-control" type="number" minlength="16" maxlength="16" data-val-required="The Card No field is required." id="card_no"
+                                                    <input class="form-control" type="number" data-val="true" minlength="16" maxlength="16" data-val-required="The Card No field is required." id="card_no"
                                                         name="card_no">
 
                                                         <!-- This JS is to restrict upto 16 char

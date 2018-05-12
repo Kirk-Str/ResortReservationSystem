@@ -7,6 +7,10 @@ if (Input::exists()){
 
 	//if(Token::check(Input::get('token'))){
 
+		$emailDataBundle = NULL;
+		$reservationData = NULL;
+		$userData = NULL;
+
 		$validate = new Validate();
 		$validation = $validate->check($_POST,array(
 			'email_id' => array(
@@ -95,7 +99,7 @@ if (Input::exists()){
 
 					if(!$validUser == 3){
 						
-						$userId = $user->create(array(
+						$userData = array(
 							'email_id' => Input::get('email_id'),
 							'firstname' => Input::get('firstname'),
 							'lastname' => Input::get('lastname'),
@@ -105,11 +109,13 @@ if (Input::exists()){
 							'country' => Input::get('country'),
 							'contact_no' => Input::get('contact_no'),
 							'role' => '3',
-						));
+						);
+
+						$userId = $user->create($userData);
 
 					}
 
-					$reservationId = $reservation->create(array(
+					$reservationData = array(
 						'room_id' => Input::get('room_id'),
 						'user_id' => $userId,
 						'check_in' =>  $check_in->format('Y-m-d'),
@@ -130,8 +136,9 @@ if (Input::exists()){
 						'holders_name' => Input::get('card_holders_name'),
 						'card_expiry_month' => Input::get('expiry_month'),
 						'card_expiry_year' => Input::get('expiry_year'),
-					));
+					);
 
+					$reservationId = $reservation->create($reservationData);
 					
 					$user->transactCommit();
 					
@@ -142,6 +149,11 @@ if (Input::exists()){
 
 					die($e->getMessage());
 				}
+
+
+				$emailDataBundle = array_merge($reservationData, $userData);
+				
+			    Email::RoomReservationConfirmed($emailDataBundle);
 
 				Session::put('message_title', 'Reservation');
 				Session::put('message', 'Reservation Success!');

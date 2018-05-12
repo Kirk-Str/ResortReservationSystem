@@ -206,10 +206,12 @@
                                                     <span class="validation">*</span>
                                                 </label>
                                                 <div class="col-md-6">
-                                                    <input class="form-control" type="number" minlength="16" maxlength="16" data-val-required="The Card No field is required." id="card_no"
+                                                    <input class="form-control" type="number" data-val="true" minlength="16" maxlength="16" data-val-required="The Card No field is required." id="card_no"
                                                         name="card_no">
 
-                                                        <!-- oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" data-val="true"  -->
+                                                        <!-- This JS is to restrict upto 16 char
+                                                            
+                                                            oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" data-val="true"  -->
 
                                                     <span class="text-danger field-validation-valid" data-valmsg-for="card_no" data-valmsg-replace="true"></span>
                                                 </div>
