@@ -109,6 +109,7 @@ class Email{
         $SubContentPageData = new Dwoo\Data();
 
 
+        $recipient =  $emailDataBundle['email_id'];
         $guestName = $emailDataBundle['firstname'] . ' ' . $emailDataBundle['lastname'];
         $reservationId = '';
         $checkInDate = '';
@@ -169,16 +170,15 @@ class Email{
         $subContent = '';
 
         $core = new Dwoo\Core();
-
+        echo Config::get('application_path');
         // Load a template file, this is reusable if you want to render multiple times the same template with different data
-        $generalEmailTemplate = new Dwoo\Template\File('./layouts/template/_emailTemplateGeneral.tpl');
-        $mainContentEmailTemplate = new Dwoo\Template\File('./layouts/template/_emailTemplateMainContentReservation.tpl');
-        $subContentEmailTemplate = new Dwoo\Template\File('./layouts/template/_emailTemplateSubContentReservation.tpl');
+        //$generalEmailTemplate = new Dwoo\Template\File(Config::get('application_path') . '/layouts/template/_emailTemplateGeneral.tpl');
+        $mainContentEmailTemplate = new Dwoo\Template\File(Config::get('application_path') . '/layouts/template/_emailTemplateMainContentReservation.tpl');
+        $subContentEmailTemplate = new Dwoo\Template\File(Config::get('application_path') . '/layouts/template/_emailTemplateSubContentReservation.tpl');
 
         $mainPageData = new Dwoo\Data();
         $mainContentPageData = new Dwoo\Data();
         $SubContentPageData = new Dwoo\Data();
-
 
         $guestName = '';
         $reservationId = '';
@@ -234,7 +234,7 @@ class Email{
         $core = new Dwoo\Core();
 
         // Load a template file, this is reusable if you want to render multiple times the same template with different data
-        $generalEmailTemplate = new Dwoo\Template\File('./layouts/template/_emailTemplateGeneral.tpl');
+        $generalEmailTemplate = new Dwoo\Template\File(Config::get('application_path') . '/layouts/template/_emailTemplateGeneral.tpl');
 
         $mainPage = new Dwoo\Data();
         $mainPage->assign('summary', $summary);

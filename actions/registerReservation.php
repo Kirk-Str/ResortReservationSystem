@@ -97,19 +97,19 @@ if (Input::exists()){
 
 					$user->transactBegin();
 
+					$userData = array(
+						'email_id' => Input::get('email_id'),
+						'firstname' => Input::get('firstname'),
+						'lastname' => Input::get('lastname'),
+						'address_line_one' => Input::get('address_line_one'),
+						'address_line_two' => Input::get('address_line_two'),
+						'city' => Input::get('city'),
+						'country' => Input::get('country'),
+						'contact_no' => Input::get('contact_no'),
+						'role' => '3',
+					);
+
 					if(!$validUser == 3){
-						
-						$userData = array(
-							'email_id' => Input::get('email_id'),
-							'firstname' => Input::get('firstname'),
-							'lastname' => Input::get('lastname'),
-							'address_line_one' => Input::get('address_line_one'),
-							'address_line_two' => Input::get('address_line_two'),
-							'city' => Input::get('city'),
-							'country' => Input::get('country'),
-							'contact_no' => Input::get('contact_no'),
-							'role' => '3',
-						);
 
 						$userId = $user->create($userData);
 
@@ -159,7 +159,7 @@ if (Input::exists()){
 				Session::put('message', 'Reservation Success!');
 				Session::put('sub_message', 'Your reservation #:' . $reservationId . '.</br>Please bring the reservation # when Check-In.');
 
-				Redirect::to('../message.php');
+				//Redirect::to('../message.php');
 
 			} else {
 

@@ -81,7 +81,7 @@
                         <input type="hidden" name="user_id" value="{$userId}" />
                         <input type="hidden" name="firstname" value="{$firstname}" />
                         <input type="hidden" name="lastname" value="{$lastname}" />
-                        <!-- <input type="hidden" name="email_id" value="{$emailId}" /> -->
+                        <input type="hidden" name="email_id" value="{$emailId}" />
                         <input type="hidden" name="country" value="{$country}" />
                         <input type="hidden" name="contact_no" value="{$contactNo}" />
                         <input type="hidden" name="userType" value="{$userType}" />

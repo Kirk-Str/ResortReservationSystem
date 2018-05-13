@@ -83,7 +83,7 @@
                         <input type="hidden" name="user_id" value="<?php echo $this->scope["userId"];?>" />
                         <input type="hidden" name="firstname" value="<?php echo $this->scope["firstname"];?>" />
                         <input type="hidden" name="lastname" value="<?php echo $this->scope["lastname"];?>" />
-                        <!-- <input type="hidden" name="email_id" value="<?php echo $this->scope["emailId"];?>" /> -->
+                        <input type="hidden" name="email_id" value="<?php echo $this->scope["emailId"];?>" />
                         <input type="hidden" name="country" value="<?php echo $this->scope["country"];?>" />
                         <input type="hidden" name="contact_no" value="<?php echo $this->scope["contactNo"];?>" />
                         <input type="hidden" name="userType" value="<?php echo $this->scope["userType"];?>" />
