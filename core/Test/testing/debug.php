@@ -1,6 +1,6 @@
 <?php 
 
-        require 'core/init.php';
+        //require 'core/init.php';
         echo Email::RoomReservationConfirmed('dd');
         //mail('effersonjack@gmail.com', 'Testing Raw mail', 'Body content', 'From: noreply@happyholiday.ezyro.com');
         //echo Email::RoomReservationConfirmed('effersonjack@gmail.com', '2017-01-01', '2017-05-01', 2, 1, 'test', 2123, 123);
