@@ -86,7 +86,7 @@ class Email{
 
     }
 
-    public static function RoomReservationConfirmed($emailDataBundle){
+    public static function RoomReservationConfirmed($reservationId){
 
 
         self::initialize();
@@ -99,14 +99,6 @@ class Email{
 
         $core = new Dwoo\Core();
 
-        // Load a template file, this is reusable if you want to render multiple times the same template with different data
-        // $generalEmailTemplate = new Dwoo\Template\File('./layouts/template/_emailTemplateGeneral.tpl');
-        // $mainContentEmailTemplate = new Dwoo\Template\File('./layouts/template/_emailTemplateMainContentReservation.tpl');
-        // $subContentEmailTemplate = new Dwoo\Template\File('./layouts/template/_emailTemplateSubContentReservation.tpl');
-
-
-        echo Config::get('application_path') . '/layouts/template/_emailTemplateMainContentReservation.tpl';
-        //$generalEmailTemplate = new Dwoo\Template\File(Config::get('application_path') . '/layouts/template/_emailTemplateGeneral.tpl');
         $mainContentEmailTemplate = new Dwoo\Template\File($_SERVER['DOCUMENT_ROOT'] . '/layouts/template/_emailTemplateMainContentReservation.tpl');
         $subContentEmailTemplate = new Dwoo\Template\File($_SERVER['DOCUMENT_ROOT'] . '/layouts/template/_emailTemplateSubContentReservation.tpl');
 
@@ -116,32 +108,27 @@ class Email{
         $SubContentPageData = new Dwoo\Data();
 
 
-        $recipient =  'effersonjack@gmail.com';//$emailDataBundle['email_id'];
-        $guestName = 'Jack Efferson'; // $emailDataBundle['firstname'] . ' ' . $emailDataBundle['lastname'];
-        $reservationId = '';
-        $checkInDate = '';
-        $checkOutDate = '';
-        $noNightsStay = '';
-        $adults = '';
-        $children = '';
-        $roomType = '';
-        $totalAmount = '';
-        $paidAmount = '';
-        $balanceAmount = '';
-        $roomRate = '';
+        $reservation = new Reservation();
+        $emailDataBundle = $reservation->find($reservationId);
 
-        $mainContentPageData->assign('guest_name', $guestName);
-        $mainContentPageData->assign('reservation_id', $reservationId);
-        $mainContentPageData->assign('check_in_date', $checkInDate);
-        $mainContentPageData->assign('check_out_date', $checkOutDate);
-        $mainContentPageData->assign('no_nights_stay', $noNightsStay);
-        $mainContentPageData->assign('adults', $adults);
-        $mainContentPageData->assign('children', $children);
-        $mainContentPageData->assign('room_type', $roomType);
-        $mainContentPageData->assign('total_amount', $totalAmount);
-        $mainContentPageData->assign('paid_amount', $paidAmount);
-        $mainContentPageData->assign('balance_amount', $balanceAmount);
-        $mainContentPageData->assign('room_rate', $roomRate);
+        $check_in = new DateTime($emailDataBundle->check_in);
+        $check_out = new DateTime($emailDataBundle->check_out);
+        $nightStay = $check_in->diff($check_out)->format('%a')+1;
+
+        $recipient =  $emailDataBundle->email_id;
+
+        $mainContentPageData->assign('guest_name', $emailDataBundle->firstname . ' ' . $emailDataBundle->lastname);
+        $mainContentPageData->assign('reservation_id', $emailDataBundle->reservation_id);
+        $mainContentPageData->assign('check_in_date', $emailDataBundle->check_in);
+        $mainContentPageData->assign('check_out_date', $emailDataBundle->check_out);
+        $mainContentPageData->assign('no_nights_stay', $nightStay);
+        $mainContentPageData->assign('adults', $emailDataBundle->adults);
+        $mainContentPageData->assign('children', $emailDataBundle->children);
+        $mainContentPageData->assign('room_type', $emailDataBundle->room_name);
+        $mainContentPageData->assign('total_amount', $emailDataBundle->total_amount);
+        $mainContentPageData->assign('paid_amount', $emailDataBundle->deposit_amount);
+        $mainContentPageData->assign('balance_amount', $emailDataBundle->balance_amount);
+        $mainContentPageData->assign('room_rate', $emailDataBundle->rate);
 
         $summary = 'Summary';
         

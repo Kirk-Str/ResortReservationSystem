@@ -150,10 +150,7 @@ if (Input::exists()){
 					die($e->getMessage());
 				}
 
-
-				$emailDataBundle = array_merge($reservationData, $userData);
-				
-			    Email::RoomReservationConfirmed($emailDataBundle);
+			    Email::RoomReservationConfirmed($reservationId);
 
 				Session::put('message_title', 'Reservation');
 				Session::put('message', 'Reservation Success!');
