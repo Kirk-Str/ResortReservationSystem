@@ -157,7 +157,9 @@ if (Input::exists()){
 			$login = $user->login(Input::get('email_id'), Input::get('password'), $remember);
 			if ($login){
 
-				//Redirect::to('../index.php'); 
+		
+				Email::RoomReservationConfirmed($reservationId);
+
 				Session::put('message_title', 'Welcome to Hotel Happy Holiday');
 				Session::put('message', 'Welcome to Hotel Happy Holiday, ' . Input::get('firstname') . ' ' . Input::get('lastname'));
 				Session::put('sub_message', ' Enjoy our premium services via loyalty membership program.');

@@ -1,11 +1,11 @@
-<html>
+<html style="background: #DDD">
     <head>
        <title></title>
        <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
     </head>
     <body data-gr-c-s-loaded="true" bgcolor="#ffffff">
        <br>
-       <table style="border: 2px solid #cccccc"  cellspacing="0" cellpadding="0" align="center">
+       <table style="border: 1px solid #EEE"  cellspacing="0" cellpadding="0" align="center">
           <tbody>
              <tr>
                 <td>
@@ -17,7 +17,7 @@
                                   <img src="http://orcabeach.ezyro.com/assets/images/logosicons/orcalogo.jpg" border="0"> 
                                </td>
                                <td width="400" height="180">
-                                  <img src="_templateConfirmation_files/DEMO_hotelexteriorC2.jpg" width="400" height="100%" border="0"> 
+                                  <img src="" width="400" height="0" border="0"> 
                                </td>
                             </tr>
                          </tbody>

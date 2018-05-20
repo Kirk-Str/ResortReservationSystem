@@ -15,7 +15,50 @@ class Email{
 
     }
 
-    public static function OfferRequestSent($recipient, $checkInDate, $checkOutDate, $guests, $notes){
+    //Send email on User Account registration
+    public static function UserAccountRegistrationConfirmation($reservationId){
+
+
+        self::initialize();
+
+        $subject = 'User Account Registration - Orca Beach Resort, Ltd.';
+
+        $summary = '';
+        $mainContent = '';
+        $subContent = '';
+
+        $core = new Dwoo\Core();
+
+        $mainContentEmailTemplate = new Dwoo\Template\File($_SERVER['DOCUMENT_ROOT'] . '/layouts/template/_emailTemplateMainContentReservation.tpl');
+        $subContentEmailTemplate = new Dwoo\Template\File($_SERVER['DOCUMENT_ROOT'] . '/layouts/template/_emailTemplateSubContentReservation.tpl');
+
+
+        $mainPageData = new Dwoo\Data();
+        $mainContentPageData = new Dwoo\Data();
+        $SubContentPageData = new Dwoo\Data();
+
+
+        $summary = 'Welcome to Orca Beach Resort';
+        
+        $mainContent = $core->get($mainContentEmailTemplate, $mainContentPageData);
+            
+        $subContent = $core->get($subContentEmailTemplate);
+        
+        $mainPageData->assign('summary', $summary);
+        $mainPageData->assign('main_content', $mainContent);
+        $mainPageData->assign('sub_content', $subContent);
+
+        $retVal = self::FormatEmail(self::$_senderEmail, $recipient, $subject, $summary, $mainContent, $subContent);
+
+        if($retVal){
+            return true;
+        }else{
+            return self::$_emailConfirmationMessage;
+        }
+
+    }
+
+    public static function OfferRequestSent($requestId){
 
 
         self::initialize();
@@ -37,44 +80,32 @@ class Email{
         $mainContentPageData = new Dwoo\Data();
         $SubContentPageData = new Dwoo\Data();
 
+        $request = new Request();
+        $emailDataBundle = $request->find($requestId);
 
-        $guestName = '';
-        $reservationId = '';
-        $checkInDate = '';
-        $checkOutDate = '';
-        $noNightsStay = '';
-        $adults = '';
-        $children = '';
-        $roomType = '';
-        $totalAmount = '';
-        $paidAmount = '';
-        $balanceAmount = '';
-        $roomRate = '';
+        $guestName = $emailDataBundle->firstname . ' ' . $emailDataBundle->lastname;
+        $requestId = $emailDataBundle->request_Id;
+        $startDate = $emailDataBundle->event_start_date;
+        $endDate = $emailDataBundle->event_end_date;
+        $guests = $emailDataBundle->guests;
+        $additionalRequest = '';
 
         $mainContentPageData->assign('guest_name', $guestName);
-        $mainContentPageData->assign('reservation_id', $reservationId);
-        $mainContentPageData->assign('check_in_date', $checkInDate);
-        $mainContentPageData->assign('check_out_date', $checkOutDate);
-        $mainContentPageData->assign('no_nights_stay', $noNightsStay);
-        $mainContentPageData->assign('adults', $adults);
-        $mainContentPageData->assign('children', $children);
-        $mainContentPageData->assign('room_type', $roomType);
-        $mainContentPageData->assign('total_amount', $totalAmount);
-        $mainContentPageData->assign('paid_amount', $paidAmount);
-        $mainContentPageData->assign('balance_amount', $balanceAmount);
-        $mainContentPageData->assign('room_rate', $roomRate);
+        $mainContentPageData->assign('request_id', $requestId);
+        $mainContentPageData->assign('start_date', $startDate);
+        $mainContentPageData->assign('end_date', $endDate);
+        $mainContentPageData->assign('guests', $guests);
+        $mainContentPageData->assign('additional_request', $additionalRequest);
 
         $summary = 'Summary';
         
         $mainContent = $core->get($mainContentEmailTemplate, $mainContentPageData);
          
-        $subContent = $core->get($subContentEmailTemplate);
+        $subContent = 'The request has been sent for approval. One of our representative will get back to you shortly.';
        
         $mainPageData->assign('summary', $summary);
         $mainPageData->assign('main_content', $mainContent);
         $mainPageData->assign('sub_content', $subContent);
-
-        //echo $core->get($generalEmailTemplate, $mainPageData);
 
         $retVal = self::FormatEmail(self::$_senderEmail, $recipient, $subject, $summary, $mainContent, $subContent);
 
@@ -86,6 +117,8 @@ class Email{
 
     }
 
+
+    //Send email on booking
     public static function RoomReservationConfirmed($reservationId){
 
 
@@ -222,6 +255,11 @@ class Email{
 
     }
 
+
+
+    // Baseline Functions //
+
+    ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     public static function FormatEmail($sender, $recipient , $subject, $summary, $mainContent, $subContent){
 
         // Create the controller, it is reusable and can render multiple templates

@@ -156,7 +156,7 @@ if (Input::exists()){
 				Session::put('message', 'Reservation Success!');
 				Session::put('sub_message', 'Your reservation #:' . $reservationId . '.</br>Please bring the reservation # when Check-In.');
 
-				//Redirect::to('../message.php');
+				Redirect::to('../message.php');
 
 			} else {
 
