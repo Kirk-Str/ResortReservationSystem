@@ -158,7 +158,7 @@ if (Input::exists()){
 			if ($login){
 
 		
-				Email::RoomReservationConfirmed($reservationId);
+				Email::UserAccountRegistrationConfirmation($userId);
 
 				Session::put('message_title', 'Welcome to Hotel Happy Holiday');
 				Session::put('message', 'Welcome to Hotel Happy Holiday, ' . Input::get('firstname') . ' ' . Input::get('lastname'));

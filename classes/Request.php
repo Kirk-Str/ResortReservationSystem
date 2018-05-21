@@ -35,7 +35,7 @@ class Request {
 
 	public function find($requestId = null){
 
-		if($offerId){
+		if($requestId){
 			
 			$field = 'id';
 			$where = array($field, "=", $requestId);

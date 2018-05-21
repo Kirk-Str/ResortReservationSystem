@@ -16,12 +16,12 @@ class Email{
     }
 
     //Send email on User Account registration
-    public static function UserAccountRegistrationConfirmation($reservationId){
+    public static function UserAccountRegistrationConfirmation($userId){
 
 
         self::initialize();
 
-        $subject = 'User Account Registration - Orca Beach Resort, Ltd.';
+        $subject = 'Welcome to Orca Beach Resort - Orca Beach Resort, Ltd.';
 
         $summary = '';
         $mainContent = '';
@@ -29,21 +29,28 @@ class Email{
 
         $core = new Dwoo\Core();
 
-        $mainContentEmailTemplate = new Dwoo\Template\File($_SERVER['DOCUMENT_ROOT'] . '/layouts/template/_emailTemplateMainContentReservation.tpl');
+        // Load a template file, this is reusable if you want to render multiple times the same template with different data
+        $mainContentEmailTemplate = new Dwoo\Template\File($_SERVER['DOCUMENT_ROOT'] . '/layouts/template/_emailTemplateMainContentUserAccountCreation.tpl');
         $subContentEmailTemplate = new Dwoo\Template\File($_SERVER['DOCUMENT_ROOT'] . '/layouts/template/_emailTemplateSubContentReservation.tpl');
-
 
         $mainPageData = new Dwoo\Data();
         $mainContentPageData = new Dwoo\Data();
         $SubContentPageData = new Dwoo\Data();
 
+        $user = new User();
+        $emailDataBundle = $user->find($userId);
 
-        $summary = 'Welcome to Orca Beach Resort';
+        $recipient = $emailDataBundle->email_id;
+        $guestName = $emailDataBundle->firstname . ' ' . $emailDataBundle->lastname;
+
+        $mainContentPageData->assign('guest_name', $guestName);
+
+        $summary = '';
         
         $mainContent = $core->get($mainContentEmailTemplate, $mainContentPageData);
-            
-        $subContent = $core->get($subContentEmailTemplate);
-        
+         
+        $subContent = '';
+       
         $mainPageData->assign('summary', $summary);
         $mainPageData->assign('main_content', $mainContent);
         $mainPageData->assign('sub_content', $subContent);
@@ -58,7 +65,7 @@ class Email{
 
     }
 
-    public static function OfferRequestSent($requestId){
+    public static function OfferRequestConfirmation($requestId){
 
 
         self::initialize();
@@ -72,9 +79,8 @@ class Email{
         $core = new Dwoo\Core();
 
         // Load a template file, this is reusable if you want to render multiple times the same template with different data
-        $generalEmailTemplate = new Dwoo\Template\File('./layouts/template/_emailTemplateGeneral.tpl');
-        $mainContentEmailTemplate = new Dwoo\Template\File('./layouts/template/_emailTemplateMainContentReservation.tpl');
-        $subContentEmailTemplate = new Dwoo\Template\File('./layouts/template/_emailTemplateSubContentReservation.tpl');
+        $mainContentEmailTemplate = new Dwoo\Template\File($_SERVER['DOCUMENT_ROOT'] . '/layouts/template/_emailTemplateMainContentOfferRequest.tpl');
+        $subContentEmailTemplate = new Dwoo\Template\File($_SERVER['DOCUMENT_ROOT'] . '/layouts/template/_emailTemplateSubContentReservation.tpl');
 
         $mainPageData = new Dwoo\Data();
         $mainContentPageData = new Dwoo\Data();
@@ -83,12 +89,12 @@ class Email{
         $request = new Request();
         $emailDataBundle = $request->find($requestId);
 
+        $recipient = $emailDataBundle->email_id;
         $guestName = $emailDataBundle->firstname . ' ' . $emailDataBundle->lastname;
-        $requestId = $emailDataBundle->request_Id;
         $startDate = $emailDataBundle->event_start_date;
         $endDate = $emailDataBundle->event_end_date;
         $guests = $emailDataBundle->guests;
-        $additionalRequest = '';
+        $additionalRequest = $emailDataBundle->note;
 
         $mainContentPageData->assign('guest_name', $guestName);
         $mainContentPageData->assign('request_id', $requestId);
@@ -101,7 +107,7 @@ class Email{
         
         $mainContent = $core->get($mainContentEmailTemplate, $mainContentPageData);
          
-        $subContent = 'The request has been sent for approval. One of our representative will get back to you shortly.';
+        $subContent = '<font face="Verdana" color="#001F3E" size="1">The request has been sent for approval. One of our representative will get back to you shortly.</font>';
        
         $mainPageData->assign('summary', $summary);
         $mainPageData->assign('main_content', $mainContent);

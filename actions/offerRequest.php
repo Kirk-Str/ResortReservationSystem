@@ -55,6 +55,8 @@ if (Input::exists()){
 					die($e->getMessage());
 				}
 
+				Email::OfferRequestConfirmation($requestId);
+
 				Session::put('message_title', 'Offer Request');
 				Session::put('message', 'Offer Request has been sent successfully!');
 				Session::put('sub_message', 'Our Holiday representatives will get back to you shortly. Your request no is:' . $requestId . '.</br> Please note the reservation no for reference purposes.');
