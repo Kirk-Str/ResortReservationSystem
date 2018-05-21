@@ -108,14 +108,13 @@ if (Input::exists()){
 						else if(Input::get('type') == "1")
 						{
 
-							
-							$additionalAmount = Input::get('additional-charges');
-							$totalBalanceToBePaid = $balance + $additionalAmount;
-
 							$actualCheckOut = Input::get('check_out_single');
 							$totalAmount = $reservation->data()->total_amount;
 							$roomRate = $reservation->data()->rate;
 							$balancePayable = $reservation->data()->balance_amount;
+
+							$additionalAmount = Input::get('additional-charges');
+							$totalBalanceToBePaid = $balancePayable + $additionalAmount;
 
 							$checkIn = new DateTime($reservation->data()->check_in);
 							$checkOut = new DateTime($reservation->data()->check_out);
@@ -155,6 +154,7 @@ if (Input::exists()){
 								'check_out_datetime' => $checkoutDateTime,
 							), array('reservation_id' => $reservationId));
 	
+							Email::RoomCheckoutAndBilling($reservationId);
 
 						}
 
@@ -170,13 +170,6 @@ if (Input::exists()){
 
 
 					Redirect::to(Config::get('application_path') . 'admin/confirmation.php?requestId=' . $reservationId);
-
-					// if(Input::get('type') == "0"){
-					// 	Redirect::to(Config::get('application_path') . 'admin/confirmationList.php?type=opt-filter-occupied');
-					// }else{
-					// 	Redirect::to(Config::get('application_path') . 'admin/confirmationList.php?type=opt-filter-left');
-					// }
-				
 
 				} else {
 					

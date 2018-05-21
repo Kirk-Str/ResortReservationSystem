@@ -1,6 +1,4 @@
-<?php
-/* template head */
-/* end template head */ ob_start(); /* template body */ ?><html>
+<html>
     <head>
        <title></title>
        <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
@@ -21,11 +19,11 @@
                             </tr>
                          </tbody>
                       </table>
-                      <table width="100%"  cellspacing="0" cellpadding="0" border="0" bgcolor="#ffffff">
+                      <table width="100%" cellspacing="0" cellpadding="0" border="0" bgcolor="#ffffff">
                          <tbody>
                             <tr>
                                <td bordercolor="#fefcf5" colspan="2" valign="top"align="left">
-                                  <p style="MARGIN: 10px 6px 5px"><font size="1" face="Verdana" color="#001F3E"><?php echo $this->scope["summary"];?><br><br> 
+                                  <p style="MARGIN: 10px 6px 5px"><font size="1" face="Verdana" color="#001F3E">{$summary}<br><br> 
                                      </font>
                                   </p>
                                </td>
@@ -33,10 +31,10 @@
                             <tr>
                                <td bgcolor="#ffffff">
                                   <div>
-                                     <?php echo $this->scope["main_content"];?>
+                                     {$main_content}
                                   </div>
                                   <div >
-                                     <?php echo $this->scope["sub_content"];?>
+                                     {$sub_content}
                                   </div>
                                </td>
                             </tr>
@@ -59,6 +57,4 @@
     </body>
  </html>
  
- <?php  /* end template body */
-return $this->buffer . ob_get_clean();
-?>
+ 

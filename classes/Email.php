@@ -18,10 +18,9 @@ class Email{
     //Send email on User Account registration
     public static function UserAccountRegistrationConfirmation($userId){
 
-
         self::initialize();
 
-        $subject = 'Welcome to Orca Beach Resort - Orca Beach Resort, Ltd.';
+        $subject = 'Welcome to Orca Beach Resort :)';
 
         $summary = '';
         $mainContent = '';
@@ -65,12 +64,13 @@ class Email{
 
     }
 
+    //Offer Request Confirmation
     public static function OfferRequestConfirmation($requestId){
 
 
         self::initialize();
 
-        $subject = 'Reservation Confirmation - Orca Beach Resort, Ltd.';
+        $subject = 'Offer Request Pending -  Orca Beach Resort, Ltd.';
 
         $summary = '';
         $mainContent = '';
@@ -89,38 +89,46 @@ class Email{
         $request = new Request();
         $emailDataBundle = $request->find($requestId);
 
-        $recipient = $emailDataBundle->email_id;
-        $guestName = $emailDataBundle->firstname . ' ' . $emailDataBundle->lastname;
-        $startDate = $emailDataBundle->event_start_date;
-        $endDate = $emailDataBundle->event_end_date;
-        $guests = $emailDataBundle->guests;
-        $additionalRequest = $emailDataBundle->note;
+        if(!empty($emailDataBundle)){
 
-        $mainContentPageData->assign('guest_name', $guestName);
-        $mainContentPageData->assign('request_id', $requestId);
-        $mainContentPageData->assign('start_date', $startDate);
-        $mainContentPageData->assign('end_date', $endDate);
-        $mainContentPageData->assign('guests', $guests);
-        $mainContentPageData->assign('additional_request', $additionalRequest);
+            $recipient = $emailDataBundle->email_id;
+            $guestName = $emailDataBundle->firstname . ' ' . $emailDataBundle->lastname;
+            $offer_name = $emailDataBundle->offer_name;
+            $rate = $emailDataBundle->rate;
+            $startDate = $emailDataBundle->event_start_date;
+            $endDate = $emailDataBundle->event_end_date;
+            $guests = $emailDataBundle->guests;
+            $additionalRequest = $emailDataBundle->note;
 
-        $summary = 'Summary';
+            $mainContentPageData->assign('guest_name', $guestName);
+            $mainContentPageData->assign('request_id', $requestId);
+            $mainContentPageData->assign('offer_name', $offer_name);
+            $mainContentPageData->assign('rate_per_guest', $rate);
+            $mainContentPageData->assign('start_date', $startDate);
+            $mainContentPageData->assign('end_date', $endDate);
+            $mainContentPageData->assign('guests', $guests);
+            $mainContentPageData->assign('additional_request', $additionalRequest);
+
+            $summary = '';
+            
+            $mainContent = $core->get($mainContentEmailTemplate, $mainContentPageData);
+            
+            $subContent = '<br/><p style="MARGIN-LEFT: 6px; MARGIN-RIGHT: 6px"><font face="Verdana" color="#001F3E" size="1">The request has been sent for approval. One of our representative will get back to you shortly.</font></p>';
         
-        $mainContent = $core->get($mainContentEmailTemplate, $mainContentPageData);
-         
-        $subContent = '<font face="Verdana" color="#001F3E" size="1">The request has been sent for approval. One of our representative will get back to you shortly.</font>';
-       
-        $mainPageData->assign('summary', $summary);
-        $mainPageData->assign('main_content', $mainContent);
-        $mainPageData->assign('sub_content', $subContent);
+            // $mainPageData->assign('summary', $summary);
+            // $mainPageData->assign('main_content', $mainContent);
+            // $mainPageData->assign('sub_content', $subContent);
 
-        $retVal = self::FormatEmail(self::$_senderEmail, $recipient, $subject, $summary, $mainContent, $subContent);
+            $retVal = self::FormatEmail(self::$_senderEmail, $recipient, $subject, $summary, $mainContent, $subContent);
 
-        if($retVal){
-            return true;
-        }else{
-            return self::$_emailConfirmationMessage;
+            if($retVal){
+                return true;
+            }else{
+                return self::$_emailConfirmationMessage;
+            }
         }
 
+        return self::$_emailConfirmationMessage;
     }
 
 
@@ -150,53 +158,58 @@ class Email{
         $reservation = new Reservation();
         $emailDataBundle = $reservation->find($reservationId);
 
-        $check_in = new DateTime($emailDataBundle->check_in);
-        $check_out = new DateTime($emailDataBundle->check_out);
-        $nightStay = $check_in->diff($check_out)->format('%a')+1;
+        if(!empty($emailDataBundle)){
 
-        $recipient =  $emailDataBundle->email_id;
+            $check_in = new DateTime($emailDataBundle->check_in);
+            $check_out = new DateTime($emailDataBundle->check_out);
+            $nightStay = $check_in->diff($check_out)->format('%a')+1;
 
-        $mainContentPageData->assign('guest_name', $emailDataBundle->firstname . ' ' . $emailDataBundle->lastname);
-        $mainContentPageData->assign('reservation_id', $emailDataBundle->reservation_id);
-        $mainContentPageData->assign('check_in_date', $emailDataBundle->check_in);
-        $mainContentPageData->assign('check_out_date', $emailDataBundle->check_out);
-        $mainContentPageData->assign('no_nights_stay', $nightStay);
-        $mainContentPageData->assign('adults', $emailDataBundle->adults);
-        $mainContentPageData->assign('children', $emailDataBundle->children);
-        $mainContentPageData->assign('room_type', $emailDataBundle->room_name);
-        $mainContentPageData->assign('total_amount', $emailDataBundle->total_amount);
-        $mainContentPageData->assign('paid_amount', $emailDataBundle->deposit_amount);
-        $mainContentPageData->assign('balance_amount', $emailDataBundle->balance_amount);
-        $mainContentPageData->assign('room_rate', $emailDataBundle->rate);
+            $recipient =  $emailDataBundle->email_id;
 
-        $summary = 'Summary';
+            $mainContentPageData->assign('guest_name', $emailDataBundle->firstname . ' ' . $emailDataBundle->lastname);
+            $mainContentPageData->assign('reservation_id', $emailDataBundle->reservation_id);
+            $mainContentPageData->assign('check_in_date', $emailDataBundle->check_in);
+            $mainContentPageData->assign('check_out_date', $emailDataBundle->check_out);
+            $mainContentPageData->assign('no_nights_stay', $nightStay);
+            $mainContentPageData->assign('adults', $emailDataBundle->adults);
+            $mainContentPageData->assign('children', $emailDataBundle->children);
+            $mainContentPageData->assign('room_type', $emailDataBundle->room_name);
+            $mainContentPageData->assign('total_amount', $emailDataBundle->total_amount);
+            $mainContentPageData->assign('paid_amount', $emailDataBundle->deposit_amount);
+            $mainContentPageData->assign('balance_amount', $emailDataBundle->balance_amount);
+            $mainContentPageData->assign('room_rate', $emailDataBundle->rate);
+
+            $summary = 'Summary';
+            
+            $mainContent = $core->get($mainContentEmailTemplate, $mainContentPageData);
+            
+            $subContent = $core->get($subContentEmailTemplate);
         
-        $mainContent = $core->get($mainContentEmailTemplate, $mainContentPageData);
-         
-        $subContent = $core->get($subContentEmailTemplate);
-       
-        $mainPageData->assign('summary', $summary);
-        $mainPageData->assign('main_content', $mainContent);
-        $mainPageData->assign('sub_content', $subContent);
+            $mainPageData->assign('summary', $summary);
+            $mainPageData->assign('main_content', $mainContent);
+            $mainPageData->assign('sub_content', $subContent);
 
-        //echo $core->get($generalEmailTemplate, $mainPageData);
+            //echo $core->get($generalEmailTemplate, $mainPageData);
 
-        $retVal = self::FormatEmail(self::$_senderEmail, $recipient, $subject, $summary, $mainContent, $subContent);
+            $retVal = self::FormatEmail(self::$_senderEmail, $recipient, $subject, $summary, $mainContent, $subContent);
 
-        if($retVal){
-            return true;
-        }else{
-            return self::$_emailConfirmationMessage;
+            if($retVal){
+                return true;
+            }else{
+                return self::$_emailConfirmationMessage;
+            }
         }
+
+        return self::$_emailConfirmationMessage;
 
     }
 
-    public static function RoomCheckoutAndBilling($recipient, $checkInDate, $checkOutDate, $adults, $children, $roomType, $totalAmount, $advancePaid){
+    public static function RoomCheckoutAndBilling($reservationId){
 
 
         self::initialize();
 
-        $subject = 'Reservation Confirmation - Orca Beach Resort, Ltd.';
+        $subject = 'Check Out and Billings - Orca Beach Resort, Ltd.';
 
         $summary = '';
         $mainContent = '';
@@ -226,38 +239,59 @@ class Email{
         $balanceAmount = '';
         $roomRate = '';
 
-        $mainContentPageData->assign('guest_name', $guestName);
-        $mainContentPageData->assign('reservation_id', $reservationId);
-        $mainContentPageData->assign('check_in_date', $checkInDate);
-        $mainContentPageData->assign('check_out_date', $checkOutDate);
-        $mainContentPageData->assign('no_nights_stay', $noNightsStay);
-        $mainContentPageData->assign('adults', $adults);
-        $mainContentPageData->assign('children', $children);
-        $mainContentPageData->assign('room_type', $roomType);
-        $mainContentPageData->assign('total_amount', $totalAmount);
-        $mainContentPageData->assign('paid_amount', $paidAmount);
-        $mainContentPageData->assign('balance_amount', $balanceAmount);
-        $mainContentPageData->assign('room_rate', $roomRate);
+        $reservation = new Reservation();
+        $emailDataBundle = $reservation->find($reservationId);
 
-        $summary = 'Summary';
-        
-        $mainContent = $core->get($mainContentEmailTemplate, $mainContentPageData);
-         
-        $subContent = $core->get($subContentEmailTemplate);
-       
-        $mainPageData->assign('summary', $summary);
-        $mainPageData->assign('main_content', $mainContent);
-        $mainPageData->assign('sub_content', $subContent);
+        if(!empty($emailDataBundle)){
 
-        //echo $core->get($generalEmailTemplate, $mainPageData);
-
-        $retVal = self::FormatEmail(self::$_senderEmail, $recipient, $subject, $summary, $mainContent, $subContent);
-
-        if($retVal){
-            return true;
-        }else{
-            return self::$_emailConfirmationMessage;
+            $check_in = new DateTime($emailDataBundle->check_in);
+            $check_out = new DateTime($emailDataBundle->check_out);
+            $nightStay = $check_in->diff($check_out)->format('%a')+1;
+    
+            $recipient =  $emailDataBundle->email_id;
+    
+            $mainContentPageData->assign('guest_name', $emailDataBundle->firstname . ' ' . $emailDataBundle->lastname);
+            $mainContentPageData->assign('reservation_id', $emailDataBundle->reservation_id);
+            $mainContentPageData->assign('check_in_date', $emailDataBundle->check_in);
+            $mainContentPageData->assign('check_out_date', $emailDataBundle->check_out);
+            $mainContentPageData->assign('no_nights_stay', $nightStay);
+            $mainContentPageData->assign('adults', $emailDataBundle->adults);
+            $mainContentPageData->assign('children', $emailDataBundle->children);
+            
+            $mainContentPageData->assign('check_in_actual',  $emailDataBundle->check_in_actual);
+            $mainContentPageData->assign('check_out_actual',  $emailDataBundle->check_out_actual);
+    
+            $mainContentPageData->assign('adults_actual',  $emailDataBundle->adults_actual);
+            $mainContentPageData->assign('children_actual',  $emailDataBundle->children_actual);
+    
+            $mainContentPageData->assign('room_type', $emailDataBundle->room_name);
+            $mainContentPageData->assign('total_amount', $emailDataBundle->total_amount);
+            $mainContentPageData->assign('paid_amount', $emailDataBundle->deposit_amount);
+            $mainContentPageData->assign('balance_amount', $emailDataBundle->balance_amount);
+            $mainContentPageData->assign('room_rate', $emailDataBundle->rate);
+    
+            $summary = 'Thank you for visiting us, and see you soon :)';
+            
+            $mainContent = $core->get($mainContentEmailTemplate, $mainContentPageData);
+             
+            $subContent = $core->get($subContentEmailTemplate);
+           
+            $mainPageData->assign('summary', $summary);
+            $mainPageData->assign('main_content', $mainContent);
+            $mainPageData->assign('sub_content', $subContent);
+    
+            //echo $core->get($generalEmailTemplate, $mainPageData);
+    
+            $retVal = self::FormatEmail(self::$_senderEmail, $recipient, $subject, $summary, $mainContent, $subContent);
+    
+            if($retVal){
+                return true;
+            }else{
+                return self::$_emailConfirmationMessage;
+            }
         }
+           
+        return self::$_emailConfirmationMessage;
 
     }
 
