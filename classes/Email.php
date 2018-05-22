@@ -113,7 +113,7 @@ class Email{
             
             $mainContent = $core->get($mainContentEmailTemplate, $mainContentPageData);
             
-            $subContent = '<br/><p style="MARGIN-LEFT: 6px; MARGIN-RIGHT: 6px"><font face="Verdana" color="#001F3E" size="1">The request has been sent for approval. One of our representative will get back to you shortly.</font></p>';
+            $subContent = '<br/><p style="MARGIN-LEFT: 6px; MARGIN-RIGHT: 6px"><font face="Verdana" color="#001F3E" size="1">The request has been sent for approval. One of our representative will get back to you shortly.</font></p><br/><br/><br/><br/>';
         
             // $mainPageData->assign('summary', $summary);
             // $mainPageData->assign('main_content', $mainContent);
@@ -174,22 +174,16 @@ class Email{
             $mainContentPageData->assign('adults', $emailDataBundle->adults);
             $mainContentPageData->assign('children', $emailDataBundle->children);
             $mainContentPageData->assign('room_type', $emailDataBundle->room_name);
-            $mainContentPageData->assign('total_amount', $emailDataBundle->total_amount);
-            $mainContentPageData->assign('paid_amount', $emailDataBundle->deposit_amount);
-            $mainContentPageData->assign('balance_amount', $emailDataBundle->balance_amount);
-            $mainContentPageData->assign('room_rate', $emailDataBundle->rate);
+            $mainContentPageData->assign('total_amount', number_format($emailDataBundle->total_amount, 2));
+            $mainContentPageData->assign('paid_amount', number_format($emailDataBundle->deposit_amount, 2));
+            $mainContentPageData->assign('balance_amount', number_format($emailDataBundle->balance_amount, 2));
+            $mainContentPageData->assign('room_rate', number_format($emailDataBundle->rate, 2));
 
             $summary = 'Summary';
             
             $mainContent = $core->get($mainContentEmailTemplate, $mainContentPageData);
             
             $subContent = $core->get($subContentEmailTemplate);
-        
-            $mainPageData->assign('summary', $summary);
-            $mainPageData->assign('main_content', $mainContent);
-            $mainPageData->assign('sub_content', $subContent);
-
-            //echo $core->get($generalEmailTemplate, $mainPageData);
 
             $retVal = self::FormatEmail(self::$_senderEmail, $recipient, $subject, $summary, $mainContent, $subContent);
 
@@ -204,40 +198,29 @@ class Email{
 
     }
 
-    public static function RoomCheckoutAndBilling($reservationId){
+
+      //Send email on check out and billing
+      public static function RoomCheckoutAndBilling($reservationId){
 
 
         self::initialize();
 
-        $subject = 'Check Out and Billings - Orca Beach Resort, Ltd.';
+        $subject = 'Check Out and Billing - Orca Beach Resort, Ltd.';
 
         $summary = '';
         $mainContent = '';
         $subContent = '';
 
         $core = new Dwoo\Core();
-        echo Config::get('application_path');
-        // Load a template file, this is reusable if you want to render multiple times the same template with different data
-        $generalEmailTemplate = new Dwoo\Template\File(Config::get('application_path') . '/layouts/template/_emailTemplateGeneral.tpl');
-        $mainContentEmailTemplate = new Dwoo\Template\File(Config::get('application_path') . '/layouts/template/_emailTemplateMainContentReservation.tpl');
-        $subContentEmailTemplate = new Dwoo\Template\File(Config::get('application_path') . '/layouts/template/_emailTemplateSubContentReservation.tpl');
+
+        $mainContentEmailTemplate = new Dwoo\Template\File($_SERVER['DOCUMENT_ROOT'] . '/layouts/template/_emailTemplateMainContentCheckoutAndBilling.tpl');
+        $subContentEmailTemplate = new Dwoo\Template\File($_SERVER['DOCUMENT_ROOT'] . '/layouts/template/_emailTemplateSubContentReservation.tpl');
+
 
         $mainPageData = new Dwoo\Data();
         $mainContentPageData = new Dwoo\Data();
         $SubContentPageData = new Dwoo\Data();
 
-        $guestName = '';
-        $reservationId = '';
-        $checkInDate = '';
-        $checkOutDate = '';
-        $noNightsStay = '';
-        $adults = '';
-        $children = '';
-        $roomType = '';
-        $totalAmount = '';
-        $paidAmount = '';
-        $balanceAmount = '';
-        $roomRate = '';
 
         $reservation = new Reservation();
         $emailDataBundle = $reservation->find($reservationId);
@@ -265,36 +248,30 @@ class Email{
             $mainContentPageData->assign('children_actual',  $emailDataBundle->children_actual);
     
             $mainContentPageData->assign('room_type', $emailDataBundle->room_name);
-            $mainContentPageData->assign('total_amount', $emailDataBundle->total_amount);
-            $mainContentPageData->assign('paid_amount', $emailDataBundle->deposit_amount);
-            $mainContentPageData->assign('balance_amount', $emailDataBundle->balance_amount);
-            $mainContentPageData->assign('room_rate', $emailDataBundle->rate);
-    
-            $summary = 'Thank you for visiting us, and see you soon :)';
+            $mainContentPageData->assign('total_amount', number_format($emailDataBundle->total_amount,2));
+            $mainContentPageData->assign('advance_paid_amount', number_format($emailDataBundle->deposit_amount,2));
+            $mainContentPageData->assign('additional_amount', number_format($emailDataBundle->additional_amount,2));
+            $mainContentPageData->assign('balance_paid_amount', number_format($emailDataBundle->balance_amount<2));
+            $mainContentPageData->assign('room_rate', number_format($emailDataBundle->rate,2));
+
+            $summary = 'Summary';
             
             $mainContent = $core->get($mainContentEmailTemplate, $mainContentPageData);
-             
-            $subContent = $core->get($subContentEmailTemplate);
-           
-            $mainPageData->assign('summary', $summary);
-            $mainPageData->assign('main_content', $mainContent);
-            $mainPageData->assign('sub_content', $subContent);
-    
-            //echo $core->get($generalEmailTemplate, $mainPageData);
-    
+            
+            $subContent = '<br/><br/><font face="Verdana" color="#001F3E" size="1">Thank you for visiting us</font><br/><br/>';
+
             $retVal = self::FormatEmail(self::$_senderEmail, $recipient, $subject, $summary, $mainContent, $subContent);
-    
+
             if($retVal){
                 return true;
             }else{
                 return self::$_emailConfirmationMessage;
             }
         }
-           
+
         return self::$_emailConfirmationMessage;
 
     }
-
 
 
     // Baseline Functions //
@@ -317,8 +294,8 @@ class Email{
         
         $header = "From:$sender \r\n";
         //$header .= "Cc:afgh@somedomain.com \r\n";
-        $header .= "MIME-Version: 1.0\r\n";
-        $header .= "Content-type: text/html\r\n";
+        $header .= 'MIME-Version: 1.0' . "\r\n";
+        $header .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
 
         return self::Send($header, $recipient, $subject, $message);
 

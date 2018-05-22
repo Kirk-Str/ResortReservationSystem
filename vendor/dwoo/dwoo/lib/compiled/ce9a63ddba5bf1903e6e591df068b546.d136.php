@@ -1,4 +1,6 @@
-<table width="500" cellspacing="0" cellpadding="0" border="0" bgcolor="#ffffff">
+<?php
+/* template head */
+/* end template head */ ob_start(); /* template body */ ?><table width="500" cellspacing="0" cellpadding="0" border="0" bgcolor="#ffffff">
           <tbody>
              <tr>
                 <td colspan="2" width="446" valign="top" height="18">
@@ -11,46 +13,46 @@
                 <td width="180" valign="top" height="10">
                    <p style="MARGIN-LEFT: 10px; MARGIN-RIGHT: 6px"><font face="Verdana" color="#001F3E" size="1">Reservation Number:</font></p>
                 </td>
-                <td width="291" valign="top" height="10"><font face="Verdana" color="#001F3E" size="1">{$reservation_id}</font></td>
+                <td width="291" valign="top" height="10"><font face="Verdana" color="#001F3E" size="1"><?php echo $this->scope["reservation_id"];?></font></td>
              </tr>
              <tr>
                 <td width="180" valign="top" height="10">
                    <p style="MARGIN-LEFT: 10px; MARGIN-RIGHT: 6px"><font face="Verdana" color="#001F3E" size="1">Guest Name:</font></p>
                 </td>
-                <td width="291" valign="top" height="10"><font face="Verdana" color="#001F3E" size="1">{$guest_name}</font>
+                <td width="291" valign="top" height="10"><font face="Verdana" color="#001F3E" size="1"><?php echo $this->scope["guest_name"];?></font>
                 </td>
              </tr>
              <tr>
                 <td width="180" valign="top" height="10">
                    <p style="MARGIN-LEFT: 10px; MARGIN-RIGHT: 6px"><font face="Verdana" color="#001F3E" size="1">Check In Date:</font></p>
                 </td>
-                <td width="291" valign="top" height="10"><font face="Verdana" color="#001F3E" size="1">{$check_in_date}</font>
+                <td width="291" valign="top" height="10"><font face="Verdana" color="#001F3E" size="1"><?php echo $this->scope["check_in_date"];?></font>
                 </td>
              </tr>
              <tr>
                 <td width="180" valign="top" height="10">
                    <p style="MARGIN-LEFT: 10px; MARGIN-RIGHT: 6px"><font face="Verdana" color="#001F3E" size="1">Check Out Date:</font></p>
                 </td>
-                <td width="291" valign="top" height="10"><font face="Verdana" color="#001F3E" size="1">{$check_out_date}</font>
+                <td width="291" valign="top" height="10"><font face="Verdana" color="#001F3E" size="1"><?php echo $this->scope["check_out_date"];?></font>
                 </td>
              </tr>
              <tr>
                 <td width="180" valign="top" height="10">
                    <p style="MARGIN-LEFT: 10px; MARGIN-RIGHT: 6px"><font face="Verdana" color="#001F3E" size="1">Nights Stay(s):</font></p>
                 </td>
-                <td width="291" valign="top" height="10"><font face="Verdana" color="#001F3E" size="1">{$no_nights_stay}</font></td>
+                <td width="291" valign="top" height="10"><font face="Verdana" color="#001F3E" size="1"><?php echo $this->scope["no_nights_stay"];?></font></td>
              </tr>
              <tr>
                 <td width="180" valign="top" height="10">
                    <p style="MARGIN-LEFT: 10px; MARGIN-RIGHT: 6px"><font face="Verdana" color="#001F3E" size="1">Adults:</font></p>
                 </td>
-                <td width="291" valign="top" height="10"><font face="Verdana" color="#001F3E" size="1">{$adults}</font></td>
+                <td width="291" valign="top" height="10"><font face="Verdana" color="#001F3E" size="1"><?php echo $this->scope["adults"];?></font></td>
              </tr>
              <tr>
                 <td width="180" valign="top" height="10">
                    <p style="MARGIN-LEFT: 10px; MARGIN-RIGHT: 6px"><font face="Verdana" color="#001F3E" size="1">Children:</font></p>
                 </td>
-                <td width="291" valign="top" height="10"><font face="Verdana" color="#001F3E" size="1">{$children}</font></td>
+                <td width="291" valign="top" height="10"><font face="Verdana" color="#001F3E" size="1"><?php echo $this->scope["children"];?></font></td>
              </tr>
             <tr><td><br/></td><td></td></tr>
             <tr><td></td><td></td></tr>
@@ -58,72 +60,74 @@
                 <td width="180" valign="top" height="10">
                    <p style="MARGIN-LEFT: 10px; MARGIN-RIGHT: 6px"><font face="Verdana" color="#001F3E" size="1">Actual Check In:</font></p>
                 </td>
-                <td width="291" valign="top" height="10"><font face="Verdana" color="#001F3E" size="1">{$check_in_actual}</font>
+                <td width="291" valign="top" height="10"><font face="Verdana" color="#001F3E" size="1"><?php echo $this->scope["check_in_actual"];?></font>
                 </td>
              </tr>
              <tr>
                 <td width="180" valign="top" height="10">
                    <p style="MARGIN-LEFT: 10px; MARGIN-RIGHT: 6px"><font face="Verdana" color="#001F3E" size="1">Actual Check Out:</font></p>
                 </td>
-                <td width="291" valign="top" height="10"><font face="Verdana" color="#001F3E" size="1">{$check_out_actual}</font>
+                <td width="291" valign="top" height="10"><font face="Verdana" color="#001F3E" size="1"><?php echo $this->scope["check_out_actual"];?></font>
                 </td>
              </tr>
              <tr>
                 <td width="180" valign="top" height="10">
                    <p style="MARGIN-LEFT: 10px; MARGIN-RIGHT: 6px"><font face="Verdana" color="#001F3E" size="1">Actual Adults:</font></p>
                 </td>
-                <td width="291" valign="top" height="10"><font face="Verdana" color="#001F3E" size="1">{$adults_actual}</font></td>
+                <td width="291" valign="top" height="10"><font face="Verdana" color="#001F3E" size="1"><?php echo $this->scope["adults_actual"];?></font></td>
              </tr>
              <tr>
                 <td width="180" valign="top" height="10">
                    <p style="MARGIN-LEFT: 10px; MARGIN-RIGHT: 6px"><font face="Verdana" color="#001F3E" size="1">Actual Children:</font></p>
                 </td>
-                <td width="291" valign="top" height="10"><font face="Verdana" color="#001F3E" size="1">{$children_actual}</font></td>
+                <td width="291" valign="top" height="10"><font face="Verdana" color="#001F3E" size="1"><?php echo $this->scope["children_actual"];?></font></td>
              </tr>
 
              <tr>
                 <td width="180" valign="top" height="10">
                    <p style="MARGIN-LEFT: 10px; MARGIN-RIGHT: 6px"><font face="Verdana" color="#001F3E" size="1">Room Type:</font></p>
                 </td>
-                <td width="291" valign="top" height="10"><font face="Verdana" color="#001F3E" size="1">{$room_type}</font>
+                <td width="291" valign="top" height="10"><font face="Verdana" color="#001F3E" size="1"><?php echo $this->scope["room_type"];?></font>
                 </td>
              </tr>
              <tr>
                 <td width="180" valign="top" height="10">
                    <p style="MARGIN-LEFT: 10px; MARGIN-RIGHT: 6px"><font face="Verdana" color="#001F3E" size="1">Total Amount:</font></p>
                 </td>
-                <td width="291" valign="top" height="10"><font face="Verdana" color="#001F3E" size="1">{$total_amount}</font>
+                <td width="291" valign="top" height="10"><font face="Verdana" color="#001F3E" size="1"><?php echo $this->scope["total_amount"];?></font>
                 </td>
              </tr>
              <tr>
                 <td width="180" valign="top" height="10">
                    <p style="MARGIN-LEFT: 10px; MARGIN-RIGHT: 6px"><font face="Verdana" color="#001F3E" size="1">Advance Paid Amount:</font></p>
                 </td>
-                <td width="291" valign="top" height="10"><font face="Verdana" color="#001F3E" size="1">{$advance_paid_amount}</font>
+                <td width="291" valign="top" height="10"><font face="Verdana" color="#001F3E" size="1"><?php echo $this->scope["advance_paid_amount"];?></font>
                 </td>
              </tr>
              <tr>
                 <td width="180" valign="top" height="10">
                    <p style="MARGIN-LEFT: 10px; MARGIN-RIGHT: 6px"><font face="Verdana" color="#001F3E" size="1">Additional Amount:</font></p>
                 </td>
-                <td width="291" valign="top" height="10"><font face="Verdana" color="#001F3E" size="1">{$additional_amount}</font>
+                <td width="291" valign="top" height="10"><font face="Verdana" color="#001F3E" size="1"><?php echo $this->scope["additional_amount"];?></font>
                 </td>
              </tr>
              <tr>
                 <td width="180" valign="top" height="10">
                    <p style="MARGIN-LEFT: 10px; MARGIN-RIGHT: 6px"><font face="Verdana" color="#001F3E" size="1">Balance Paid Amount:</font></p>
                 </td>
-                <td width="291" valign="top" height="10"><font face="Verdana" color="#001F3E" size="1">{$balance_paid_amount}</font>
+                <td width="291" valign="top" height="10"><font face="Verdana" color="#001F3E" size="1"><?php echo $this->scope["balance_paid_amount"];?></font>
                 </td>
              </tr>
              <tr>
                 <td width="180" valign="top" height="10">
                    <p style="MARGIN-LEFT: 10px; MARGIN-RIGHT: 0px"><font face="Verdana" color="#001F3E" size="1">Room Rate:</font></p>
                 </td>
-                <td width="291" valign="top" height="10"><font face="Verdana" color="#001F3E" size="1">{$room_rate} per room 
+                <td width="291" valign="top" height="10"><font face="Verdana" color="#001F3E" size="1"><?php echo $this->scope["room_rate"];?> per room 
                    per night - includes gratuities for housekeeping, bell services and valet; and in-room 
                    coffee.</font>
                 </td>
              </tr>
           </tbody>
-       </table>
+       </table><?php  /* end template body */
+return $this->buffer . ob_get_clean();
+?>
