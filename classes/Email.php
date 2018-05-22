@@ -11,7 +11,7 @@ class Email{
     public static function initialize(){
 
         self::$_senderEmail = Config::get('sender_email');
-        $_emailConfirmationMessage = '';
+        $_emailConfirmationMessage = 'Email setting failed at server! Please report to administrator';
 
     }
 
@@ -39,28 +39,29 @@ class Email{
         $user = new User();
         $emailDataBundle = $user->find($userId);
 
-        $recipient = $emailDataBundle->email_id;
-        $guestName = $emailDataBundle->firstname . ' ' . $emailDataBundle->lastname;
+        if(!empty($emailDataBundle)){
 
-        $mainContentPageData->assign('guest_name', $guestName);
+            $recipient = $emailDataBundle->email_id;
+            $guestName = $emailDataBundle->firstname . ' ' . $emailDataBundle->lastname;
 
-        $summary = '';
-        
-        $mainContent = $core->get($mainContentEmailTemplate, $mainContentPageData);
-         
-        $subContent = '';
-       
-        $mainPageData->assign('summary', $summary);
-        $mainPageData->assign('main_content', $mainContent);
-        $mainPageData->assign('sub_content', $subContent);
+            $mainContentPageData->assign('guest_name', $guestName);
 
-        $retVal = self::FormatEmail(self::$_senderEmail, $recipient, $subject, $summary, $mainContent, $subContent);
+            $summary = '';
+            
+            $mainContent = $core->get($mainContentEmailTemplate, $mainContentPageData);
+            
+            $subContent = '';
 
-        if($retVal){
-            return true;
-        }else{
-            return self::$_emailConfirmationMessage;
+            $retVal = self::FormatEmail(self::$_senderEmail, $recipient, $subject, $summary, $mainContent, $subContent);
+
+            if($retVal){
+                return true;
+            }else{
+                return self::$_emailConfirmationMessage;
+            }
         }
+
+        return self::$_emailConfirmationMessage;
 
     }
 
@@ -113,7 +114,7 @@ class Email{
             
             $mainContent = $core->get($mainContentEmailTemplate, $mainContentPageData);
             
-            $subContent = '<br/><p style="MARGIN-LEFT: 6px; MARGIN-RIGHT: 6px"><font face="Verdana" color="#001F3E" size="1">The request has been sent for approval. One of our representative will get back to you shortly.</font></p><br/><br/><br/><br/>';
+            $subContent = '<br/><p style="MARGIN-LEFT: 6px; MARGIN-RIGHT: 6px"><font face="Helvetica" color="#001F3E" size="3">The request has been sent for approval. One of our representative will get back to you shortly.</font></p><br/><br/><br/><br/>';
         
             // $mainPageData->assign('summary', $summary);
             // $mainPageData->assign('main_content', $mainContent);
@@ -179,7 +180,8 @@ class Email{
             $mainContentPageData->assign('balance_amount', number_format($emailDataBundle->balance_amount, 2));
             $mainContentPageData->assign('room_rate', number_format($emailDataBundle->rate, 2));
 
-            $summary = 'Summary';
+            $summary = '<p style="MARGIN-LEFT: 6px; MARGIN-RIGHT: 6px"><font face="Helvetica" color="#001F3E" size="3">Your stay is almost here and we can\'t wait to welcome you in here on your arival</font><p/>
+            <p style="MARGIN-LEFT: 6px; MARGIN-RIGHT: 6px"><font face="Helvetica" color="#001F3E" size="3">If you need help with transportation or dinner in your first night please let us know. We\'re here to help and, we can\'t wait to see you.</font></p>';
             
             $mainContent = $core->get($mainContentEmailTemplate, $mainContentPageData);
             
@@ -251,14 +253,14 @@ class Email{
             $mainContentPageData->assign('total_amount', number_format($emailDataBundle->total_amount,2));
             $mainContentPageData->assign('advance_paid_amount', number_format($emailDataBundle->deposit_amount,2));
             $mainContentPageData->assign('additional_amount', number_format($emailDataBundle->additional_amount,2));
-            $mainContentPageData->assign('balance_paid_amount', number_format($emailDataBundle->balance_amount<2));
+            $mainContentPageData->assign('balance_paid_amount', number_format($emailDataBundle->balance_amount,2));
             $mainContentPageData->assign('room_rate', number_format($emailDataBundle->rate,2));
 
-            $summary = 'Summary';
+            $summary = '<p style="MARGIN-LEFT: 6px; MARGIN-RIGHT: 6px"><font face="Helvetica" color="#001F3E" size="3">We hope that you had a wonderful stay at Orca Beach Resort. We, on behalf of our staffs, management team thank you wholeheartedly :)';
             
             $mainContent = $core->get($mainContentEmailTemplate, $mainContentPageData);
             
-            $subContent = '<br/><br/><font face="Verdana" color="#001F3E" size="1">Thank you for visiting us</font><br/><br/>';
+            $subContent = '<br/><br/><p style="MARGIN-LEFT: 6px; MARGIN-RIGHT: 6px"><font face="Helvetica" color="#001F3E" size="3">Once again thank you for choosing us. We will look forward to meet you again.</font></p><br/><br/>';
 
             $retVal = self::FormatEmail(self::$_senderEmail, $recipient, $subject, $summary, $mainContent, $subContent);
 

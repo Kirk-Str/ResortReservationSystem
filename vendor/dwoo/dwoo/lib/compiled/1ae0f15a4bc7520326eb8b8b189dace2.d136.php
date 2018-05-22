@@ -9,16 +9,16 @@
             </td>
         </tr>
         <tr>
-        <td   align="center" height="26">
-                <p style="MARGIN-LEFT: 10px; MARGIN-RIGHT: 10px"  ><font face="Verdana" color="#001F3E" size="1">Thanks for signing up!, We at Orca Beach Resort can't wait to serve you the best of what we've got.
+        <td   align="center" height="20">
+                <p style="MARGIN-LEFT: 10px; MARGIN-RIGHT: 10px"  ><font face="Helvetica" color="#001F3E" size="3">You have made the right decision! Thank-you for choosing us!, We at Orca Beach Resort can't wait to serve you the best of what we've got.
                 </font>
             </p>
             </td>
         </tr>
         <tr>
         <tr>
-            <td align="center" height="200">
-                <img src="http://orcabeach.ezyro.com/assets/images/logosicons/cake.png" height="200px" width="200px" border="0" alt="Orca Beach Resort Logo"/> 
+            <td align="center" height="300">
+                <img src="http://orcabeach.ezyro.com/assets/images/logosicons/cake.png" height="150px" width="150px" border="0" alt="Orca Beach Resort Logo"/> 
             </td>
         </tr>
     </tbody>

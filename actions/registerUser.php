@@ -95,6 +95,8 @@ if (Input::exists()){
 
 			$remember = true;
 
+			$userId = '';
+
 			$user = new User();
 
 			$image = $_FILES['avatar-image']['tmp_name'];
@@ -112,7 +114,7 @@ if (Input::exists()){
 
 					$salt = Hash::salt(32);
 
-					$user->create(array(
+					$userId = $user->create(array(
 						'email_id' => Input::get('email_id'),
 						'password' => Hash::make(Input::get('password'), $salt),
 						'salt' => $salt,
@@ -134,7 +136,7 @@ if (Input::exists()){
 
 					$row = $user->find($emailId);
 
-					$user->update(array(
+					$userId = $user->update(array(
 						'password' => Hash::make(Input::get('password'), $row->salt),
 						'avatar_image' => $imgContent,
 						'firstname' => Input::get('firstname'),

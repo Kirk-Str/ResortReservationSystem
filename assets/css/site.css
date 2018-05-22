@@ -516,7 +516,7 @@ Tables & Styles
 */
 
 table tr{
-    cursor: hand;
+    cursor: pointer;
 }
 
 
