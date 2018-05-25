@@ -1,4 +1,4 @@
-<footer class="footer-distributed">
+<footer id="footer-base" class="footer-distributed">
         <div class="footer-left">
             <div class="col-md-12">
                 <div class="form-group col-lg-4" style="padding-left: 0;">
@@ -11,31 +11,31 @@
                     </select>
                 </div>
             </div>
-            <h3>Hotel Happy Holiday<span></span></h3>
+            <h3>Orca Beach Resort Ltd.<span></span></h3>
             <p class="footer-links">
                 <a asp-area="" asp-controller="Home" asp-action="Index">HOME</a> ·
                 <a asp-area="" asp-controller="Home" asp-action="Reservation">RESERVATION</a> ·
                 <a asp-area="" asp-controller="Home" asp-action="Suites">SUITES</a> ·
-                <a asp-area="" asp-controller="Home" asp-action="Meetings">MEETINGS</a> ·
+                <a asp-area="" asp-controller="Home" asp-action="Outings">OUTINGS</a> ·
                 <a asp-area="" asp-controller="Home" asp-action="Loyality">LOYALITY</a> ·
                 <a asp-area="" asp-controller="Home" asp-action="Surroundings">SURROUNDINGS</a> ·
                 <a asp-area="" asp-controller="Home" asp-action="Feedback">FEEDBACK</a> ·
                 <a asp-area="" asp-controller="Home" asp-action="About">ABOUT</a>
             </p>
-            <p class="footer-company-name">Hotel Happy Holiday © 2017</p>
+            <p class="footer-company-name">Orca Beach Resort Ltd. © <?php echo date("Y"); ?></p>
         </div>
         <div class="footer-center">
             <div>
                 <i class="fa fa-map-marker"></i>
-                <p><span>21 Revolution Street</span> Dover, London</p>
+                <p><span>1400 E. Southern Ave. Kalpitiya</span>Puttalam, Srilanka</p>
             </div>
             <div>
                 <i class="fa fa-phone"></i>
-                <p>+1 555 123456</p>
+                <p>+94 71 55 123456</p>
             </div>
             <div>
                 <i class="fa fa-envelope"></i>
-                <p><a href="mailto:info@hhh.com">support@holiday.com</a></p>
+                <p><a href="mailto:hello@orcabeach.com">hello@orcabeach.com</a></p>
             </div>
         </div>
         <div class="footer-right">

@@ -41,7 +41,7 @@
                             <tr>
                                <td colspan="2" height="26" bgcolor="#435fbb">
                                   <p align="center"><font size="1" face="Verdana" color="#ffffff">
-                                     Orca Beach Resort Ltd.&nbsp;|&nbsp;1400 E. Southern Ave.|&nbsp;Puttalam, Srilanka&nbsp; | <a href="http://orcabeach.ezyro.com" target="blank"><font color="#ffffff">www.orcabeach.ezyro.com</font></a></font>
+                                     Orca Beach Resort Ltd.&nbsp;|&nbsp;1400 E. Southern Ave., Kalpitiya&nbsp;|&nbsp;Puttalam, Srilanka&nbsp; | <a href="http://orcabeach.ezyro.com" target="blank"><font color="#ffffff">www.orcabeach.ezyro.com</font></a></font>
                                   </p>
                                   <font size="1" face="Verdana" color="#ffffff">
                                   </font>
