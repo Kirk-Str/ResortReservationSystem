@@ -444,7 +444,7 @@ h2{
 
 h3{
     font-size: 30px;
-    color: rgb(94, 94, 94);
+    color: #13384f;
     font-family: "OpenSans",Georgia, serif;
 }
 
@@ -489,6 +489,17 @@ h3.para{
     margin: 40px 0 40px 0;
     padding: 30px;
     background-color: #D0B877 !important;
+}
+
+.sealine-banner {
+    font-size: 18px;
+    margin: 40px 0 40px 0;
+    padding: 30px;
+    background: #fff;
+    background: -moz-linear-gradient(top,#fff 0,#7fa3b3 100%,#7db9e8 100%);
+    background: -webkit-linear-gradient(top,#fff 0,#7fa3b3 100%,#7db9e8 100%);
+    background: linear-gradient(to bottom,#fff 0,#7fa3b3 100%,#7db9e8 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#7db9e8', GradientType=0);
 }
 
 .golden-banner > h3{
