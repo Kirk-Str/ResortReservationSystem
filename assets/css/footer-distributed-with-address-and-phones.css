@@ -1,7 +1,6 @@
 #footer-base{
 	background-image: url('/assets/images/footer-cover.jpg');
 	background-size:cover;
-	height: 800px;
 }
 
 .footer-distributed{
@@ -13,8 +12,7 @@
 	font: bold 16px sans-serif;
 
 	padding: 55px 50px;
-	--padding-top: 500px;
-	
+	padding-top: 400px;
 
 }
 
@@ -172,10 +170,18 @@
 		width: 100%;
 		margin-bottom: 0px;
 		text-align: center;
+		
 	}
 
 	.footer-distributed .footer-center i{
 		margin-left: 0;
 	}
 
+	
+}
+
+@media (min-width: 900px){
+	#footer-base{
+		height: 900px;
+	}
 }
