@@ -135,7 +135,7 @@
             </div>
         </div>
     </div>
-    <div class="container body-content">
+    <div class="container">
         {$content}
     </div>
     {$footer}

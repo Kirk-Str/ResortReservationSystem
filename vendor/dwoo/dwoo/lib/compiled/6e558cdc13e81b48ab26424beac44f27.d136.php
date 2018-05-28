@@ -149,7 +149,7 @@ else {
             </div>
         </div>
     </div>
-    <div class="container body-content">
+    <div class="container">
         <?php echo $this->scope["content"];?>
     </div>
     <?php echo $this->scope["footer"];?>

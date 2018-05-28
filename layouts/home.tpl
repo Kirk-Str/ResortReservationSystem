@@ -67,11 +67,10 @@
     </form>
     
 </div>
-<div class="golden-banner">
-    <h3>
-        The word is out. Join Hotel Happy Holiday Loyality for access to exclusive offers, complimentary WiFi and other perks
-        - just for booking directly with us. Not a member? Join today.
-    </h3>
+<div class="sealine-banner">
+    
+    In Sri Lanka, just two hours from the airport and three hours north of Colombo, is an unspoilt peninsula of golden sand. Here lies a blissfully secluded resort with luxury tented accommodation on Kalpitiya beach. The bluest of skies melts seamlessly into the azure of the Indian Ocean to make a picture-perfect backdrop to a unique, tailor-made tropical holiday experience.
+ 
 </div>
 <div class="row">
 
