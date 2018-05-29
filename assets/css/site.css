@@ -1,5 +1,7 @@
 ﻿/*@import url('https://fonts.googleapis.com/css?family=Merriweather:400,700');*/
 @import url('https://fonts.googleapis.com/css?family=Cantata+One');
+@import url('https://fonts.googleapis.com/css?family=Playfair+Display:400,400i,700,700i,900,900i');
+
 /*@import url('../fonts/Sansita/Sansita-Bold.ttf');
 @import url('../fonts/Volkhov/Volkhov-Bold.ttf')*/
 
@@ -49,6 +51,22 @@ label{
     font-size: 16px !important;
     color: rgb(107, 107, 107) !important;
     padding: 0;
+}
+
+.form-control{
+    border-radius: 0;
+}
+
+.btn{
+    border-radius: 0;
+}
+
+.thumbnail{
+    border-radius: 0;
+}
+
+.label{
+    border-radius: 0;
 }
 
 .inline-block{
@@ -117,11 +135,10 @@ label{
 #login-dp{
     min-width: 280px;
     padding: 30px 20px 0;
-    border-radius: 4px 4px;
-    border-radius: 4px 4px;
-    -moz-border-radius: 4px 4px;
-    -o-border-radius: 4px 4px;
-    -webkit-border-radius: 4px 4px;
+    border-radius: 0px 0px;
+    -moz-border-radius: 0px 0px;
+    -o-border-radius: 0px 0px;
+    -webkit-border-radius: 0px 0px;
     overflow:hidden;
     background-color:rgba(255,255,255,1);
 }
@@ -149,7 +166,7 @@ label{
     background-color:#3b5998;
 }
 .btn-fb:hover{
-    background-color:#496ebc 
+    background-color:#496ebc;
 }
 .btn-tw{
     font-weight: normal !important;
@@ -179,7 +196,7 @@ input[name="daterange"]{
 
 .navbar{
     
-    border-bottom: 5px solid #D0B877;
+    border-bottom: 1px solid #e2e2e2;
 }
 
 .navbar-brand {
@@ -199,6 +216,7 @@ input[name="daterange"]{
 }
 
 .navbar-nav > li > a {
+    color:#13384f !important;
     font-size:small;
     padding-top: 30px;
     padding-bottom: 30px;
@@ -439,7 +457,7 @@ h1{
 h2{
     font-size: 40px;
     color: rgb(75, 75, 75);
-    font-family: "Sansita",Georgia, serif
+    font-family: 'Playfair Display',serif;
 }
 
 h3{
@@ -475,8 +493,8 @@ h3.para{
 .btn-submit{
     color: #fff !important;
     font-weight: 600;
-    background-color: #D0B877 !important;
-    border-color: #e0b244;
+    background-color: #1b587f !important;
+    border-color: #1b5785;
 }
 
 .btn-submit:hover{
@@ -507,12 +525,12 @@ h3.para{
 }
 
 .goldenbreak-2px{
-    border-top: 2px solid #D0B877;
+    border-top: 2px solid #1b587f;
 }
 
 .goldenbreak-5px{
     margin: 0;
-    border-top: 5px solid #D0B877;
+    border-top: 5px solid #1b587f;
 }
 
 /*.jumbotron input{

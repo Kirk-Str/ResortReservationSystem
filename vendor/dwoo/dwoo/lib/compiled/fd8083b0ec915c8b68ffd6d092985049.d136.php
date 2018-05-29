@@ -6,6 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title><?php echo $this->scope["pageTitle"];?> - HotelHappyHoliday</title>
+    
         <link rel="stylesheet" href="<?php echo Config::get('application_path') .'assets/lib/bootstrap/dist/css/bootstrap.css'; ?>" />
         <link rel="stylesheet" href="<?php echo Config::get('application_path') .'assets/css/footer-distributed-with-address-and-phones.css'; ?>" />
         <link rel="stylesheet" href="<?php echo Config::get('application_path') .'assets/lib/font-awesome/css/font-awesome.min.css'; ?>" />
@@ -149,7 +150,7 @@ else {
             </div>
         </div>
     </div>
-    <div class="container body-content">
+    <div class="container">
         <?php echo $this->scope["content"];?>
     </div>
     <?php echo $this->scope["footer"];?>
