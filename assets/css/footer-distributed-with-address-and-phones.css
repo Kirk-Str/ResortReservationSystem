@@ -182,6 +182,6 @@
 
 @media (min-width: 900px){
 	#footer-base{
-		height: 900px;
+		--height: 900px;
 	}
 }

@@ -1,13 +1,18 @@
 <?php
 /* template head */
 /* end template head */ ob_start(); /* template body */ ?>﻿<hr class="goldenbreak-2px">
+</br>
+</br>
 <h2 class="text-center">It's excursion or relaxation, we take you where you want to be!</h2>
     <p class="para">
         <B>Breathtaking!</B> Never get tired of surrounding scenaries.
         Explorer the surroundings that offers serveral natural and man-made attactions such as National Zoo,
         Museum, Botanical Garden, Beautiful Palm Beaches.
     </p>
-    <div class="row">
+    </br>
+    </br>
+    </br>
+    <div class="row" style="margin: 0 80px 0 80px">
         <div class="col-md-4 col-xs-12 clear-padding">
             <div class="tile">
                 <div class="hovereffect">
