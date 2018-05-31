@@ -122,29 +122,27 @@ else {
             Complimentary mineral water is available in each room. Enjoy the comfort and luxury that Holiday&trade; offers.
         </p>
     </div>
-    <div class="col-md-4 col-md-pull-8">
+    <div class="col-md-4 col-md-pull-8 clear-padding">
         <img class="featurette-image img-responsive center-block" src="assets/images/home/suite.jpg" data-holder-rendered="true">
     </div>
 </div>
-<hr class="featurette-divider">
-<div class="row featurette wow fadeInRight" data-wow-duration="500ms" data-wow-delay="400ms">
+<div class="row featurette wow fadeInRight" data-wow-duration="500ms" data-wow-delay="300ms">
     <div class="col-md-8">
         <h2 class="featurette-heading">Mouthwatering Foods. <span class="text-muted">It's delicious!</span></h2>
         <p class="lead">
             Holiday&trade; provides Five-Star/Five-Diamond catering from our acclaimed chef, Gordon Ramsay. Mouthwatering foods with gourmet quality and extra caring in catering. Enjoy the Holiday&trade;'s multi cuisine foods such as Italian, French, American, Chinese.
         </p>
     </div>
-    <div class="col-md-4">
+    <div class="col-md-4 clear-padding">
         <img class="featurette-image img-responsive center-block" src="assets/images/home/res.jpg" data-holder-rendered="true">
     </div>
 </div>
-<hr class="featurette-divider">
 <div class="row featurette wow fadeInRight" data-wow-duration="500ms" data-wow-delay="200ms">
     <div class="col-md-8  col-md-push-4">
         <h2 class="featurette-heading">Awe Inspiring Natural Attractions. <span class="text-muted">It'll blow your mind.</span></h2>
         <p class="lead">Holiday&trade; is surrounded by sevreral important places like National Zoo, Botanical Garden, Museum, Palm Beaches that you cannot ignore visting!</p>
     </div>
-    <div class="col-md-4 col-md-pull-8">
+    <div class="col-md-4 col-md-pull-8 clear-padding">
         <img class="featurette-image img-responsive center-block" src="assets/images/home/featureattactions.jpg" data-holder-rendered="true">
     </div>
 </div>

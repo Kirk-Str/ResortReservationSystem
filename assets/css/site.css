@@ -381,9 +381,12 @@ input[name="daterange"]{
 /* .card > .btn{
 } */
 
+.featurette{
+    margin: 0 20px 0 20px;background: #ddd;
+}
 
 .featurette-image{
-    margin-top: 20px;
+    --margin-top: 20px;
 }
 
 #feature {
