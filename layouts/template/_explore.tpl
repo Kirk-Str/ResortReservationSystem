@@ -28,7 +28,7 @@
             <div class="tile">
                 <div class="hovereffect">
                 <div class="gradiant-background">
-                        <h2>Whale &amp; Dolphin Watching</h2>
+                        <h2>Whale Watching</h2>
                         <p>Enjoy the fresh air in Sri Lanka.</p>
                     </div>
                     <a asp-action="Surroundings">
