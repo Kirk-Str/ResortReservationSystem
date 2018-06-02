@@ -20,7 +20,7 @@
             </p>
         </div>
         <div class="col-md-5">
-            <img class="featurette-image img-responsive center-block" data-src="holder.js/500x500/auto" alt="500x500" src="assets/images/home/zoocollate.jpg" data-holder-rendered="true">
+            <img class="featurette-image img-responsive center-block" data-src="holder.js/500x500/auto" alt="500x500" src="assets/images/contentImages/ayurveda.jpg" data-holder-rendered="true">
         </div>
     </div>
     <hr class="featurette-divider">
@@ -35,7 +35,7 @@
             </p>
         </div>
         <div class="col-md-5 col-md-pull-7">
-            <img class="featurette-image img-responsive center-block" data-src="holder.js/500x500/auto" alt="500x500" src="assets/images/home/dovercliff.jpg" data-holder-rendered="true">
+            <img class="featurette-image img-responsive center-block" data-src="holder.js/500x500/auto" alt="500x500" src="assets/images/contentImages/safari.jpg" data-holder-rendered="true">
         </div>
     </div>
     <hr class="featurette-divider">
@@ -50,7 +50,7 @@
             </p>
         </div>
         <div class="col-md-5">
-            <img class="featurette-image img-responsive center-block" data-src="holder.js/500x500/auto" alt="500x500" src="assets/images/home/beaches.jpg" data-holder-rendered="true">
+            <img class="featurette-image img-responsive center-block" data-src="holder.js/500x500/auto" alt="500x500" src="assets/images/contentImages/scubadiving.jpg" data-holder-rendered="true">
         </div>
     </div>
     <hr class="featurette-divider">
@@ -66,7 +66,7 @@
             </p>
         </div>
         <div class="col-md-5 col-md-pull-7">
-            <img class="featurette-image img-responsive center-block" data-src="holder.js/500x500/auto" alt="500x500" src="assets/images/home/Lewisham Glass MIll Leisure Centre.jpg" data-holder-rendered="true">
+            <img class="featurette-image img-responsive center-block" data-src="holder.js/500x500/auto" alt="500x500" src="assets/images/contentImages/whalewatching.jpg" data-holder-rendered="true">
         </div>
     </div>
     <hr class="featurette-divider">
@@ -82,7 +82,7 @@
             </p>
         </div>
         <div class="col-md-5">
-            <img class="featurette-image img-responsive center-block" data-src="holder.js/500x500/auto" alt="500x500" src="assets/images/home/flower-garden.jpg" data-holder-rendered="true">
+            <img class="featurette-image img-responsive center-block" data-src="holder.js/500x500/auto" alt="500x500" src="assets/images/contentImages/fishing.jpg" data-holder-rendered="true">
         </div>
     </div>
     <hr class="featurette-divider">
@@ -92,7 +92,33 @@
             <p class="lead">Appart from Holiday&trade;s luxury shuttle services, the surrounding of the Holiday&trade; is filled with busy transport services. Access to Taxi, Bus and Metro Train is convenient and near by</p>
         </div>
         <div class="col-md-5 col-md-pull-7">
-            <img class="featurette-image img-responsive center-block" data-src="holder.js/500x500/auto" alt="500x500" src="assets/images/home/932.jpg" data-holder-rendered="true">
+            <img class="featurette-image img-responsive center-block" data-src="holder.js/500x500/auto" alt="500x500" src="assets/images/contentImages/kayaking.jpg" data-holder-rendered="true">
+        </div>
+    </div>
+    <hr class="featurette-divider">
+    <div class="row featurette wow fadeInRight" data-wow-duration="500ms" data-wow-delay="1000ms">
+            <div class="col-md-7">
+                <h2 class="featurette-heading">Botanical Garden. <span class="text-muted">See for yourself.</span></h2>
+                <p class="lead">
+                    The Dover Botanic garden is the gem of gardens.
+                    just outside London. With 440 acres of open gardens to stroll in five large glasshouses.
+                    Plus Kew palace, Queen Charlotte's cottage wonderful flower beds, two lakes with wild fowl.
+                    There is also the Marianne North Gallery near by,
+                    full of her paintings of her travels. And three very large glasshouses full of all sorts of plants from all over the world.
+                </p>
+            </div>
+            <div class="col-md-5">
+                <img class="featurette-image img-responsive center-block" data-src="holder.js/500x500/auto" alt="500x500" src="assets/images/contentImages/kitesurfing.jpg" data-holder-rendered="true">
+            </div>
+        </div>
+    <hr class="featurette-divider">
+    <div class="row featurette wow fadeInRight" data-wow-duration="500ms" data-wow-delay="1200ms">
+        <div class="col-md-7 col-md-push-5">
+            <h2 class="featurette-heading">Easy Access Transportations. <span class="text-muted">It'll blow your mind.</span></h2>
+            <p class="lead">Appart from Holiday&trade;s luxury shuttle services, the surrounding of the Holiday&trade; is filled with busy transport services. Access to Taxi, Bus and Metro Train is convenient and near by</p>
+        </div>
+        <div class="col-md-5 col-md-pull-7">
+            <img class="featurette-image img-responsive center-block" data-src="holder.js/500x500/auto" alt="500x500" src="assets/images/contentImages/yoga.jpg" data-holder-rendered="true">
         </div>
     </div>
 <?php  /* end template body */

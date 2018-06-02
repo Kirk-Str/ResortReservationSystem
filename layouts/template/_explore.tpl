@@ -19,7 +19,7 @@
                         <p>Enjoy the fresh air in Sri Lanka.</p>
                     </div>
                     <a asp-action="Surroundings">
-                        <img class="img-responsive" src="assets/images/home/932.jpg" alt="">
+                        <img class="img-responsive" src="assets/images/contentImages/yoga.jpg" alt="">
                     </a>
                 </div>
             </div>
@@ -32,7 +32,7 @@
                         <p>Enjoy the fresh air in Sri Lanka.</p>
                     </div>
                     <a asp-action="Surroundings">
-                        <img class="img-responsive" src="assets/images/home/beaches.jpg" alt="">
+                        <img class="img-responsive" src="assets/images/contentImages/whalewatching.jpg" alt="">
                     </a>
                 </div>
             </div>
@@ -45,7 +45,7 @@
                         <p>Enjoy the fresh air in Sri Lanka.</p>
                     </div>
                     <a asp-action="Surroundings">
-                        <img class="img-responsive" src="assets/images/home/zoocollate.jpg" alt="">
+                        <img class="img-responsive" src="assets/images/contentImages/kitesurfing.jpg" alt="">
                     </a>
                 </div>
             </div>
@@ -58,7 +58,7 @@
                         <p>Enjoy the fresh air in Sri Lanka.</p>
                     </div>
                     <a asp-action="Surroundings">
-                        <img class="img-responsive" src="assets/images/home/Lewisham Glass MIll Leisure Centre.jpg" alt="">
+                        <img class="img-responsive" src="assets/images/contentImages/kayaking.jpg" alt="">
                     </a>
                 </div>
             </div>
@@ -71,7 +71,7 @@
                         <p>Enjoy the fresh air in Sri Lanka.</p>
                     </div>
                     <a asp-action="Surroundings">
-                        <img class="img-responsive" src="assets/images/home/flower-garden.jpg" alt="">
+                        <img class="img-responsive" src="assets/images/contentImages/cycling.jpg" alt="">
                     </a>
                 </div>
             </div>
@@ -84,7 +84,7 @@
                         <p>Enjoy the fresh air in Sri Lanka.</p>
                     </div>
                     <a asp-action="Surroundings">
-                        <img class="img-responsive" src="assets/images/home/dovercliff.jpg" alt="">
+                        <img class="img-responsive" src="assets/images/contentImages/fishing.jpg" alt="">
                     </a>
                 </div>
             </div>
@@ -97,7 +97,7 @@
                         <p>Enjoy the fresh air in Sri Lanka.</p>
                     </div>
                     <a asp-action="Surroundings">
-                        <img class="img-responsive" src="assets/images/home/dovercliff.jpg" alt="">
+                        <img class="img-responsive" src="assets/images/contentImages/ayurveda.jpg" alt="">
                     </a>
                 </div>
             </div>
@@ -110,7 +110,7 @@
                         <p>Enjoy the fresh air in Sri Lanka.</p>
                     </div>
                     <a asp-action="Surroundings">
-                        <img class="img-responsive" src="assets/images/home/dovercliff.jpg" alt="">
+                        <img class="img-responsive" src="assets/images/contentImages/safari.jpg" alt="">
                     </a>
                 </div>
             </div>
@@ -123,7 +123,7 @@
                         <p>Enjoy the fresh air in Sri Lanka.</p>
                     </div>
                     <a asp-action="Surroundings">
-                        <img class="img-responsive" src="assets/images/home/dovercliff.jpg" alt="">
+                        <img class="img-responsive" src="assets/images/contentImages/scubadiving.jpg" alt="">
                     </a>
                 </div>
             </div>
