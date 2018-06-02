@@ -226,7 +226,8 @@ input[name="daterange"]{
 }
 
 .navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
-    background: #e9ebee;
+    background: #13384f;
+    color: #fff !important;
 }
 
 .navbar-collapse {
