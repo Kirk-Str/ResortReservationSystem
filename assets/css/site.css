@@ -503,9 +503,9 @@ h3.para{
 }
 
 .btn-submit:hover{
-    color:#a48334 !important;
-    background-color: #D0B877 !important;
-    border-color: #a48334;
+    color: #fff !important;
+    background-color: #13384f !important;
+    border-color: #1b587f;
 }
 
 .golden-banner{
