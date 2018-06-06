@@ -1,14 +1,18 @@
-<h2 class="wow fadeInDown">
-    HOLIDAYS LOYALITY&trade;
-</h2>
-<p class="para-b wow fadeInDown">
-    A loyality program that offers experience never seen anywhere before. Experience the holidays royality&trade;
-    through high priority services.
-</p>
+<?php
+/* template head */
+/* end template head */ ob_start(); /* template body */ ?><div class="container">
+    
+    <h2 class="wow fadeInDown text-center">
+        Say I Do to a Story to Tell and a Romance to Live Forever
+    </h2>
 
-<div class="jumbotron jstyle j-loyality wow fadeInDown">
-   
-</div>
+    <p class="para wow fadeInDown">
+        With an unforgettable picturesque backdrop full of passion and romance, choose Orca Beach Resort for your perfect Tropical Destination Wedding. Celebrate your big day with your intimate family and friends and combine your wedding and honeymoon at Orca Beach Resort.
+    </p>
+    <br><br>
+    <div id="wedding-page">
+
+    </div>
 
 
 <h2 class="text-center row-offset-1 wow fadeIn">Having Holiday's Loyality&trade; is Royality</h2>
@@ -64,4 +68,9 @@
         </div>
     </div>
 </div>
-{$explore}
+
+<?php echo $this->scope["explore"];?>
+
+</div><?php  /* end template body */
+return $this->buffer . ob_get_clean();
+?>

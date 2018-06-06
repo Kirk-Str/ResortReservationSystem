@@ -14,7 +14,7 @@ if($userType == 1){
 $core = new Dwoo\Core();
 
 // Load a template file, this is reusable if you want to render multiple times the same template with different data
-$loyaltyTemplate = new Dwoo\Template\File('./layouts/loyalty.tpl');
+$loyaltyTemplate = new Dwoo\Template\File('./layouts/weddings.tpl');
 $exploreTemplate = new Dwoo\Template\File('./layouts/template/_explore.tpl');
 $footerTemplate = new Dwoo\Template\File('./layouts/template/_footer.tpl');
 $scriptTemplate = new Dwoo\Template\File('./layouts/template/_scripts.tpl');

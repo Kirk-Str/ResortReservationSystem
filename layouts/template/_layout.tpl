@@ -53,7 +53,7 @@
                         <li><a href="<?php echo Config::get('application_path') . 'reservation.php'?>">RESERVATION</a></li>
                         <li><a href="<?php echo Config::get('application_path') . 'suites.php'?>">SUITES</a></li>
                         <li><a href="<?php echo Config::get('application_path') . 'outings.php'?>">OUTINGS</a></li>
-                        <li><a href="<?php echo Config::get('application_path') . 'loyalty.php'?>">LOYALITY</a></li>
+                        <li><a href="<?php echo Config::get('application_path') . 'weddings.php'?>">WEDDING</a></li>
                         <li><a href="<?php echo Config::get('application_path') . 'surroundings.php'?>">SURROUNDINGS</a></li>
                         <li><a href="<?php echo Config::get('application_path') . 'about.php'?>">ABOUT</a></li>
 
@@ -136,7 +136,7 @@
             </div>
         </div>
     </div>
-    <div class="container">
+    <div class="container-">
         {$content}
     </div>
     {$footer}
