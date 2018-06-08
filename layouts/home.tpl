@@ -62,88 +62,103 @@
     
 </div>
 
-<div class="sealine-banner">
-    
-    In Sri Lanka, just two hours from the airport and three hours north of Colombo, is an unspoilt peninsula of golden sand. Here lies a blissfully secluded resort with luxury tented accommodation on Kalpitiya beach. The bluest of skies melts seamlessly into the azure of the Indian Ocean to make a picture-perfect backdrop to a unique, tailor-made tropical holiday experience.
- 
-</div>
 
+<div class="beige-">
+    <div class="container" style="margin-top: 30px">
+
+        <div class="text-center featurette-text">
+        <h2>We offer great deals that gives you a royal experience!</h2>
+        
+<hr class="goldenbreak-2px-limited">
+        <p class="para">Whether it's wedding party, honeymoon or birthday party, we cater you the best deal in Srilanka that you can never forget. Please choose our offer from wide range of unbelievable price.</p>
+        </div>
+        <div class="row featurette-text">
+            
+        {foreach $offersList row}
+
+            <div class="col-md-4 col-sm-1">
+                <section class="card">
+                    <img class="featurette-image img-responsive card-img-top center-block" src="data:image;base64,{$row.thumbnail}" data-holder-rendered="true">
+                    <h3>{$row.caption}</h3>
+                    <p class="lead">{$row.description}</p>
+                    <p>
+                    {if $userType == 2 }
+                        <a href="./offerRequest.php?type=add&offerId={$row.offer_id}" class="btn btn-submit">Book Now</a>
+                    {else}
+                        <a href="#" class="btn btn-submit" data-toggle="modal" data-target=".bs-example-modal-lg">Book Now</a>
+                    {/if}
+
+                    </p>
+                    <hr class="goldenbreak-5px" />
+                </section>
+            </div>
+
+        {/foreach}
+        </div>
+    </div>
+</div>
+<div class="beige">
 <div class="container">
-<div class="row">
+        <div class="row featurette wow fadeInRight" data-wow-duration="500ms" data-wow-delay="400ms">
+            <div class="col-md-8 col-md-push-4">
+                <h2 class="featurette-heading featurette-text">Unparalleled Suites options. <span class="text-muted">Enjoy the luxury!</span></h2>
+                <p class="lead featurette-text">
+                    With 42 rooms and suites in total, each offering a unique and memorable experience. All rooms are air conditioned and equipped with
+                    a Widescreen 58" TV mounted on the wall and Wi-Fi. Each unit also has a work desk and a private bathroom with hairdryer.
+                    Complimentary mineral water is available in each room. Enjoy the comfort and luxury that Holiday&trade; offers.
+                </p>
+            </div>
+            <div class="col-md-4 col-md-pull-8 clear-padding">
+                <img class="featurette-image img-responsive center-block" src="assets/images/home/suite.jpg" data-holder-rendered="true">
+            </div>
+        </div>
 
-{foreach $offersList row}
+        </div>
+        </div>
 
-    <div class="col-md-4 col-sm-1">
-        <section class="card">
-            <img class="featurette-image img-responsive card-img-top center-block" src="data:image;base64,{$row.thumbnail}" data-holder-rendered="true">
-            <h3>{$row.caption}</h3>
-            <p class="lead">{$row.description}</p>
-            <p>
-            {if $userType == 2 }
-                <a href="./offerRequest.php?type=add&offerId={$row.offer_id}" class="btn btn-submit">Book Now</a>
-            {else}
-                <a href="#" class="btn btn-submit" data-toggle="modal" data-target=".bs-example-modal-lg">Book Now</a>
-            {/if}
-
-            </p>
-            <hr class="goldenbreak-5px" />
-        </section>
-    </div>
-
-{/foreach}
+        
+        <div class="container">
+        <div class="row featurette wow fadeInRight" data-wow-duration="500ms" data-wow-delay="300ms">
+         
+            <div class="col-md-8 ">
+                <h2 class="featurette-heading  featurette-text">Mouthwatering Foods. <span class="text-muted">It's delicious!</span></h2>
+                <p class="lead  featurette-text">
+                    Holiday&trade; provides Five-Star/Five-Diamond catering from our acclaimed chef, Gordon Ramsay. Mouthwatering foods with gourmet quality and extra caring in catering. Enjoy the Holiday&trade;'s multi cuisine foods such as Italian, French, American, Chinese.
+                </p>
+            </div>
+            <div class="col-md-4 clear-padding">
+                <img class="featurette-image img-responsive center-block" src="assets/images/home/res.jpg" data-holder-rendered="true">
+            </div>
+        </div>
 </div>
-</div>
+        
 
-
-<div class="container" >
-    <div class="row featurette wow fadeInRight" data-wow-duration="500ms" data-wow-delay="400ms">
-        <div class="col-md-8 col-md-push-4">
-            <h2 class="featurette-heading">Unparalleled Suites options. <span class="text-muted">Enjoy the luxury!</span></h2>
-            <p class="lead">
-                With 42 rooms and suites in total, each offering a unique and memorable experience. All rooms are air conditioned and equipped with
-                a Widescreen 58" TV mounted on the wall and Wi-Fi. Each unit also has a work desk and a private bathroom with hairdryer.
-                Complimentary mineral water is available in each room. Enjoy the comfort and luxury that Holiday&trade; offers.
-            </p>
+        <div class="beige">
+                <div class="container">
+        <div class="row featurette wow fadeInRight" data-wow-duration="500ms" data-wow-delay="200ms">
+            <div class="col-md-8  col-md-push-4">
+                <h2 class="featurette-heading  featurette-text">Awe Inspiring Natural Attractions. <span class="text-muted">It'll blow your mind.</span></h2>
+                <p class="lead  featurette-text">Holiday&trade; is surrounded by sevreral important places like National Zoo, Botanical Garden, Museum, Palm Beaches that you cannot ignore visting!</p>
+            </div>
+            <div class="col-md-4 col-md-pull-8 clear-padding">
+                <img class="featurette-image img-responsive center-block" src="assets/images/home/featureattactions.jpg" data-holder-rendered="true">
+            </div>
         </div>
-        <div class="col-md-4 col-md-pull-8 clear-padding">
-            <img class="featurette-image img-responsive center-block" src="assets/images/home/suite.jpg" data-holder-rendered="true">
-        </div>
-    </div>
-    <div class="row featurette wow fadeInRight" data-wow-duration="500ms" data-wow-delay="300ms">
-        <div class="col-md-8">
-            <h2 class="featurette-heading">Mouthwatering Foods. <span class="text-muted">It's delicious!</span></h2>
-            <p class="lead">
-                Holiday&trade; provides Five-Star/Five-Diamond catering from our acclaimed chef, Gordon Ramsay. Mouthwatering foods with gourmet quality and extra caring in catering. Enjoy the Holiday&trade;'s multi cuisine foods such as Italian, French, American, Chinese.
-            </p>
-        </div>
-        <div class="col-md-4 clear-padding">
-            <img class="featurette-image img-responsive center-block" src="assets/images/home/res.jpg" data-holder-rendered="true">
-        </div>
-    </div>
-    <div class="row featurette wow fadeInRight" data-wow-duration="500ms" data-wow-delay="200ms">
-        <div class="col-md-8  col-md-push-4">
-            <h2 class="featurette-heading">Awe Inspiring Natural Attractions. <span class="text-muted">It'll blow your mind.</span></h2>
-            <p class="lead">Holiday&trade; is surrounded by sevreral important places like National Zoo, Botanical Garden, Museum, Palm Beaches that you cannot ignore visting!</p>
-        </div>
-        <div class="col-md-4 col-md-pull-8 clear-padding">
-            <img class="featurette-image img-responsive center-block" src="assets/images/home/featureattactions.jpg" data-holder-rendered="true">
-        </div>
-    </div>
-    <!-- Server Side script required for dynamic validation for this functionality-->
-    <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
-        <div class="modal-dialog modal-lg" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
-                    <h3 class="modal-title" id="myLargeModalLabel">Registration Required</h3>
+        <!-- Server Side script required for dynamic validation for this functionality-->
+        <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                        <h3 class="modal-title" id="myLargeModalLabel">Registration Required</h3>
+                    </div>
+                    <p class="modal-body lead">You need to be a registered member of Holiday&trade; to have access this facility. </p>
                 </div>
-                <p class="modal-body lead">You need to be a registered member of Holiday&trade; to have access this facility. </p>
             </div>
         </div>
     </div>
 </div>
-
-
+</div>
 <div class="container">
 {$explore}
 </div>

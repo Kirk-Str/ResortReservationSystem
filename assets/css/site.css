@@ -3,6 +3,8 @@
 @import url('https://fonts.googleapis.com/css?family=Playfair+Display:400,400i,700,700i,900,900i');
 @import url('https://fonts.googleapis.com/css?family=Hind+Guntur:300,400,500,600,700" rel="stylesheet');
 @import url('https://fonts.googleapis.com/css?family=Bree+Serif|Crete+Round|Francois+One|Lora:400i|Merriweather|Ubuntu|Volkhov');
+@import url('https://fonts.googleapis.com/css?family=Satisfy');
+@import url('https://fonts.googleapis.com/css?family=Marck+Script');
 
 @font-face {
     font-family: "OpenSans";
@@ -217,7 +219,7 @@ input[name="daterange"]{
 }
 
 .navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
-    background: #13384f;
+    background: #8dd1dd;
     color: #fff !important;
 }
 
@@ -368,7 +370,7 @@ input[name="daterange"]{
 .card{
     --margin: 10px;
     --background: #2b2b2b;
-    height: 560px;
+    --height: 560px;
 }
 
 .card > .lead{
@@ -378,12 +380,25 @@ input[name="daterange"]{
 /* .card > .btn{
 } */
 
+.beige{
+    background-color: rgb(234, 224, 210);
+}
+
+.beige-dark{
+    background-color: #c6b29d;
+}
+
 .featurette{
+    padding: 40px;
     margin: 0 5px 0 5px; 
 }
 
 .featurette-image{
     --margin-top: 20px;
+}
+
+.featurette-text{
+    margin: 40px 20px !important;
 }
 
 #feature {
@@ -465,7 +480,7 @@ h1{
 h2{
     font-size: 40px;
     color: #000;
-    font-family: 'Playfair Display',serif;
+    font-family: 'Satisfy', cursive;
 }
 
 h3{
@@ -499,22 +514,27 @@ h3.para{
 }
 
 .btn-submit{
+    background: #71abb0;
     color: #fff !important;
     font-weight: 600;
-    background-color: #1b587f !important;
-    border-color: #1b5785;
+    -moz-transition: all .2s;
+    transition: all .2s;
+    text-transform: uppercase;
 }
 
 .btn-submit:hover{
     color: #fff !important;
-    background-color: #13384f !important;
-    border-color: #1b587f;
+    background: #8dd1dd;
 }
 
 .golden-banner{
-    margin: 40px 0 40px 0;
-    padding: 30px;
-    background-color: #D0B877 !important;
+    border-color: #c6b29d;
+    border-top-width: 2px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 30px;
+    width: 100%;
+    max-width: 206px;
 }
 
 .sealine-banner {
@@ -532,13 +552,27 @@ h3.para{
     color: #fff;
 }
 
+.goldenbreak-2px-limited{
+    border-color: #c6b29d;
+    border-top-width: 2px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 30px;
+    width: 100%;
+    max-width: 250px;
+}
+
 .goldenbreak-2px{
-    border-top: 2px solid #1b587f;
+    border-top: 2px solid #004f70;
 }
 
 .goldenbreak-5px{
-    margin: 0;
-    border-top: 5px solid #1b587f;
+    border-color: #c6b29d;
+    border-top-width: 2px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 30px;
+    width: 100%;
 }
 
 /*.jumbotron input{

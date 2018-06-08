@@ -1,18 +1,17 @@
 <?php
 /* template head */
 /* end template head */ ob_start(); /* template body */ ?><div class="explore-more wow fadeInDown">
-    <h2>EXPLORE THE SURROUNDINGS!</h2>
+    <h2>Explore the surrounding!</h2>
 </div>
     <div class="text-center explore-more wow fadeInDown">
-
         <p class="para">
             <B>Breathtaking!</B> Never get tired of surrounding scenaries.
             Explorer the surroundings that offers serveral natural and man-made attactions such as National Zoo,
             Museum, Botanical Garden, Beautiful Palm Beaches.
         </p>
     </div>
-    <hr class="goldenbreak-2px">
-    <div class="row featurette wow fadeInRight" data-wow-duration="500ms" data-wow-delay="200ms">
+  
+    <div class="row featurette wow fadeInRight beige" data-wow-duration="500ms" data-wow-delay="200ms">
         <div class="col-md-7">
             <h2 class="featurette-heading">National Zoo. <span class="text-muted">It'll blow your mind.</span></h2>
             <p class="lead">
@@ -23,7 +22,8 @@
             <img class="featurette-image img-responsive center-block" data-src="holder.js/500x500/auto" alt="500x500" src="assets/images/contentImages/ayurveda.jpg" data-holder-rendered="true">
         </div>
     </div>
-    <hr class="featurette-divider">
+
+    
     <div class="row featurette wow fadeInRight" data-wow-duration="500ms" data-wow-delay="400ms">
         <div class="col-md-7 col-md-push-5">
             <h2 class="featurette-heading">Dover White Cliff. <span class="text-muted">It'll blow your mind.</span></h2>
@@ -38,8 +38,8 @@
             <img class="featurette-image img-responsive center-block" data-src="holder.js/500x500/auto" alt="500x500" src="assets/images/contentImages/safari.jpg" data-holder-rendered="true">
         </div>
     </div>
-    <hr class="featurette-divider">
-    <div class="row featurette wow fadeInRight" data-wow-duration="500ms" data-wow-delay="600ms">
+   
+    <div class="row featurette wow fadeInRight beige" data-wow-duration="500ms" data-wow-delay="600ms">
         <div class="col-md-7">
             <h2 class="featurette-heading">Palm Beaches. <span class="text-muted">See for yourself.</span></h2>
             <p class="lead">

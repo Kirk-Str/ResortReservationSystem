@@ -1,9 +1,10 @@
 <?php
 /* template head */
-/* end template head */ ob_start(); /* template body */ ?>﻿<hr class="goldenbreak-2px">
+/* end template head */ ob_start(); /* template body */ ?>﻿
 </br>
 </br>
 <h2 class="text-center">It's excursion or relaxation, we take you where you want to be!</h2>
+<hr class="goldenbreak-2px-limited">
     <p class="para">
         <B>Breathtaking!</B> Never get tired of surrounding scenaries.
         Explorer the surroundings that offers serveral natural and man-made attactions such as National Zoo,
