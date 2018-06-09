@@ -3,7 +3,10 @@
     <div id="mycarousal" class="carousel slide" data-ride="carousel" data-interval="6000">
         <div class="carousel-inner" role="listbox">
             <div class="item active">
-                <img src="assets/images/contentImages/huts.jpg" class="img-responsive" />
+                <img src="./assets/images/contentImages/kitesurfing-cover.jpg" class="img-responsive" />
+            </div>
+            <div class="item">
+                <img src="./assets/images/contentImages/huts.jpg" class="img-responsive" />
             </div>
         </div>
     </div>
@@ -14,67 +17,59 @@
         <h3 class="wow fadeInDown">Seal the deal & Explore the your world, Today</h3>
 
         <div class="text-center">
-        <div class="reservation-bar wow fadeInDown res-page">
-            <div class="form-group">
-                <label for="check_in">Check In</label>
-                <input name="daterange" class="form-control" id="check_in" type="text" required />
-                <input type="hidden" name="check_in_h" id="check_in_h"  value="" />
+            <div class="reservation-bar wow fadeInDown res-page">
+                <div class="form-group">
+                    <label for="check_in">Check In</label>
+                    <input name="daterange" class="form-control" id="check_in" type="text" required />
+                    <input type="hidden" name="check_in_h" id="check_in_h" value="" />
+                </div>
+                <div class="form-group">
+                    <label for="check_out">Check Out</label>
+                    <input name="daterange" class="form-control" id="check_out" type="text" required />
+                    <input type="hidden" name="check_out_h" id="check_out_h" value="" />
+                </div>
+                <div class="form-group">
+                    <label for="adults">Adults</label>
+                    <select id="adults" class="form-control" name="adults" required>
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                        <option>6</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="children">Children</label>
+                    <select id="children" class="form-control" name="children">
+                        <option>0</option>
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                        <option>6</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="promotion">Promotion Code</label>
+                    <input id="promotionCode" class="form-control" type="text" name="promotioncode" />
+                </div>
+                <input type="submit" class="btn btn-submit" value="Check Availability" />
             </div>
-            <div class="form-group">
-                <label for="check_out">Check Out</label>
-                <input name="daterange" class="form-control" id="check_out" type="text" required />
-                <input type="hidden" name="check_out_h" id="check_out_h" value="" />
-            </div>
-            <div class="form-group">
-                <label for="adults">Adults</label>
-                <select id="adults" class="form-control" name="adults" required>
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                    <option>5</option>
-                    <option>6</option>
-                </select>
-            </div>
-            <div class="form-group">
-                <label for="children">Children</label>
-                <select id="children" class="form-control" name="children">
-                    <option>0</option>
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                    <option>5</option>
-                    <option>6</option>
-                </select>
-            </div>
-
-            <div class="form-group">
-                <label for="promotion">Promotion Code</label>
-                <input id="promotionCode" class="form-control" type="text" name="promotioncode" />
-            </div>
-
-            <input type="submit" class="btn btn-submit" value="Check Availability" />
-
         </div>
-    </div>
     </form>
-    
 </div>
-
-
 <div class="beige-">
     <div class="container" style="margin-top: 30px">
-
         <div class="text-center featurette-text">
-        <h2>We offer great deals that gives you a royal experience!</h2>
-        
-<hr class="goldenbreak-2px-limited">
-        <p class="para">Whether it's wedding party, honeymoon or birthday party, we cater you the best deal in Srilanka that you can never forget. Please choose our offer from wide range of unbelievable price.</p>
+            <h2>We offer great deals that gives you a royal experience!</h2>
+            <hr class="goldenbreak-2px-limited">
+            <p class="para">Whether it's wedding party, honeymoon or birthday party, we cater you the best deal in Srilanka that you can never forget. Please choose our offer from wide range of unbelievable price.</p>
         </div>
         <div class="row featurette-text">
-            
-        {foreach $offersList row}
+
+            {foreach $offersList row}
 
             <div class="col-md-4 col-sm-1">
                 <section class="card">
@@ -82,29 +77,25 @@
                     <h3>{$row.caption}</h3>
                     <p class="lead">{$row.description}</p>
                     <p>
-                    {if $userType == 2 }
-                        <a href="./offerRequest.php?type=add&offerId={$row.offer_id}" class="btn btn-submit">Book Now</a>
-                    {else}
-                        <a href="#" class="btn btn-submit" data-toggle="modal" data-target=".bs-example-modal-lg">Book Now</a>
-                    {/if}
-
+                        {if $userType == 2 }
+                        <a href="./offerRequest.php?type=add&offerId={$row.offer_id}" class="btn btn-submit">Book Now</a> {else}
+                        <a href="#" class="btn btn-submit" data-toggle="modal" data-target=".bs-example-modal-lg">Book Now</a> {/if}
                     </p>
                     <hr class="goldenbreak-5px" />
                 </section>
             </div>
 
-        {/foreach}
+            {/foreach}
         </div>
     </div>
 </div>
 <div class="beige">
-<div class="container">
+    <div class="container">
         <div class="row featurette wow fadeInRight" data-wow-duration="500ms" data-wow-delay="400ms">
             <div class="col-md-8 col-md-push-4">
                 <h2 class="featurette-heading featurette-text">Unparalleled Suites options. <span class="text-muted">Enjoy the luxury!</span></h2>
                 <p class="lead featurette-text">
-                    With 42 rooms and suites in total, each offering a unique and memorable experience. All rooms are air conditioned and equipped with
-                    a Widescreen 58" TV mounted on the wall and Wi-Fi. Each unit also has a work desk and a private bathroom with hairdryer.
+                    With 42 rooms and suites in total, each offering a unique and memorable experience. All rooms are air conditioned and equipped with a Widescreen 58" TV mounted on the wall and Wi-Fi. Each unit also has a work desk and a private bathroom with hairdryer.
                     Complimentary mineral water is available in each room. Enjoy the comfort and luxury that Holiday&trade; offers.
                 </p>
             </div>
@@ -113,28 +104,24 @@
             </div>
         </div>
 
-        </div>
-        </div>
-
-        
-        <div class="container">
-        <div class="row featurette wow fadeInRight" data-wow-duration="500ms" data-wow-delay="300ms">
-         
-            <div class="col-md-8 ">
-                <h2 class="featurette-heading  featurette-text">Mouthwatering Foods. <span class="text-muted">It's delicious!</span></h2>
-                <p class="lead  featurette-text">
-                    Holiday&trade; provides Five-Star/Five-Diamond catering from our acclaimed chef, Gordon Ramsay. Mouthwatering foods with gourmet quality and extra caring in catering. Enjoy the Holiday&trade;'s multi cuisine foods such as Italian, French, American, Chinese.
-                </p>
-            </div>
-            <div class="col-md-4 clear-padding">
-                <img class="featurette-image img-responsive center-block" src="assets/images/home/res.jpg" data-holder-rendered="true">
-            </div>
-        </div>
+    </div>
 </div>
-        
+<div class="container">
+    <div class="row featurette wow fadeInRight" data-wow-duration="500ms" data-wow-delay="300ms">
 
-        <div class="beige">
-                <div class="container">
+        <div class="col-md-8 ">
+            <h2 class="featurette-heading  featurette-text">Mouthwatering Foods. <span class="text-muted">It's delicious!</span></h2>
+            <p class="lead  featurette-text">
+                Holiday&trade; provides Five-Star/Five-Diamond catering from our acclaimed chef, Gordon Ramsay. Mouthwatering foods with gourmet quality and extra caring in catering. Enjoy the Holiday&trade;'s multi cuisine foods such as Italian, French, American, Chinese.
+            </p>
+        </div>
+        <div class="col-md-4 clear-padding">
+            <img class="featurette-image img-responsive center-block" src="assets/images/home/res.jpg" data-holder-rendered="true">
+        </div>
+    </div>
+</div>
+<div class="beige">
+    <div class="container">
         <div class="row featurette wow fadeInRight" data-wow-duration="500ms" data-wow-delay="200ms">
             <div class="col-md-8  col-md-push-4">
                 <h2 class="featurette-heading  featurette-text">Awe Inspiring Natural Attractions. <span class="text-muted">It'll blow your mind.</span></h2>
@@ -160,5 +147,5 @@
 </div>
 </div>
 <div class="container">
-{$explore}
+    {$explore}
 </div>

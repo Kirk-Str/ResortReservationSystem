@@ -1,11 +1,11 @@
 ﻿/*@import url('https://fonts.googleapis.com/css?family=Merriweather:400,700');*/
+
 @import url('https://fonts.googleapis.com/css?family=Cantata+One');
 @import url('https://fonts.googleapis.com/css?family=Playfair+Display:400,400i,700,700i,900,900i');
 @import url('https://fonts.googleapis.com/css?family=Hind+Guntur:300,400,500,600,700" rel="stylesheet');
 @import url('https://fonts.googleapis.com/css?family=Bree+Serif|Crete+Round|Francois+One|Lora:400i|Merriweather|Ubuntu|Volkhov');
 @import url('https://fonts.googleapis.com/css?family=Satisfy');
 @import url('https://fonts.googleapis.com/css?family=Marck+Script');
-
 @font-face {
     font-family: "OpenSans";
     src: url(../fonts//Open_Sans//OpenSans-Light.ttf);
@@ -20,14 +20,20 @@ body {
     padding-top: 100px;
 }
 
+
 /* Wrapping element */
+
+
 /* Set some basic padding to keep content from hitting the edges */
+
 .body-content {
     --padding-left: 15px;
     --padding-right: 15px;
 }
 
+
 /* Set widths on the form inputs since otherwise they're 100% wide */
+
 input,
 select,
 textarea {
@@ -35,7 +41,7 @@ textarea {
 }
 
 a,
-label{
+label {
     font-family: 'Crete Round', serif;
     font-weight: 400 !important;
     font-size: 16px !important;
@@ -43,28 +49,30 @@ label{
     padding: 0;
 }
 
-.form-control{
+.form-control {
     border-radius: 0;
 }
 
-.btn{
+.btn {
     border-radius: 0;
 }
 
-.thumbnail{
+.thumbnail {
     border-radius: 0;
 }
 
-.label{
+.label {
     border-radius: 0;
 }
 
-.inline-block{
-    display:inline-block;
+.inline-block {
+    display: inline-block;
 }
+
+
 /* Carousel */
 
-.carousel-caption{
+.carousel-caption {
     font-size: 60px;
     line-height: 1.4;
 }
@@ -74,48 +82,43 @@ label{
     line-height: 1.4;
 }
 
+
 /* Make .svg files in the carousel display properly in older browsers */
+
 .carousel-inner .item img[src$=".svg"] {
     width: 100%;
 }
 
-.img-responsive{
+.img-responsive {
     width: 100%;
 }
 
-@media  (max-width: 1024px) {
-
-    .navbar-header{
+@media (max-width: 1024px) {
+    .navbar-header {
         height: 90px;
         padding-top: 6px;
     }
-
     .reservation-form h2 {
         display: none !important;
     }
-
     .reservation-form h3 {
         display: none !important;
     }
-
-
-    .reservation-form{
+    .reservation-form {
         position: relative !important;
         margin-top: 40px;
     }
-
-    .home-page{
+    .home-page {
         margin-top: 0 !important;
     }
-
-    .res-page{
+    .res-page {
         margin-top: 0 !important;
     }
- 
 }
 
 
 /* Hide/rearrange for smaller screens */
+
 @media screen and (max-width: 767px) {
     /* Hide captions */
     .carousel-caption {
@@ -123,73 +126,82 @@ label{
     }
 }
 
+
 /*------------------------------------------------------------------------------*/
 
-
-#login-dp{
+#login-dp {
     min-width: 280px;
     padding: 30px 20px 0;
     border-radius: 0px 0px;
     -moz-border-radius: 0px 0px;
     -o-border-radius: 0px 0px;
     -webkit-border-radius: 0px 0px;
-    overflow:hidden;
-    background-color:rgba(255,255,255,1);
+    overflow: hidden;
+    background-color: rgba(255, 255, 255, 1);
 }
-#login-dp .help-block{
-    font-size:12px    
+
+#login-dp .help-block {
+    font-size: 12px
 }
-#login-dp .bottom{
-    background-color:rgba(255,255,255,.8);
-    border-top:1px solid #ddd;
-    clear:both;
-    padding:14px;
+
+#login-dp .bottom {
+    background-color: rgba(255, 255, 255, .8);
+    border-top: 1px solid #ddd;
+    clear: both;
+    padding: 14px;
 }
-#login-dp .social-buttons{
-    margin:12px 0    
+
+#login-dp .social-buttons {
+    margin: 12px 0
 }
-#login-dp .social-buttons a{
+
+#login-dp .social-buttons a {
     width: 49%;
 }
+
 #login-dp .form-group {
     margin-bottom: 10px;
 }
-.btn-fb{
+
+.btn-fb {
     font-weight: normal !important;
     color: #fff !important;
-    background-color:#3b5998;
-}
-.btn-fb:hover{
-    background-color:#496ebc;
-}
-.btn-tw{
-    font-weight: normal !important;
-    color: #fff !important;
-    background-color:#55acee;
+    background-color: #3b5998;
 }
 
-input[name="daterange"]{
+.btn-fb:hover {
+    background-color: #496ebc;
+}
+
+.btn-tw {
+    font-weight: normal !important;
+    color: #fff !important;
+    background-color: #55acee;
+}
+
+input[name="daterange"] {
     width: 160px;
 }
 
-.btn-tw:hover{
-    background-color:#59b5fa;
+.btn-tw:hover {
+    background-color: #59b5fa;
 }
-@media(max-width:768px){
-    #login-dp{
+
+@media(max-width:768px) {
+    #login-dp {
         background-color: inherit;
         color: #fff;
     }
-    #login-dp .bottom{
+    #login-dp .bottom {
         background-color: inherit;
-        border-top:0 none;
+        border-top: 0 none;
     }
 }
 
+
 /*------------------------------------------------------------------------------*/
 
-.navbar{
-    
+.navbar {
     border-bottom: 1px solid #e2e2e2;
 }
 
@@ -199,26 +211,27 @@ input[name="daterange"]{
 }
 
 .navbar-default {
-    background:rgba(255,255,255,1);
-    -webkit-box-shadow: 0 2px 8px 2px rgba(0,0,0,0.1);
-    -moz-box-shadow:  0 2px 8px 2px rgba(0,0,0,0.1);
-    box-shadow:  0 2px 8px 2px rgba(0,0,0,0.1);
+    background: rgba(255, 255, 255, 1);
+    -webkit-box-shadow: 0 2px 8px 2px rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: 0 2px 8px 2px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 8px 2px rgba(0, 0, 0, 0.1);
 }
 
-.avatar-padding{
+.avatar-padding {
     margin: 14px;
 }
 
-.navbar-nav > li > a {
-    color:#13384f !important;
-    font-size:small;
+.navbar-nav>li>a {
+    color: #13384f !important;
+    font-size: small;
     padding-top: 30px;
     padding-bottom: 30px;
     line-height: 20px;
-    font-weight:600;
+    font-weight: 600;
 }
 
-.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+.navbar-default .navbar-nav>li>a:hover,
+.navbar-default .navbar-nav>li>a:focus {
     background: #8dd1dd;
     color: #fff !important;
 }
@@ -231,12 +244,12 @@ input[name="daterange"]{
     margin-top: 80px;
 }
 
-.clear-margin{
-    margin:0 !important;
+.clear-margin {
+    margin: 0 !important;
 }
 
-.clear-padding{
-    padding:0 !important;
+.clear-padding {
+    padding: 0 !important;
 }
 
 .margin-offset-1 {
@@ -255,11 +268,11 @@ input[name="daterange"]{
     margin-top: 40px;
 }
 
-.accent-blue{
-    background-color:#13384f;
+.accent-blue {
+    background-color: #13384f;
 }
 
-.jstyle{
+.jstyle {
     /*font-family: 'Cantata One', serif;*/
     color: #FFF !important;
     height: 300px;
@@ -267,11 +280,11 @@ input[name="daterange"]{
     border-radius: 0 !important;
 }
 
-.j-reservation{
+.j-reservation {
     height: 500px;
     background-position: center;
     background-image: url('../images/home/big-ben2.jpg');
-    background-repeat:no-repeat;
+    background-repeat: no-repeat;
     --padding-top: 360px !important;
 }
 
@@ -280,33 +293,30 @@ input[name="daterange"]{
     padding: 40px 60px 0 60px;
 }
 
-
 .j-reservation h3 {
     font-size: 30px;
-    font-family: "OpenSans",Georgia, serif;
+    font-family: "OpenSans", Georgia, serif;
     color: #FFF;
     text-shadow: 4px 4px 10px rgb(75, 75, 75);
     padding: 0 60px;
 }
 
-.j-suites{
+.j-suites {
     background-image: url('../images/home/Bangkok-Suites-Studio-1200-thin.jpg');
-    background-repeat:no-repeat;
+    background-repeat: no-repeat;
 }
 
-.j-outings{
-
+.j-outings {
     background-image: url('../images/home/river_room.jpg');
-    background-repeat:no-repeat;
+    background-repeat: no-repeat;
 }
 
-.j-loyality{
-
+.j-loyality {
     background-image: url('../images/home/the-hot-list-couples-article-hero-desktop.jpg');
-    background-repeat:no-repeat;
+    background-repeat: no-repeat;
 }
 
-.jumbotron{
+.jumbotron {
     border-radius: 0 !important;
 }
 
@@ -316,88 +326,91 @@ input[name="daterange"]{
     text-shadow: 4px 4px 10px rgb(75, 75, 75);
 }
 
-.reservation-bar{
+.reservation-bar {
     color: rgb(60, 60, 60);
     background: rgba(230, 230, 230, 0.9);
     border-top: 0px solid rgba(189, 189, 189, 0.8);
     padding: 20px 30px;
     width: 100%;
+    top: 40px;
     display: block;
+    position: absolute;
 }
 
-.reservation-bar .form-group{
+.reservation-bar .form-group {
     display: inline-block;
     margin: 0 25px 0 0;
 }
 
-.banner-wrapper{
+.banner-wrapper {
     margin-top: -20px !important;
     position: relative;
     width: 100%;
 }
 
-#mycarousal{
+#mycarousal {
     position: relative;
 }
 
-.reservation-form{
+.reservation-form {
     position: absolute;
     z-index: 10;
     top: 0;
     width: 100%;
 }
 
-.home-page{
+.home-page {
     margin-top: 260px;
 }
 
-.res-page{
+.res-page {
     margin-top: 400px;
 }
 
-.reservation-form h2{
+.reservation-form h2 {
     color: #FFF;
     padding: 40px 60px 0 60px;
     text-shadow: 0px 0px 10px rgb(75, 75, 75);
 }
 
-.reservation-form h3{
+.reservation-form h3 {
     color: #FFF;
     padding: 0 60px;
     text-shadow: 0px 0px 10px rgb(75, 75, 75);
 }
 
-.card{
+.card {
     --margin: 10px;
     --background: #2b2b2b;
     --height: 560px;
 }
 
-.card > .lead{
+.card>.lead {
     height: 100px;
 }
+
 
 /* .card > .btn{
 } */
 
-.beige{
-    background-color: rgb(234, 224, 210);
+.beige {
+    background-color: rgb(253, 246, 237);
 }
 
-.beige-dark{
+.beige-dark {
     background-color: #c6b29d;
 }
 
-.featurette{
+.featurette {
     padding: 40px;
-    margin: 0 5px 0 5px; 
+    margin: 0 5px 0 5px;
 }
 
-.featurette-image{
+.featurette-image {
     --margin-top: 20px;
 }
 
-.featurette-text{
+.featurette-text {
     margin: 40px 20px !important;
 }
 
@@ -406,114 +419,115 @@ input[name="daterange"]{
     padding-bottom: 40px;
 }
 
-#wedding-page{
-    background: rgba(0, 0, 0, 0) url("../images/contentImages/weddingbg.jpg") no-repeat scroll 100% 2px / cover;;
+#wedding-page {
+    background: rgba(0, 0, 0, 0) url("../images/contentImages/weddingbg.jpg") no-repeat scroll 100% 2px / cover;
+    ;
     height: 100vh;
     width: 100%;
     background-position: 40%;
 }
 
-#room-overview{
-    margin:0 !important;
+#room-overview {
+    margin: 0 !important;
 }
 
-#room-overview .thumbnail{
+#room-overview .thumbnail {
     margin: 2px 2px !important;
     cursor: pointer;
 }
 
-#room-overview > .close{
+#room-overview>.close {
     line-height: -1 !important;
 }
 
-#room-overview h3{
+#room-overview h3 {
     font-size: 30px;
     font-weight: bold;
     color: rgb(94, 94, 94);
-    font-family: "OpenSans",Georgia, serif;
+    font-family: "OpenSans", Georgia, serif;
 }
 
-#room-overview .lead{
+#room-overview .lead {
     font-size: 18px;
-    font-family: "OpenSans",Georgia, serif !important;
+    font-family: "OpenSans", Georgia, serif !important;
     margin: 0;
     color: rgb(150, 150, 150);
 }
 
-#room-overview button{
+#room-overview button {
     font-size: 12px;
     margin: 0 4px 0 0;
 }
 
-#room-overview a:hover{
+#room-overview a:hover {
     text-decoration: #3b5998 !important;
 }
 
-p.para{
+p.para {
     font-size: 22px;
-    font-family: "OpenSans",Georgia, serif !important;
+    font-family: "OpenSans", Georgia, serif !important;
     margin: 20px 0 20px 0;
     color: rgb(60, 60, 60) !important;
 }
 
-p.para-b{
+p.para-b {
     font-size: 18px;
-    font-family: "OpenSans",Georgia, serif !important;
+    font-family: "OpenSans", Georgia, serif !important;
     margin: 20px 0 20px 0;
     color: #000;
 }
 
-
-p.lead{
+p.lead {
     font-size: 18px;
-    font-family: "OpenSansB",Georgia, serif !important;
+    font-family: "OpenSansB", Georgia, serif !important;
     margin: 20px 0 20px 0;
-    color: #000;
+    color: rgb(75, 75, 75);
 }
 
-h1{
+h1 {
     font-size: 40px;
     color: #000;
-    font-family: "Volkhov",Georgia, serif
+    font-family: "Volkhov", Georgia, serif
 }
 
-h2{
+h2 {
     font-size: 40px;
     color: #000;
     font-family: 'Satisfy', cursive;
 }
 
-h3{
+h3 {
     font-size: 30px;
     color: #13384f;
-    font-family: "OpenSans",Georgia, serif;
+    font-family: "OpenSans", Georgia, serif;
 }
 
-h3.para{
+h3.para {
     font-size: 20px;
-    font-family: "OpenSans",Georgia, serif;
+    font-family: "OpenSans", Georgia, serif;
     margin: 20px 0 20px 0;
     color: #496ebc !important;
 }
+
 
 /* .text-danger{
     color:rgb(219, 32, 32) !important;
 } */
 
 .form-group label {
-  color: #4E4E4E;
-  font-size: 16px;
-  font-weight: 300;
+    color: #4E4E4E;
+    font-size: 16px;
+    font-weight: 300;
 }
 
 .form-group .form-control {
-  padding: 7px 12px;
-  border-color:#f2f2f2;
-  box-shadow: none;
-  max-width: none !important;
+    padding: 7px 12px;
+    border-color: #f2f2f2;
+    box-shadow: none;
+    max-width: none !important;
 }
 
-.btn-submit{
+.btn-submit {
     background: #71abb0;
     color: #fff !important;
     font-weight: 600;
@@ -522,12 +536,12 @@ h3.para{
     text-transform: uppercase;
 }
 
-.btn-submit:hover{
+.btn-submit:hover {
     color: #fff !important;
     background: #8dd1dd;
 }
 
-.golden-banner{
+.golden-banner {
     border-color: #c6b29d;
     border-top-width: 2px;
     margin-left: auto;
@@ -542,17 +556,17 @@ h3.para{
     margin: 40px 0 40px 0;
     padding: 30px;
     background: #fff;
-    background: -moz-linear-gradient(top,#fff 0,#7fa3b3 100%,#7db9e8 100%);
-    background: -webkit-linear-gradient(top,#fff 0,#7fa3b3 100%,#7db9e8 100%);
-    background: linear-gradient(to bottom,#fff 0,#7fa3b3 100%,#7db9e8 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#7db9e8', GradientType=0);
+    background: -moz-linear-gradient(top, #fff 0, #7fa3b3 100%, #7db9e8 100%);
+    background: -webkit-linear-gradient(top, #fff 0, #7fa3b3 100%, #7db9e8 100%);
+    background: linear-gradient(to bottom, #fff 0, #7fa3b3 100%, #7db9e8 100%);
+    filter: progid: DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#7db9e8', GradientType=0);
 }
 
-.golden-banner > h3{
+.golden-banner>h3 {
     color: #fff;
 }
 
-.goldenbreak-2px-limited{
+.goldenbreak-2px-limited {
     border-color: #c6b29d;
     border-top-width: 2px;
     margin-left: auto;
@@ -562,11 +576,11 @@ h3.para{
     max-width: 250px;
 }
 
-.goldenbreak-2px{
+.goldenbreak-2px {
     border-top: 2px solid #004f70;
 }
 
-.goldenbreak-5px{
+.goldenbreak-5px {
     border-color: #c6b29d;
     border-top-width: 2px;
     margin-left: auto;
@@ -574,6 +588,7 @@ h3.para{
     margin-bottom: 30px;
     width: 100%;
 }
+
 
 /*.jumbotron input{
     max-width: 130px;
@@ -586,12 +601,13 @@ Tables & Styles
 
 */
 
-table tr{
+table tr {
     cursor: pointer;
 }
 
 
 /***--------------------------------------------------------------*/
+
 
 /*logos and icons*/
 
@@ -602,64 +618,61 @@ table tr{
     width: 20px;
 }
 
-    .block {
-        margin: 20px 0 40px 0;
-        padding: 0;
-        background-color: #fff;
-        border: 1px solid #e2e2e2;
-        border-radius: 2px;
-        -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
-        box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
-    }
+.block {
+    margin: 20px 0 40px 0;
+    padding: 0;
+    background-color: #fff;
+    border: 1px solid #e2e2e2;
+    border-radius: 2px;
+    -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
+    box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
+}
 
-    .block-active{
-        border: 1px solid #bce8f1 !important;
-    }
+.block-active {
+    border: 1px solid #bce8f1 !important;
+}
 
-    .block-cancelled{
-        border: 1px solid #f2dede !important;
-    }
+.block-cancelled {
+    border: 1px solid #f2dede !important;
+}
 
-    .block .header {
-        padding: 2px;
-        background-color: rgb(232, 232, 232);
-    }
+.block .header {
+    padding: 2px;
+    background-color: rgb(232, 232, 232);
+}
 
-    .block .header-active{
-        color: #31708f;
-        background-color: #d9edf7 !important;
-    }
+.block .header-active {
+    color: #31708f;
+    background-color: #d9edf7 !important;
+}
 
-    .block .header-cancelled{
-        color: #a94442;
-        background-color: #f2dede !important;
-    }
+.block .header-cancelled {
+    color: #a94442;
+    background-color: #f2dede !important;
+}
 
-    .block .body {
-        padding: 20px;
-    }
-
+.block .body {
+    padding: 20px;
+}
 
 .label-1 {
     font-size: 18px;
-    font-family: "OpenSansB",Georgia, serif !important;
+    font-family: "OpenSansB", Georgia, serif !important;
     margin: 0px 0 0px 0;
     color: rgb(60, 60, 60);
 }
 
-
-
 .label-1-sub {
     font-size: 18px;
-    font-family: "OpenSansB",Georgia, serif !important;
+    font-family: "OpenSansB", Georgia, serif !important;
     margin: 0px 0 0px 0;
     color: rgb(150, 150, 150);
 }
 
-.text-left{
-    text-align:left !important;
+.text-left {
+    text-align: left !important;
 }
 
-span.validation{
-    color : rgb(238, 91, 91) !important;
+span.validation {
+    color: rgb(238, 91, 91) !important;
 }

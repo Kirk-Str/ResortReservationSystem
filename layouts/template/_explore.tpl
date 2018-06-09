@@ -1,5 +1,6 @@
-﻿
+﻿</br>
 </br>
+<p class="para text-uppercase font-weight-bold text-center"><strong>Exclusive Offers</strong></p>
 </br>
 <h2 class="text-center">It's excursion or relaxation, we take you where you want to be!</h2>
 <hr class="goldenbreak-2px-limited">
