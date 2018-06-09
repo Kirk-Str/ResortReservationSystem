@@ -6,6 +6,8 @@
 @import url('https://fonts.googleapis.com/css?family=Bree+Serif|Crete+Round|Francois+One|Lora:400i|Merriweather|Ubuntu|Volkhov');
 @import url('https://fonts.googleapis.com/css?family=Satisfy');
 @import url('https://fonts.googleapis.com/css?family=Marck+Script');
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+
 @font-face {
     font-family: "OpenSans";
     src: url(../fonts//Open_Sans//OpenSans-Light.ttf);
@@ -54,7 +56,15 @@ label {
 }
 
 .btn {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    letter-spacing: 2px;
     border-radius: 0;
+    background: #71abb0;
+    color: #fff !important;
+    -moz-transition: all .2s;
+    transition: all .2s;
+    text-transform: uppercase;
 }
 
 .thumbnail {
@@ -91,6 +101,10 @@ label {
 
 .img-responsive {
     width: 100%;
+}
+
+.modal-content{
+    border-radius: 0px;
 }
 
 @media (max-width: 1024px) {
@@ -530,7 +544,6 @@ h3.para {
 .btn-submit {
     background: #71abb0;
     color: #fff !important;
-    font-weight: 600;
     -moz-transition: all .2s;
     transition: all .2s;
     text-transform: uppercase;
