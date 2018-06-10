@@ -11,9 +11,9 @@
 
 
 <h2 class="text-center row-offset-1">A window full of water. Every comfort at your command!</h2>
-
+<hr class="goldenbreak-2px-limited">
 <h3 class="text-center">
-    
+    Get ready for a world class holiday experience with Orca Beach Resort hospitality.
 </h3>
 
 <div class="row row-offset-1">
@@ -38,8 +38,16 @@
 
 </div>
 
-<hr class="goldenbreak-2px">
-<div class="row-offset-1"></div>
+</br>
+</br>
+</br>
+</br>
+</br>
+<p class="para font-weight-bold text-center text-uppercase  wow fadeInDown"><strong>Select from the wide range of villas and cabana options</strong></p>
+
+    
+</br>
+</br>
 
 {foreach $suitesList val}
 

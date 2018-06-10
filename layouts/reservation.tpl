@@ -12,6 +12,7 @@
         <h2 class="wow fadeInDown">Enjoy your tailor made holiday and other special events at Holiday&trade;</h2>
         <h3 class="wow fadeInDown">Seal the deal & Explore the your world, Today</h3>
 
+        <div class="text-center">
         <div class="reservation-bar wow fadeInDown res-page">
             <div class="form-group">
                 <label for="check_in">Check In</label>
@@ -55,21 +56,24 @@
             <input type="submit" class="btn btn-submit" value="Check Availability" />
 
         </div>
-
+    </div>
     </form>
 
     
 </div>
 
-<div class="golden-banner">
-    <h3 class="text-center">
-        Enjoy all what Holiday&trade; can offer! Get Holiday&trade; Loyality membership because there is something more to It ! - just for booking directly with us. Not a member? Join today.
-    </h3>
+
+<div class="container" style="margin-top: 30px">
+<div class="text-center featurette-text">
+    <h2>We offer great deals that gives you a royal experience!</h2>
+    <hr class="goldenbreak-2px-limited">
+    <p class="para">Whether it's wedding party, honeymoon or birthday party, we cater you the best deal in Srilanka that you can never forget. Please choose our offer from wide range of unbelievable price.</p>
+    </div>
 </div>
 
-<section>
+<div class="container "  style="margin: 30px 0">
 
-    <div class="row row-offset-1">
+    <div class="row text-center row-offset-1">
 
         <div class="col-md-3 text-center wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="300ms">
             <img src="assets/images/home/money.png" width="128" height="128" />
@@ -89,8 +93,11 @@
         </div>
 
     </div>
-</section>
-<hr class="goldenbreak-2px">
+
+</div>
+
+<div class="beige">
+<div class="container">
 <div class="row featurette wow fadeInRight row-offset-1" data-wow-duration="500ms" data-wow-delay="400ms">
     <div class="col-md-8 col-md-push-4">
         <h2 class="featurette-heading">Honeymoon Package. <span class="text-muted">Enjoy the luxury!</span></h2>
@@ -102,7 +109,10 @@
         <img class="featurette-image img-responsive center-block" src="assets/images/home/honeymoon.jpg" data-holder-rendered="true">
     </div>
 </div>
-<hr class="featurette-divider">
+</div>
+</div>
+
+<div class="container">
 <div class="row featurette wow fadeInRight" data-wow-duration="500ms" data-wow-delay="400ms">
     <div class="col-md-8">
         <h2 class="featurette-heading">Birthday Offers. <span class="text-muted">Enjoy the luxury!</span></h2>
@@ -112,7 +122,10 @@
         <img class="featurette-image img-responsive center-block" src="assets/images/home/birthday.jpg" data-holder-rendered="true">
     </div>
 </div>
-<hr class="featurette-divider">
+</div>
+
+<div class="beige">
+<div class="container">
 <div class="row featurette wow fadeInRight" data-wow-duration="500ms" data-wow-delay="400ms">
     <div class="col-md-8 col-md-push-4">
         <h2 class="featurette-heading">Long Stay Package. <span class="text-muted">It's delicious!</span></h2>
@@ -122,4 +135,8 @@
         <img class="featurette-image img-responsive center-block" src="assets/images/home/longstay.jpg" data-holder-rendered="true">
     </div>
 </div>
-{$explore}
+</div>
+</div>
+<div class="container">
+    {$explore}
+</div>
