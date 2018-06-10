@@ -1,4 +1,6 @@
-<div class="container">
+<?php
+/* template head */
+/* end template head */ ob_start(); /* template body */ ?><div class="container">
 <form class="form form-inline" method="POST" action="." >
     <h3 class="inline-block">Offer Requests</h3>
     <div class="form-group pull-right" style="margin-top:30px;">
@@ -31,21 +33,41 @@
         </tr>
     </thead>
 
-{foreach $offerList row}
+<?php 
+$_fh0_data = (isset($this->scope["offerList"]) ? $this->scope["offerList"] : null);
+if ($this->isTraversable($_fh0_data) == true)
+{
+	foreach ($_fh0_data as $this->scope['row'])
+	{
+/* -- foreach start output */
+?>
 
     <tr>
 
-        <td id="{$row.id}"><a href="./request.php?requestId={$row.id}">{$row.id}</a></td>
-        <td>{$row.firstname} {$row.lastname}</td>
-        <td>{$row.offer_name}</td>
-        <td>{$row.event_start_date}</td>
-        <td>{$row.event_end_date}</td>
-        <td>{$row.guests}</td>
-        <td>{if $row.approval_status == null}New Request{elseif $row.approval_status == 1}Accepted{else}Declined{/if}</td>
+        <td id="<?php echo $this->scope["row"]["id"];?>"><a href="./request.php?requestId=<?php echo $this->scope["row"]["id"];?>"><?php echo $this->scope["row"]["id"];?></a></td>
+        <td><?php echo $this->scope["row"]["firstname"];?> <?php echo $this->scope["row"]["lastname"];?></td>
+        <td><?php echo $this->scope["row"]["offer_name"];?></td>
+        <td><?php echo $this->scope["row"]["event_start_date"];?></td>
+        <td><?php echo $this->scope["row"]["event_end_date"];?></td>
+        <td><?php echo $this->scope["row"]["guests"];?></td>
+        <td><?php if ((isset($this->scope["row"]["approval_status"]) ? $this->scope["row"]["approval_status"]:null) == null) {
+?>New Request<?php 
+}
+elseif ((isset($this->scope["row"]["approval_status"]) ? $this->scope["row"]["approval_status"]:null) == 1) {
+?>Accepted<?php 
+}
+else {
+?>Declined<?php 
+}?></td>
 
     </tr>
 
-{/foreach}
+<?php 
+/* -- foreach end output */
+	}
+}?>
 
 </table>
-</div>
+</div><?php  /* end template body */
+return $this->buffer . ob_get_clean();
+?>

@@ -1,3 +1,4 @@
+<div class="container">
 <form class="form form-inline" method="POST" action="." >
     <h3 class="inline-block">USERS</h3>
     <div class="form-group pull-right" style="margin-top:30px;">
@@ -56,3 +57,4 @@
 {/foreach}
 
 </table>
+</div>

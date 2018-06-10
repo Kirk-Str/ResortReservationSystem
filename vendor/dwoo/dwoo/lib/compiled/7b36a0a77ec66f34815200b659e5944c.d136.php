@@ -1,6 +1,8 @@
 <?php
 /* template head */
-/* end template head */ ob_start(); /* template body */ ?><div>
+/* end template head */ ob_start(); /* template body */ ?>
+<div class="container">
+<div>
     <h3><?php echo $this->scope["pageTitle"];?></h3>
 </div>
 
@@ -85,6 +87,7 @@
             </div>
         </form>
     </div>
+</div>
 </div><?php  /* end template body */
 return $this->buffer . ob_get_clean();
 ?>

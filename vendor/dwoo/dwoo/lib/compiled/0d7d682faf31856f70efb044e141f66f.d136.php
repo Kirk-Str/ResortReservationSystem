@@ -1,4 +1,6 @@
-﻿<div class="container">
+<?php
+/* template head */
+/* end template head */ ob_start(); /* template body */ ?>﻿<div class="container">
 <div>
     <h3>SELECTED DATE &amp; OCCUPANTS</h3>
 </div>
@@ -9,7 +11,7 @@
             <h4>Check In</h4>
         </div>
         <div class="body">
-            <p class="lead">{$checkIn}</p>
+            <p class="lead"><?php echo $this->scope["checkIn"];?></p>
         </div>
     </div>
     <div class="col-md-4 text-center clear-padding">
@@ -17,7 +19,7 @@
             <h4>Check Out</h4>
         </div>
         <div class="body">
-            <p class="lead">{$checkOut}</p>
+            <p class="lead"><?php echo $this->scope["checkOut"];?></p>
         </div>
     </div>
     <div class="col-md-4 text-center clear-padding">
@@ -25,7 +27,7 @@
             <h4>Guests</h4>
         </div>
         <div class="body">
-            <p class="lead">{$guests}</p>
+            <p class="lead"><?php echo $this->scope["guests"];?></p>
         </div>
     </div>
 </div>
@@ -37,39 +39,53 @@
 <div class="row block">
     <div class="col-md-12 clear-padding">
         <div class="body">
-            {foreach $suitesList val implode='
-            <hr class="featurette-divider margin-offset-4">'}
+            <?php 
+$_fh0_data = (isset($this->scope["suitesList"]) ? $this->scope["suitesList"] : null);
+$this->globals["foreach"]['default'] = array
+(
+	"iteration"		=> 1,
+	"last"		=> null,
+	"total"		=> $this->count($_fh0_data),
+);
+$_fh0_glob =& $this->globals["foreach"]['default'];
+if ($this->isTraversable($_fh0_data) == true)
+{
+	foreach ($_fh0_data as $this->scope['val'])
+	{
+		$_fh0_glob["last"] = (string) ($_fh0_glob["iteration"] === $_fh0_glob["total"]);
+/* -- foreach start output */
+?>
 
             <form action="./confirmation.php" method="POST">
 
-                <input type="hidden" name="check_in" value="{$checkIn}" />
-                <input type="hidden" name="check_out" value="{$checkOut}" />
-                <input type="hidden" name="adults" value="{$adults}" />
-                <input type="hidden" name="children" value="{$children}" />
-                <input type="hidden" name="room_id" value="{$val.room_id}" />
+                <input type="hidden" name="check_in" value="<?php echo $this->scope["checkIn"];?>" />
+                <input type="hidden" name="check_out" value="<?php echo $this->scope["checkOut"];?>" />
+                <input type="hidden" name="adults" value="<?php echo $this->scope["adults"];?>" />
+                <input type="hidden" name="children" value="<?php echo $this->scope["children"];?>" />
+                <input type="hidden" name="room_id" value="<?php echo $this->scope["val"]["room_id"];?>" />
 
                 <section class="row featurette">
                     <div class="col-md-8 col-md-push-4">
-                        <h2 class="featurette-heading">{$val.room_name}
-                            <span class="text-muted">{$val.caption}</span>
+                        <h2 class="featurette-heading"><?php echo $this->scope["val"]["room_name"];?>
+                            <span class="text-muted"><?php echo $this->scope["val"]["caption"];?></span>
                         </h2>
                         <div class="col-md-6">
                             <table class="margin-offset-4" style="border-spacing:6px">
                                 <tr >
                                     <td style="padding-bottom: 10px; width: 160px" class="label-1">Occupancy: </td>
-                                    <td  style="padding-bottom: 10px" class="label-1-sub">{$val.occupancy}</td>
+                                    <td  style="padding-bottom: 10px" class="label-1-sub"><?php echo $this->scope["val"]["occupancy"];?></td>
                                 </tr>
                                 <tr>
                                     <td  style="padding-bottom: 10px" class="label-1">Size: </td>
-                                    <td  style="padding-bottom: 10px" class="label-1-sub">{$val.size}</td>
+                                    <td  style="padding-bottom: 10px" class="label-1-sub"><?php echo $this->scope["val"]["size"];?></td>
                                 </tr>
                                 <tr>
                                     <td  style="padding-bottom: 10px" class="label-1">Rate Per Night:</td>
-                                    <td  style="padding-bottom: 10px" class="label-1-sub">{$val.rate|string_format:"%.2f"}</td>
+                                    <td  style="padding-bottom: 10px" class="label-1-sub"><?php echo sprintf("%.2f",(isset($this->scope["val"]["rate"]) ? $this->scope["val"]["rate"]:null));?></td>
                                 </tr>
                                 <tr>
                                     <td  style="padding-bottom: 10px" class="label-1">View:</td>
-                                    <td  style="padding-bottom: 10px" class="label-1-sub">{$val.view}</td>
+                                    <td  style="padding-bottom: 10px" class="label-1-sub"><?php echo $this->scope["val"]["view"];?></td>
                                 </tr>
                             </table>
                         </div>
@@ -82,7 +98,8 @@
                                     </td>
                                 </tr> -->
 
-                                {if $val.available_room == 0}
+                                <?php if ((isset($this->scope["val"]["available_room"]) ? $this->scope["val"]["available_room"]:null) == 0) {
+?>
 
                                    <tr>
                                         <td colspan="2">
@@ -90,15 +107,19 @@
                                         </td>
                                     </tr>
 
-                                {elseif $val.available_room <= 2}
+                                <?php 
+}
+elseif ((isset($this->scope["val"]["available_room"]) ? $this->scope["val"]["available_room"]:null) <= 2) {
+?>
 
                                     <tr>
                                         <td colspan="2">
-                                            <label name="warning-label" class="text-danger">Only {$val.available_room}(s) Room left!</label>
+                                            <label name="warning-label" class="text-danger">Only <?php echo $this->scope["val"]["available_room"];?>(s) Room left!</label>
                                         </td>
                                     </tr>
 
-                                {/if} 
+                                <?php 
+}?> 
 
                                 <!-- <tr>
                                     <td class="label-1">Rooms:</td>
@@ -117,23 +138,38 @@
                             </table>
                         </div>
 
-                        {if $val.available_room != 0}
+                        <?php if ((isset($this->scope["val"]["available_room"]) ? $this->scope["val"]["available_room"]:null) != 0) {
+?>
 
                             <div class="col-md-12">
                                 <button type="submit" class="btn btn-block btn-lg btn-submit pull-right" style="width: 200px;">Select</button>
                             </div>
 
-                        {/if}
+                        <?php 
+}?>
 
                     </div>
                     <div class="col-md-4 col-md-pull-8">
-                        {if $val.thumbnail != ""}<img class="featurette-image img-responsive center-block" src="data:image;base64,{$val.thumbnail}" data-holder-rendered="true"/>{/if}
+                        <?php if ((isset($this->scope["val"]["thumbnail"]) ? $this->scope["val"]["thumbnail"]:null) != "") {
+?><img class="featurette-image img-responsive center-block" src="data:image;base64,<?php echo $this->scope["val"]["thumbnail"];?>" data-holder-rendered="true"/><?php 
+}?>
                     </div>
                 </section>
 
             </form>
-            {/foreach}
+            <?php 
+/* -- implode */
+if (!$_fh0_glob["last"]) {
+	echo '
+            <hr class="featurette-divider margin-offset-4">';
+}
+/* -- foreach end output */
+		$_fh0_glob["iteration"]+=1;
+	}
+}?>
         </div>
     </div>
 </div>
-</div>
+</div><?php  /* end template body */
+return $this->buffer . ob_get_clean();
+?>

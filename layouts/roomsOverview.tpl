@@ -1,3 +1,4 @@
+<div class="container">
 <div>
     <h3>ROOM OVERVIEW</h3>
 </div>
@@ -65,4 +66,5 @@
 
   {/foreach}
 
+</div>
 </div>

@@ -1,10 +1,10 @@
 <footer id="footer-base" class="footer-distributed">
 
     <div class="text-center" style="margin-bottom: 180px;">
-        <img src=".\assets\images\LogosIcons\no-one-restaurrant-in-kalpitiya.png" style="margin: 40px;">
-        <img src=".\assets\images\LogosIcons\kitesurfing-logo.png" style="margin: 40px;">
-        <img src=".\assets\images\LogosIcons\wilpattu-logo.png" style="margin: 40px;">
-        <img src=".\assets\images\LogosIcons\excellence.png" style="margin: 40px;">
+        <img src="<?php echo Config::get('application_path') . './assets/images/LogosIcons/no-one-restaurrant-in-kalpitiya.png'; ?>" style="margin: 40px;">
+        <img src="<?php echo Config::get('application_path') . './assets/images/LogosIcons/kitesurfing-logo.png'; ?>"  style="margin: 40px;">
+        <img src="<?php echo Config::get('application_path') . './assets/images/LogosIcons/wilpattu-logo.png'; ?>"  style="margin: 40px;">
+        <img src="<?php echo Config::get('application_path') . './assets/images/LogosIcons/excellence.png'; ?>"  style="margin: 40px;">
     </div>
 
         <div class="footer-left">

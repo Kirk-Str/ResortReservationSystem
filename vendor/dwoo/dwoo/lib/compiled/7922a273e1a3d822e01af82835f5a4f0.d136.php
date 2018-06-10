@@ -1,11 +1,6 @@
 <?php
 /* template head */
-/* end template head */ ob_start(); /* template body */ ?><?php
-
-    //require '..\vendor\autoload.php';
-
-?>
-
+/* end template head */ ob_start(); /* template body */ ?><div class="container">
 <div>
     <h3>ROOM TYPES</h3>
 </div>
@@ -67,6 +62,6 @@ if ($this->isTraversable($_fh0_data) == true)
        
 
 </table>
-<?php  /* end template body */
+</div><?php  /* end template body */
 return $this->buffer . ob_get_clean();
 ?>

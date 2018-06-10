@@ -1,3 +1,4 @@
+<div class="container">
 <div>
     <h3>OFFER REQUEST</h3>
 </div>
@@ -117,4 +118,5 @@
     <div class="col-md-8">
 
     </div>
+</div>
 </div>

@@ -1,3 +1,5 @@
+
+<div class="container">
 <div>
     <h3>{$pageTitle}</h3>
 </div>
@@ -71,4 +73,5 @@
             </div>
         </form>
     </div>
+</div>
 </div>

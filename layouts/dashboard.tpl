@@ -1,9 +1,4 @@
-<?php
-
-//    require '..\vendor\autoload.php';
-
-?>
-
+<div class="container">
 <div>
     <h3>DASHBOARD</h3>
 </div>
@@ -142,3 +137,5 @@
     </table>
 
 {/if}
+
+</div>

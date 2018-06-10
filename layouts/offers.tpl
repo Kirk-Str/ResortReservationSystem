@@ -1,9 +1,4 @@
-<?php
-
-    //require '..\vendor\autoload.php';
-
-?>
-
+<div class="container">
 <div>
     <h3>OFFERS</h3>
 </div>
@@ -46,3 +41,4 @@
     {/foreach}
        
 </table>
+</div>

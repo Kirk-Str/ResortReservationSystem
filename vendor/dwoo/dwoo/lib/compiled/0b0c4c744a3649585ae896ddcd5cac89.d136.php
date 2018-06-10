@@ -1,6 +1,7 @@
 <?php
 /* template head */
-/* end template head */ ob_start(); /* template body */ ?><form class="form form-inline" method="POST" action="." >
+/* end template head */ ob_start(); /* template body */ ?><div class="container">
+<form class="form form-inline" method="POST" action="." >
     <h3 class="inline-block">USERS</h3>
     <div class="form-group pull-right" style="margin-top:30px;">
         <label class="radio-inline" style="margin-right:20px;">
@@ -67,6 +68,7 @@ if ($this->isTraversable($_fh0_data) == true)
 	}
 }?>
 
-</table><?php  /* end template body */
+</table>
+</div><?php  /* end template body */
 return $this->buffer . ob_get_clean();
 ?>

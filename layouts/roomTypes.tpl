@@ -1,9 +1,4 @@
-<?php
-
-    //require '..\vendor\autoload.php';
-
-?>
-
+<div class="container">
 <div>
     <h3>ROOM TYPES</h3>
 </div>
@@ -53,3 +48,4 @@
        
 
 </table>
+</div>

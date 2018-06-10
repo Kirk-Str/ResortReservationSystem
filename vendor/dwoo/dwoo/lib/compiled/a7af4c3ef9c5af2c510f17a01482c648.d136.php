@@ -2,7 +2,8 @@
 /* template head */
 if (class_exists('Dwoo\Plugins\Functions\PluginTruncate')===false)
 	$this->getLoader()->loadPlugin('PluginTruncate');
-/* end template head */ ob_start(); /* template body */ ?><div>
+/* end template head */ ob_start(); /* template body */ ?><div class="container">
+<div>
     <h3>ROOM OVERVIEW</h3>
 </div>
 <hr> 
@@ -93,6 +94,7 @@ else {
 	}
 }?>
 
+</div>
 </div><?php  /* end template body */
 return $this->buffer . ob_get_clean();
 ?>
