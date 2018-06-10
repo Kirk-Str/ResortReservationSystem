@@ -10,6 +10,9 @@
             <div class="item">
                 <img src="./assets/images/contentImages/huts.jpg" class="img-responsive" />
             </div>
+            <div class="item">
+                <img src="./assets/images/contentImages/whalewatching-cover.jpg" class="img-responsive" />
+            </div>
         </div>
     </div>
 

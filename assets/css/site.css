@@ -7,7 +7,6 @@
 @import url('https://fonts.googleapis.com/css?family=Satisfy');
 @import url('https://fonts.googleapis.com/css?family=Marck+Script');
 @import url('https://fonts.googleapis.com/css?family=Montserrat');
-
 @font-face {
     font-family: "OpenSans";
     src: url(../fonts//Open_Sans//OpenSans-Light.ttf);
@@ -103,7 +102,7 @@ label {
     width: 100%;
 }
 
-.modal-content{
+.modal-content {
     border-radius: 0px;
 }
 
@@ -346,7 +345,7 @@ input[name="daterange"] {
     border-top: 0px solid rgba(189, 189, 189, 0.8);
     padding: 20px 30px;
     width: 100%;
-    top: 40px;
+    top: 80px;
     display: block;
     position: absolute;
 }
@@ -354,6 +353,7 @@ input[name="daterange"] {
 .reservation-bar .form-group {
     display: inline-block;
     margin: 0 25px 0 0;
+    text-align: left;
 }
 
 .banner-wrapper {
