@@ -21,23 +21,30 @@
     Get ready for a world class lounging experience with Holiday's Loyality&trade; Program.
 </h3>
 
+<div class="text-center">
 <div class="row row-offset-1">
-
-    <div class="col-md-4 text-center">
-        <img src="assets/images/home/money.png" width="128" height="128" />
+    <div class="col-md-2 text-center">
+        <img src="assets/images/LogosIcons/spa.png" width="128" height="128" />
         <h4>Afforable Rates</h4>
     </div>
-    <div class="col-md-4 text-center">
-        <img src="assets/images/home/wifi.png" width="128" height="128" />
+    <div class="col-md-2 text-center">
+        <img src="assets/images/LogosIcons/makeup.png" width="128" height="128" />
         <h4>Complementry Wifi</h4>
     </div>
-    <div class="col-md-4 text-center">
-        <img src="assets/images/home/water.png" width="128" height="128" />
+    <div class="col-md-2 text-center">
+        <img src="assets/images/LogosIcons/catering.png" width="128" height="128" />
         <h4>Free Water Bottle</h4>
     </div>
-
+        <div class="col-md-2 text-center">
+        <img src="assets/images/LogosIcons/organize.png" width="128" height="128" />
+        <h4>Free Water Bottle</h4>
+    </div>
+    <div class="col-md-2 text-center">
+        <img src="assets/images/LogosIcons/affordable.png" width="128" height="128" />
+        <h4>Free Water Bottle</h4>
+    </div>
 </div>
-
+</div>
 
 <div class="row row-offset-1">
     <div class="col-md-8">

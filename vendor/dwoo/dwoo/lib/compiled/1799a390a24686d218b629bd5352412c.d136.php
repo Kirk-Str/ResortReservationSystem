@@ -78,20 +78,20 @@
     <div class="row text-center row-offset-1">
 
         <div class="col-md-3 text-center wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="300ms">
-            <img src="assets/images/home/money.png" width="128" height="128" />
+            <img src="assets/images/LogosIcons/affordable.png" width="128" height="128" />
             <h4>Afforable Rates</h4>
         </div>
-        <div class="col-md-3 text-center wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms">
-            <img src="assets/images/home/wifi.png" width="128" height="128" />
-            <h4>Free Wifi</h4>
+        <div class="col-md-3 text-center wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="300ms">
+            <img src="assets/images/LogosIcons/wifi.png" width="128" height="128" />
+            <h4>Free Wi-Fi</h4>
         </div>
-        <div class="col-md-3 text-center wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="900ms">
-            <img src="assets/images/home/water.png" width="128" height="128" />
-            <h4>Free Water Bottle</h4>
+        <div class="col-md-3 text-center wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="300ms">
+            <img src="assets/images/LogosIcons/drinks.png" width="128" height="128" />
+            <h4>Complementary Drinks</h4>
         </div>
-        <div class="col-md-3 text-center wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="1200ms">
-            <img src="assets/images/home/text-lines.png" width="128" height="128" />
-            <h4>Complementry Newspaper</h4>
+        <div class="col-md-3 text-center wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="300ms">
+            <img src="assets/images/LogosIcons/newspaper.png" width="128" height="128" />
+            <h4>Complementary Newspapers</h4>
         </div>
 
     </div>
