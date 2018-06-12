@@ -59,84 +59,90 @@
     </div>
     </form>
 
-    
+
 </div>
 
-
-<div class="container" style="margin-top: 30px">
-<div class="text-center featurette-text">
-    <h2>We offer great deals that gives you a royal experience!</h2>
+<div class="container">
+    <h2 class="text-center row-offset-1 wow fadeIn">We offer great deals that gives you a royal experience!</h2>
     <hr class="goldenbreak-2px-limited">
-    <p class="para">Whether it's wedding party, honeymoon or birthday party, we cater you the best deal in Srilanka that you can never forget. Please choose our offer from wide range of unbelievable price.</p>
-    </div>
-</div>
+    <p class="para text-center">
+        Whether it's wedding party, honeymoon or birthday party, we cater you the best deal in Srilanka that you can never forget. Please choose our offer from wide range of unbelievable price.
+    </p>
 
-<div class="container "  style="margin: 30px 0">
-
-    <div class="row text-center row-offset-1">
-
-        <div class="col-md-3 text-center wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="300ms">
+    <div class="row">
+        <div class="col-md-2 col-sm-4 text-center row-offset-1 col-md-offset-1">
             <img src="assets/images/LogosIcons/affordable.png" width="128" height="128" />
             <h4>Afforable Rates</h4>
         </div>
-        <div class="col-md-3 text-center wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="300ms">
-            <img src="assets/images/LogosIcons/wifi.png" width="128" height="128" />
+        <div class="col-md-2 col-sm-4 text-center  row-offset-1">
+        <img src="assets/images/LogosIcons/wifi.png" width="128" height="128" />
             <h4>Free Wi-Fi</h4>
         </div>
-        <div class="col-md-3 text-center wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="300ms">
+        <div class="col-md-2 col-sm-4 text-center  row-offset-1">
             <img src="assets/images/LogosIcons/drinks.png" width="128" height="128" />
             <h4>Complementary Drinks</h4>
         </div>
-        <div class="col-md-3 text-center wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="300ms">
+        <div class="col-md-2 col-sm-4 text-center  row-offset-1">
+            <img src="assets/images/LogosIcons/organize.png" width="128" height="128" />
+            <h4>Arrangements and Organizing</h4>
+        </div>
+        <div class="col-md-2 col-sm-4 text-center  row-offset-1">
             <img src="assets/images/LogosIcons/newspaper.png" width="128" height="128" />
-            <h4>Complementary Newspapers</h4>
+                <h4>Complementary Newspapers</h4>
+        </div>
+    </div>
+
+</div>
+
+</br>
+</br>
+</br>
+</br>
+</br>
+<p class="para font-weight-bold text-center text-uppercase  wow fadeInDown">
+<strong>Select from the wide range of special offers for your special day</strong>
+</p>
+</br>
+</br>
+
+{foreach $offersList val}
+
+    {if $dwoo.foreach.default.index % 2 == 0}
+
+        <div class="beige">
+            <div class="container">
+                <div class="row featurette wow fadeInRight" data-wow-duration="500ms" data-wow-delay="400ms">
+                    <div class="col-md-8 col-md-push-4">
+                        <h2 class="featurette-heading featurette-text">{$val.offer_name} <span class="text-muted">{$val.caption}</span></h2>
+                        <p class="lead featurette-text">{$val.description}</p>
+                    </div>
+                    <div class="col-md-4 col-md-pull-8">
+                        <img class="featurette-image img-responsive center-block" src="data:image;base64,{$val.thumbnail}" data-holder-rendered="true">
+                    </div>
+                </div>
+            </div>
         </div>
 
-    </div>
+    {else}
 
-</div>
+        <div class="container">
+            <div class="row featurette wow fadeInRight" data-wow-duration="500ms" data-wow-delay="400ms">
+                <div class="col-md-8">
+                    <h2 class="featurette-heading featurette-text">{$val.offer_name} <span class="text-muted">{$val.caption}</span></h2>
+                    <p class="lead featurette-text">{$val.description}</p>
+                </div>
+                <div class="col-md-4">
+                    <img class="featurette-image img-responsive center-block" src="data:image;base64,{$val.thumbnail}" data-holder-rendered="true">
+                </div>
+            </div>
+        </div>
 
-<div class="beige">
-<div class="container">
-<div class="row featurette wow fadeInRight row-offset-1" data-wow-duration="500ms" data-wow-delay="400ms">
-    <div class="col-md-8 col-md-push-4">
-        <h2 class="featurette-heading">Honeymoon Package. <span class="text-muted">Enjoy the luxury!</span></h2>
-        <p class="lead">
-            Holiday's Restaurant & Spa Resort promises you the most suitable environment for you to spend your special day just like a dream.
-        </p>
-    </div>
-    <div class="col-md-4 col-md-pull-8">
-        <img class="featurette-image img-responsive center-block" src="assets/images/home/honeymoon.jpg" data-holder-rendered="true">
-    </div>
-</div>
-</div>
-</div>
+    {/if}
 
-<div class="container">
-<div class="row featurette wow fadeInRight" data-wow-duration="500ms" data-wow-delay="400ms">
-    <div class="col-md-8">
-        <h2 class="featurette-heading">Birthday Offers. <span class="text-muted">Enjoy the luxury!</span></h2>
-        <p class="lead">Make that day special and celebrate your birthday at Holiday&trade;</p>
-    </div>
-    <div class="col-md-4">
-        <img class="featurette-image img-responsive center-block" src="assets/images/home/birthday.jpg" data-holder-rendered="true">
-    </div>
-</div>
-</div>
+{/foreach}
 
-<div class="beige">
-<div class="container">
-<div class="row featurette wow fadeInRight" data-wow-duration="500ms" data-wow-delay="400ms">
-    <div class="col-md-8 col-md-push-4">
-        <h2 class="featurette-heading">Long Stay Package. <span class="text-muted">It's delicious!</span></h2>
-        <p class="lead">The long stay package is suitable for those who prefer to stay at Holiday&trade; for minimum 14 nights.</p>
-    </div>
-    <div class="col-md-4 col-md-pull-8">
-        <img class="featurette-image img-responsive center-block" src="assets/images/home/longstay.jpg" data-holder-rendered="true">
-    </div>
-</div>
-</div>
-</div>
+
+
 <div class="container">
     {$explore}
 </div>

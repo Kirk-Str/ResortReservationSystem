@@ -6,6 +6,10 @@ if($userType == 1){
     Redirect::to(Config::get('application_path') . 'admin/index.php');
 }
 
+//Application Logic in Page
+$offer = new Offer();
+$rows = $offer->selectAll();
+
 
 //Application Logic in Page
 // Create the controller, it is reusable and can render multiple templates
@@ -20,8 +24,9 @@ $validationScriptTemplate = new Dwoo\Template\File('./layouts/template/_validati
 $layoutTemplate = new Dwoo\Template\File('./layouts/template/_layout.tpl');
 
 // Create a data set, this data set can be reused to render multiple templates if it contains enough data to fill them all
-$explorePage = new Dwoo\Data();
-$explorePage->assign('explore', $core->get($exploreTemplate));
+$contentData = new Dwoo\Data();
+$contentData->assign('explore', $core->get($exploreTemplate));
+$contentData->assign('offersList', objectToArray($rows));
 
 $validationScriptPage = new Dwoo\Data();
 $validationScriptPage->assign('validationScripts', $core->get($validationScriptTemplate));
@@ -31,7 +36,7 @@ $mainPage->assign('pageTitle', 'Reservation');
 $mainPage->assign('userType', $userType);
 $mainPage->assign('username', strtoupper($username));
 $mainPage->assign('avatar', $avatar);
-$mainPage->assign('content', $core->get($reservationTemplate, $explorePage));
+$mainPage->assign('content', $core->get($reservationTemplate, $contentData));
 $mainPage->assign('footer', $core->get($footerTemplate));
 $mainPage->assign('scripts', $core->get($scriptTemplate, $validationScriptPage));
 

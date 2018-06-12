@@ -8,39 +8,39 @@
         With an unforgettable picturesque backdrop full of passion and romance, choose Orca Beach Resort for your perfect Tropical Destination Wedding. Celebrate your big day with your intimate family and friends and combine your wedding and honeymoon at Orca Beach Resort.
     </p>
     <br><br>
-    <div id="wedding-page">
+    
+<div id="wedding-page">
 
-    </div>
+</div>
 
 
 <h2 class="text-center row-offset-1 wow fadeIn">Having Holiday's Loyality&trade; is Royality</h2>
-
-<h3 class="text-center">
+<hr class="goldenbreak-2px-limited">
+<p class="para text-center">
     Get ready for a world class lounging experience with Holiday's Loyality&trade; Program.
-</h3>
+</p>
 
-<div class="text-center">
-    <div class="row row-offset-1">
-        <div class="col-md-2 text-center">
-            <img src="assets/images/LogosIcons/spa.png" width="128" height="128" />
-            <h4>Afforable Rates</h4>
-        </div>
-        <div class="col-md-2 text-center">
-            <img src="assets/images/LogosIcons/makeup.png" width="128" height="128" />
-            <h4>Complementry Wifi</h4>
-        </div>
-        <div class="col-md-2 text-center">
-            <img src="assets/images/LogosIcons/catering.png" width="128" height="128" />
-            <h4>Free Water Bottle</h4>
-        </div>
-            <div class="col-md-2 text-center">
-            <img src="assets/images/LogosIcons/organize.png" width="128" height="128" />
-            <h4>Free Water Bottle</h4>
-        </div>
-        <div class="col-md-2 text-center">
-            <img src="assets/images/LogosIcons/affordable.png" width="128" height="128" />
-            <h4>Free Water Bottle</h4>
-        </div>
+
+<div class="row">
+    <div class="col-md-2 col-sm-4 text-center row-offset-1 col-md-offset-1">
+        <img src="assets/images/LogosIcons/spa.png" width="128" height="128" />
+        <h4>Spa</h4>
+    </div>
+    <div class="col-md-2 col-sm-4 text-center  row-offset-1">
+        <img src="assets/images/LogosIcons/makeup.png" width="128" height="128" />
+        <h4>Bridal Makeup</h4>
+    </div>
+    <div class="col-md-2 col-sm-4 text-center  row-offset-1">
+        <img src="assets/images/LogosIcons/catering.png" width="128" height="128" />
+        <h4>Catering Services</h4>
+    </div>
+    <div class="col-md-2 col-sm-4 text-center  row-offset-1">
+        <img src="assets/images/LogosIcons/organize.png" width="128" height="128" />
+        <h4>Arrangements and Organizing</h4>
+    </div>
+    <div class="col-md-2 col-sm-4 text-center  row-offset-1">
+        <img src="assets/images/LogosIcons/affordable.png" width="128" height="128" />
+        <h4>Afforable Price</h4>
     </div>
 </div>
 
