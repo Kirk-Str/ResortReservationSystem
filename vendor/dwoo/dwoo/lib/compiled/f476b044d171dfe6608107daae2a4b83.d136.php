@@ -38,7 +38,7 @@
     </div>
     <div class="col-md-2 col-sm-4 text-center  row-offset-1">
         <img src="assets/images/LogosIcons/organize.png" width="128" height="128" />
-        <h4>Arrangements and Organizing</h4>
+        <h4>Arrangements and Organizing Party</h4>
     </div>
     <div class="col-md-2 col-sm-4 text-center  row-offset-1">
         <img src="assets/images/LogosIcons/affordable.png" width="128" height="128" />
