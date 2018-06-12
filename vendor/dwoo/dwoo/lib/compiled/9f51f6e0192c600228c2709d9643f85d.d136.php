@@ -5,10 +5,10 @@
     <div id="mycarousal" class="carousel slide" data-ride="carousel" data-interval="6000">
         <div class="carousel-inner" role="listbox">
             <div class="item active">
-                <img src="./assets/images/contentImages/kitesurfing-cover.jpg" class="img-responsive" />
-            </div>
-            <div class="item">
                 <img src="./assets/images/contentImages/huts.jpg" class="img-responsive" />
+            </div>
+            <div class="item ">
+                <img src="./assets/images/contentImages/kitesurfing-cover.jpg" class="img-responsive" />
             </div>
             <div class="item">
                 <img src="./assets/images/contentImages/whalewatching-cover.jpg" class="img-responsive" />
@@ -18,8 +18,8 @@
 
     <form class="reservation-form" method="POST" action="./actions/availability.php">
 
-        <h2 class="wow fadeInDown">Enjoy your tailor made holiday and other special events at Holiday&trade;</h2>
-        <h3 class="wow fadeInDown">Seal the deal & Explore the your world, Today</h3>
+        <h2 class="wow fadeInDown">Enjoy your tailor made holiday and other special events at Orca Beach Resort</h2>
+        <h3 class="wow fadeInDown">Seal the deal &amp; Explore the your world, Today</h3>
 
         <div class="text-center">
             <div class="reservation-bar wow fadeInDown res-page">

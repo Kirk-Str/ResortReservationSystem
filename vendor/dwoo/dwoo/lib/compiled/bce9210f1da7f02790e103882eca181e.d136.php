@@ -1,4 +1,6 @@
-﻿<div class="container">
+<?php
+/* template head */
+/* end template head */ ob_start(); /* template body */ ?>﻿<div class="container">
         <h2 class="wow fadeInDown text-center">
     ABOUT US
 </h2>
@@ -18,5 +20,7 @@
     <div id='gmap_canvas' style='height:440px; width:auto;'></div>  
  </div>
  
-{$explore}
-</div>
+<?php echo $this->scope["explore"];?>
+</div><?php  /* end template body */
+return $this->buffer . ob_get_clean();
+?>

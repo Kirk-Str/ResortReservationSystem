@@ -12,9 +12,9 @@
 
 <h2 class="text-center row-offset-1">A window full of water. Every comfort at your command!</h2>
 <hr class="goldenbreak-2px-limited">
-<h3 class="text-center">
+<p class="para text-center">
     Get ready for a world class holiday experience with Orca Beach Resort hospitality.
-</h3>
+</p>
 
 
 <div class="row">

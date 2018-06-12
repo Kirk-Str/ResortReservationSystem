@@ -60,7 +60,7 @@ else {
                         <li><a href="<?php echo Config::get('application_path') . 'suites.php'?>">ROOMS</a></li>
                         <li><a href="<?php echo Config::get('application_path') . 'outings.php'?>">OUTINGS</a></li>
                         <li><a href="<?php echo Config::get('application_path') . 'weddings.php'?>">WEDDING</a></li>
-                        <li><a href="<?php echo Config::get('application_path') . 'surroundings.php'?>">SURROUNDINGS</a></li>
+                        <li><a href="<?php echo Config::get('application_path') . 'surroundings.php'?>">ACTIVITIES</a></li>
                         <li><a href="<?php echo Config::get('application_path') . 'about.php'?>">ABOUT</a></li>
 
                     <?php 
@@ -129,10 +129,8 @@ else {
                                             <div class="form-group">
                                                 <button type="submit" class="btn btn-submit btn-block">Sign in</button>
                                             </div>
-                                            <div class="checkbox">
-                                                <label>
-                                                    <input type="checkbox" id="remember_me" name="remember_me" value="keep me logged-in">
-                                                </label>
+                                            <div class="form-group ">
+                                                <label>keep me logged-in  </label><input style="margin-left: 10px" type="checkbox" id="remember_me" name="remember_me" value="keep me logged-in">
                                             </div>
                                             <input type="hidden" name="token" value="<?php echo Token::generate();?>">
                                         </form>

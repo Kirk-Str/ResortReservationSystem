@@ -1,15 +1,11 @@
 <div class="container">
-        <h2 class="wow fadeInDown text-center">
-                Explore the surrounding!
-            </h2>
-        
-            <p class="para wow fadeInDown">
-                    <B>Breathtaking!</B> Never get tired of surrounding scenaries.
-                    Explorer the surroundings that offers serveral natural and man-made attactions such as National Zoo,
-                    Museum, Botanical Garden, Beautiful Palm Beaches.
-            </p>
-            <br><br>
-
+<h2 class="text-center wow fadeInDown">It's excursion or relaxation, we take you where you want to be!</h2>
+<hr class="goldenbreak-2px-limited">
+    <p class="para wow fadeInDown">
+        Never get tired of surrounding scenaries.
+        Explorer the beauty of Srilanka that offers unparallel experience and adventures such as Worlds largest whale pool adventure, Kite Surfing, Kayaking in the lagoon, Vilpattu Safari - one of the largest leopard concentration, Beautiful Palm Beaches and Scuba diving etc.
+    </p>
+    <br><br>
 </div>
 </br>
 </br>

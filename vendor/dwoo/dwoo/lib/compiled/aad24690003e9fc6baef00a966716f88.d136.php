@@ -7,7 +7,8 @@
 <script src="<?php echo Config::get('application_path') .'assets/lib/bootstrap-daterangepicker/daterangepicker.js'; ?>"></script>
 <script src="<?php echo Config::get('application_path') .'assets/js/site.js'; ?>" ></script>
 <script src="<?php echo Config::get('application_path') .'assets/js/map.js'; ?>"></script>
-<?php echo $this->scope["validationScripts"];
- /* end template body */
+<?php echo $this->scope["validationScripts"];?>
+
+<?php  /* end template body */
 return $this->buffer . ob_get_clean();
 ?>

@@ -4,15 +4,14 @@
     <div id="mycarousal" class="carousel slide" data-ride="carousel" data-interval="6000">
         <div class="carousel-inner" role="listbox">
             <div class="item active">
-                <img src="assets/images/home/big-ben2.jpg" class="img-responsive" />
+                <img src="assets/images/contentImages/beach-with-hut.jpg" class="img-responsive" />
             </div>
         </div>
     </div>
 
     <form class="reservation-form" method="POST" action="./actions/availability.php">
-
-        <h2 class="wow fadeInDown">Enjoy your tailor made holiday and other special events at Holiday&trade;</h2>
-        <h3 class="wow fadeInDown">Seal the deal & Explore the your world, Today</h3>
+        <h2 class="wow fadeInDown">Amazing views of the Arabian oceans expansive beauty. Watch dolphins play, local surfers enjoying Daytona’s breaking waves and awe-inspiring sunsets.</h2>
+        <h3 class="wow fadeInDown">Seal the deal &amp; live your life, Today</h3>
 
         <div class="text-center">
         <div class="reservation-bar wow fadeInDown res-page">
@@ -68,7 +67,7 @@
     <h2 class="text-center row-offset-1 wow fadeIn">We offer great deals that gives you a royal experience!</h2>
     <hr class="goldenbreak-2px-limited">
     <p class="para text-center">
-        Whether it's wedding party, honeymoon or birthday party, we cater you the best deal in Srilanka that you can never forget. Please choose our offer from wide range of unbelievable price.
+        Whether it's wedding party, honeymoon or birthday party, we cater you the best deal in Srilanka that you can never forget. Please choose our offer from wide range of packages under unbelievable price.
     </p>
 
     <div class="row">
