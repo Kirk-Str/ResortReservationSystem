@@ -6,7 +6,7 @@
     A place where the world changing business meetings and innovations taken place. With innovative Holiday&trade;'s technology filled meeting rooms and conference halls, lead the meeting like an emperor
 </p>
 
-<div class="jumbotron jstyle j-meetings wow fadeInDown">
+<div class="jumbotron jstyle j-activities wow fadeInDown">
     
 </div>
 

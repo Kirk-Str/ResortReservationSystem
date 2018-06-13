@@ -1,7 +1,7 @@
 
 <div class="container">
 <h2 class="wow fadeInDown text-center">
-    Orca trademark Rooms &amp; Cabana
+    Orca trademark Cabanas &amp; Villas
 </h2>
 <p class="para wow fadeInDown">
     With 42 rooms and suites in total, each offering a unique and memorable experience. All rooms are air conditioned and equipped with a Widescreen 58" TV mounted on the wall and Wi-Fi. Each unit also has a work desk and a private bathroom with hairdryer. Complimentary mineral water is available in each room. Enjoy the comfort and luxury that Holiday™ offers.

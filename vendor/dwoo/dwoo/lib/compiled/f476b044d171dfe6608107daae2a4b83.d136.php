@@ -3,25 +3,25 @@
 /* end template head */ ob_start(); /* template body */ ?><div class="container">
     
     <h2 class="wow fadeInDown text-center">
-        Say I Do to a Story to Tell and a Romance to Live Forever
+        Wedding at Orca Beach Resort
     </h2>
 
     <p class="para wow fadeInDown">
-        With an unforgettable picturesque backdrop full of passion and romance, choose Orca Beach Resort for your perfect Tropical Destination Wedding. Celebrate your big day with your intimate family and friends and combine your wedding and honeymoon at Orca Beach Resort.
+    Cobalt blue seas, stunning white sands and lush greenery: the Orca Beach Resort offers one of the world’s most picturesque settings for a wedding. From an intimate beachside ceremony to a large family celebration, weddings at our Orca Beach Resort in Kalpitiya are joyous, romantic affairs. 
     </p>
-    <br><br>
+    <br>
+    <br>
     
 <div id="wedding-page">
 
 </div>
 
 
-<h2 class="text-center row-offset-1 wow fadeIn">Having Holiday's Loyality&trade; is Royality</h2>
+<h2 class="text-center row-offset-1 wow fadeIn">Say I Do to a Story to Tell and a Romance to Live Forever</h2>
 <hr class="goldenbreak-2px-limited">
-<p class="para text-center">
-    Get ready for a world class lounging experience with Holiday's Loyality&trade; Program.
+<p class="para wow fadeInDown text-center">
+     With an unforgettable picturesque backdrop full of passion and romance, choose Orca Beach Resort for your perfect Tropical Destination Wedding. Celebrate your big day with your intimate family and friends and combine your wedding and honeymoon at Orca Beach Resort.
 </p>
-
 
 <div class="row">
     <div class="col-md-2 col-sm-4 text-center row-offset-1 col-md-offset-1">
@@ -46,20 +46,19 @@
     </div>
 </div>
 
+
 <div class="row row-offset-1">
     <div class="col-md-8">
         <p class="para-b">
-            With the Holiday's Loyality&trade; guests now have the opportunity to receive added recognition and rewards when staying with Hotel Happy Holidays&trade;, 
-            Holiday's Loyality&trade; offers a genuinely new approach to recognizing guests including amazing local experiences wherever you travel in Dover.
-            The Holiday's Loyality&trade; program offers three levels of membership: Gold, Platinum and Black. 
-            These levels are based on the number of nights you stay at Hotel Happy Holidays&trade; in Dover. 
-            The more nights you spend with us, the more amazing your membership benefits and local experiences will be. 
-            It is easy to join and you will start earning benefits on your first stay.
+            Couples planning their wedding in the Srilanka will be seduced by the stunning landscapes that surround our Orca Beach resort. Secluded beaches and the expansive, sparkling Indian Ocean offer the perfect canvas against which to create the ultimate wedding. Leaning palm trees and lapping waves will accompany your wedding vows – it is a fairy-tale picture and one that you will cherish forever.
+             </p>
+<p class="para-b">
+            Dine al fresco on the beach while a live band plays, and dance under the stars as your wedding day comes to an end. The next day, you and your guests can relax in sumptuous villas or beach bungalows and recover from the wedding revelries with a spa treatment.
         </p>
     </div>
     <div class="col-md-4" style="padding: 20px;">
         <img src="assets/images/home/Loyality Logo.jpg" class="img-responsive" />
-        <button type="button" class="btn btn-block btn-lg btn-submit" style="margin-top: 40px;" data-toggle="modal" data-target=".bs-example-modal-lg">Join Now</button>
+        <button type="button" class="btn btn-block btn-lg btn-submit" style="margin-top: 40px;" data-toggle="modal" data-target=".bs-example-modal-lg">Plan Now</button>
     </div>
 </div>
 

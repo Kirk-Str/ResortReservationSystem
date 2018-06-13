@@ -7,9 +7,19 @@
         Never get tired of surrounding scenaries.
         Explorer the beauty of Srilanka that offers unparallel experience and adventures such as Worlds largest whale pool adventure, Kite Surfing, Kayaking in the lagoon, Vilpattu Safari - one of the largest leopard concentration, Beautiful Palm Beaches and Scuba diving etc.
     </p>
+    <div class="jumbotron jstyle j-activities wow fadeInDown">
+    </div>
     <br><br>
 </div>
+
 </br>
+</br>
+</br>
+</br>
+</br>
+<p class="para font-weight-bold text-center text-uppercase  wow fadeInDown"><strong>Select from the wide range of excursion / relaxation activities</strong></p>
+
+    
 </br>
 </br>
 <div class="beige">
