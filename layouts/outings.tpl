@@ -2,11 +2,11 @@
 <h2 class="wow fadeInDown text-center">
     HOLIDAYS OUTINGS&trade;
 </h2>
-<p class="para wow fadeInDown">
+<p class="para wow text-center fadeInDown">
     A place where the world changing business meetings and innovations taken place. With innovative Holiday&trade;'s technology filled meeting rooms and conference halls, lead the meeting like an emperor
 </p>
 
-<div class="jumbotron jstyle j-activities wow fadeInDown">
+<div class="jumbotron jstyle j-meetings wow fadeInDown">
     
 </div>
 

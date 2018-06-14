@@ -4,7 +4,7 @@
         Wedding at Orca Beach Resort
     </h2>
 
-    <p class="para wow fadeInDown">
+    <p class="para wow text-center fadeInDown">
     Cobalt blue seas, stunning white sands and lush greenery: the Orca Beach Resort offers one of the world’s most picturesque settings for a wedding. From an intimate beachside ceremony to a large family celebration, weddings at our Orca Beach Resort in Kalpitiya are joyous, romantic affairs. 
     </p>
     <br>

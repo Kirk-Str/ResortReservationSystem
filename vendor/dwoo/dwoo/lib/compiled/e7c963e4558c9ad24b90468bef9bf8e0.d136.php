@@ -3,7 +3,7 @@
 /* end template head */ ob_start(); /* template body */ ?><div class="container">
 <h2 class="text-center wow fadeInDown">It's excursion or relaxation, we take you where you want to be!</h2>
 <hr class="goldenbreak-2px-limited">
-    <p class="para wow fadeInDown">
+    <p class="para wow text-center fadeInDown">
         Never get tired of surrounding scenaries.
         Explorer the beauty of Srilanka that offers unparallel experience and adventures such as Worlds largest whale pool adventure, Kite Surfing, Kayaking in the lagoon, Vilpattu Safari - one of the largest leopard concentration, Beautiful Palm Beaches and Scuba diving etc.
     </p>
@@ -18,8 +18,6 @@
 </br>
 </br>
 <p class="para font-weight-bold text-center text-uppercase  wow fadeInDown"><strong>Select from the wide range of excursion / relaxation activities</strong></p>
-
-    
 </br>
 </br>
 <div class="beige">
