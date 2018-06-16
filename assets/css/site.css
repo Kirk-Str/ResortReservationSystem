@@ -320,7 +320,7 @@ input[name="daterange"] {
 }
 
 .j-activities {
-    background: rgba(0, 0, 0, 0) url("../images/contentImages/elephant.jpg") no-repeat scroll 100% 2px / cover;
+    background: rgba(0, 0, 0, 0) url("../images/contentImages/excursion-cover.png") no-repeat scroll 100% 2px / cover;
     height: 60vh;
     width: 100%;
     background-position: 40%;

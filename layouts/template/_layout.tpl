@@ -52,8 +52,8 @@
                         <li><a href="<?php echo Config::get('application_path') . 'index.php'?>">HOME</a></li>
                         <li><a href="<?php echo Config::get('application_path') . 'reservation.php'?>">RESERVATION</a></li>
                         <li><a href="<?php echo Config::get('application_path') . 'suites.php'?>">FACILITIES</a></li>
-                        <li><a href="<?php echo Config::get('application_path') . 'outings.php'?>">OUTINGS</a></li>
-                        <li><a href="<?php echo Config::get('application_path') . 'weddings.php'?>">WEDDING</a></li>
+                        
+                        <li><a href="<?php echo Config::get('application_path') . 'weddings.php'?>">WEDDING & EVENTS</a></li>
                         <li><a href="<?php echo Config::get('application_path') . 'surroundings.php'?>">ACTIVITIES</a></li>
                         <li><a href="<?php echo Config::get('application_path') . 'about.php'?>">ABOUT</a></li>
 

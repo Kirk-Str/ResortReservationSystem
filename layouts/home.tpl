@@ -97,14 +97,13 @@
     <div class="container">
         <div class="row featurette wow fadeInRight" data-wow-duration="500ms" data-wow-delay="400ms">
             <div class="col-md-8 col-md-push-4">
-                <h2 class="featurette-heading featurette-text">Unparalleled Suites options. <span class="text-muted">Enjoy the luxury!</span></h2>
+                <h2 class="featurette-heading featurette-text">Unbelievable Cabana options with spectacular views. <span class="text-muted">Sitback and enjoy the view!</span></h2>
                 <p class="lead featurette-text">
-                    With 42 rooms and suites in total, each offering a unique and memorable experience. All rooms are air conditioned and equipped with a Widescreen 58" TV mounted on the wall and Wi-Fi. Each unit also has a work desk and a private bathroom with hairdryer.
-                    Complimentary mineral water is available in each room. Enjoy the comfort and luxury that Holiday&trade; offers.
+                        With 20 cabanas and villas in total, each offering a unique and memorable relaxing experience. All cabanas are naturally air cooled and with open-top bathroom with towels and shower facility. The Tastefully-furnished unit has a terrace with relaxing chairs. Complimentary mineral water is available in each room. And yes ofcourse it comes with Wi-Fi. 
                 </p>
             </div>
             <div class="col-md-4 col-md-pull-8 clear-padding">
-                <img class="featurette-image img-responsive center-block" src="assets/images/home/suite.jpg" data-holder-rendered="true">
+                <img class="featurette-image img-responsive center-block" src="assets/images/contentImages/cabana-delux.jpg" data-holder-rendered="true">
             </div>
         </div>
 
@@ -114,13 +113,13 @@
     <div class="row featurette wow fadeInRight" data-wow-duration="500ms" data-wow-delay="300ms">
 
         <div class="col-md-8 ">
-            <h2 class="featurette-heading  featurette-text">Mouthwatering Foods. <span class="text-muted">It's delicious!</span></h2>
+            <h2 class="featurette-heading  featurette-text">Mouthwatering Authentic Foods. <span class="text-muted">It's delicious!</span></h2>
             <p class="lead  featurette-text">
-                Holiday&trade; provides Five-Star/Five-Diamond catering from our acclaimed chef, Gordon Ramsay. Mouthwatering foods with gourmet quality and extra caring in catering. Enjoy the Holiday&trade;'s multi cuisine foods such as Italian, French, American, Chinese.
+                The Restaurant at Orca Beach Resort provides star-rated catering from our acclaimed chef, Gordon Ramsay. Mouthwatering authentic srilankan foods with gourmet quality with extra caring in catering. Enjoy the Orca's Restaurant's authentic Srilankan cuisine as well as wide verity of international cuisine foods.
             </p>
         </div>
         <div class="col-md-4 clear-padding">
-            <img class="featurette-image img-responsive center-block" src="assets/images/home/res.jpg" data-holder-rendered="true">
+            <img class="featurette-image img-responsive center-block" src="assets/images/contentImages/authentic-food.jpg" data-holder-rendered="true">
         </div>
     </div>
 </div>
@@ -129,10 +128,10 @@
         <div class="row featurette wow fadeInRight" data-wow-duration="500ms" data-wow-delay="200ms">
             <div class="col-md-8  col-md-push-4">
                 <h2 class="featurette-heading  featurette-text">Awe Inspiring Natural Attractions. <span class="text-muted">It'll blow your mind.</span></h2>
-                <p class="lead  featurette-text">Holiday&trade; is surrounded by sevreral important places like National Zoo, Botanical Garden, Museum, Palm Beaches that you cannot ignore visting!</p>
+                <p class="lead  featurette-text">Orca Beach Resort is surrounded by several important places like the pristine beach, largest coral reefs, national wild reservation parks, best surfing water lake in the region, one of the worlds largest whale's concentrations, Asia's largest elephant concentrations and more other UNESCO heritage sites that cannot ignore visiting while you are in Srilanka!</p>
             </div>
             <div class="col-md-4 col-md-pull-8 clear-padding">
-                <img class="featurette-image img-responsive center-block" src="assets/images/home/featureattactions.jpg" data-holder-rendered="true">
+                <img class="featurette-image img-responsive center-block" src="assets/images/contentImages/attractions.png" data-holder-rendered="true">
             </div>
         </div>
         <!-- Server Side script required for dynamic validation for this functionality-->

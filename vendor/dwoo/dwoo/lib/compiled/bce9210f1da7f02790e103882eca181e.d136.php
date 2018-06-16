@@ -4,7 +4,7 @@
         <h2 class="wow fadeInDown text-center">
     ABOUT US
 </h2>
-<p class="para wow fadeInDown">
+<p class="para text-center wow fadeInDown">
     Orca Beach Resort delivers one-of-a-kind lifestyle experiences that bring together world class serivce and extraordinary style in sought-after locations.
     Signature brand amenities and services created for the diverse business and leisure guests include
     out of the world wedding setups, dynamic dining venues featuring world-class culinary talents and destination spas specializing in health, fitness, and beauty. 
