@@ -1,6 +1,6 @@
 ﻿<div class="container">
         <h2 class="wow fadeInDown text-center">
-    ABOUT US
+    About Us
 </h2>
 <p class="para text-center wow fadeInDown">
     Orca Beach Resort delivers one-of-a-kind lifestyle experiences that bring together world class serivce and extraordinary style in sought-after locations.
