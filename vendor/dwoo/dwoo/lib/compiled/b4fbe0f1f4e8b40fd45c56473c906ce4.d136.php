@@ -3,7 +3,7 @@
 /* end template head */ ob_start(); /* template body */ ?>
 <div class="container">
 <h2 class="wow fadeInDown text-center">
-    Orca trademark Cabanas &amp; Villas
+    Orca trademark Cabanas &amp; Bungalow
 </h2>
 <p class="para text-center wow fadeInDown">
     With 20 cabanas and villas in total, each offering a unique and memorable relaxing experience. All cabanas are naturally air cooled and with open-top bathroom with towels and shower facility. The Tastefully-furnished unit has a terrace with relaxing chairs. Complimentary mineral water is available in each room. And yes ofcourse it comes with Wi-Fi.
