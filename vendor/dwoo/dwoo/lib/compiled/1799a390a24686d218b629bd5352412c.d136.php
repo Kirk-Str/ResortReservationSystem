@@ -72,23 +72,23 @@
 
     <div class="row">
         <div class="col-md-2 col-sm-4 text-center row-offset-1 col-md-offset-1">
-            <img src="assets/images/LogosIcons/affordable.png" width="128" height="128" />
+            <img src="assets/images/logosIcons/affordable.png" width="128" height="128" />
             <h4>Afforable Rates</h4>
         </div>
         <div class="col-md-2 col-sm-4 text-center  row-offset-1">
-        <img src="assets/images/LogosIcons/wifi.png" width="128" height="128" />
+        <img src="assets/images/logosIcons/wifi.png" width="128" height="128" />
             <h4>Free Wi-Fi</h4>
         </div>
         <div class="col-md-2 col-sm-4 text-center  row-offset-1">
-            <img src="assets/images/LogosIcons/drinks.png" width="128" height="128" />
+            <img src="assets/images/logosIcons/drinks.png" width="128" height="128" />
             <h4>Complementary Drinks</h4>
         </div>
         <div class="col-md-2 col-sm-4 text-center  row-offset-1">
-            <img src="assets/images/LogosIcons/organize.png" width="128" height="128" />
+            <img src="assets/images/logosIcons/organize.png" width="128" height="128" />
             <h4>Arrangements and Organizing</h4>
         </div>
         <div class="col-md-2 col-sm-4 text-center  row-offset-1">
-            <img src="assets/images/LogosIcons/newspaper.png" width="128" height="128" />
+            <img src="assets/images/logosIcons/newspaper.png" width="128" height="128" />
                 <h4>Complementary Newspapers</h4>
         </div>
     </div>

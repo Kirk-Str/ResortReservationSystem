@@ -17,19 +17,19 @@
    </p>
    <div class="row">
       <div class="col-md-3 col-sm-1  text-center row-offset-1">
-         <img src="assets/images/LogosIcons/yoga-instructor.png" width="128" height="128" />
+         <img src="assets/images/logosIcons/yoga-instructor.png" width="128" height="128" />
          <h4>Yoga Instructor</h4>
       </div>
       <div class="col-md-3 col-sm-1  text-center  row-offset-1">
-         <img src="assets/images/LogosIcons/transport-services.png" width="128" height="128" />
+         <img src="assets/images/logosIcons/transport-services.png" width="128" height="128" />
          <h4>4x4 Safari Ride Service</h4>
       </div>
       <div class="col-md-3 col-sm-1  text-center  row-offset-1">
-         <img src="assets/images/LogosIcons/trainer.png" width="128" height="128" />
+         <img src="assets/images/logosIcons/trainer.png" width="128" height="128" />
          <h4>Trainers for Kite Surfing</h4>
       </div>
       <div class="col-md-3 col-sm-1  text-center  row-offset-1">
-         <img src="assets/images/LogosIcons/guide.png" width="128" height="128" />
+         <img src="assets/images/logosIcons/guide.png" width="128" height="128" />
          <h4>Tour Guide</h4>
       </div>
    </div>

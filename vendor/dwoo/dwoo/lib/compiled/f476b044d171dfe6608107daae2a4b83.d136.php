@@ -20,23 +20,23 @@
         </p>
         <div class="row">
            <div class="col-md-2 col-sm-4 text-center row-offset-1 col-md-offset-1">
-              <img src="assets/images/LogosIcons/spa.png" width="128" height="128" />
+              <img src="assets/images/logosIcons/spa.png" width="128" height="128" />
               <h4>Spa</h4>
            </div>
            <div class="col-md-2 col-sm-4 text-center  row-offset-1">
-              <img src="assets/images/LogosIcons/makeup.png" width="128" height="128" />
+              <img src="assets/images/logosIcons/makeup.png" width="128" height="128" />
               <h4>Bridal Makeup</h4>
            </div>
            <div class="col-md-2 col-sm-4 text-center  row-offset-1">
-              <img src="assets/images/LogosIcons/catering.png" width="128" height="128" />
+              <img src="assets/images/logosIcons/catering.png" width="128" height="128" />
               <h4>Catering Services</h4>
            </div>
            <div class="col-md-2 col-sm-4 text-center  row-offset-1">
-              <img src="assets/images/LogosIcons/organize.png" width="128" height="128" />
+              <img src="assets/images/logosIcons/organize.png" width="128" height="128" />
               <h4>Arrangements and Organizing Party</h4>
            </div>
            <div class="col-md-2 col-sm-4 text-center  row-offset-1">
-              <img src="assets/images/LogosIcons/affordable.png" width="128" height="128" />
+              <img src="assets/images/logosIcons/affordable.png" width="128" height="128" />
               <h4>Afforable Price</h4>
            </div>
         </div>

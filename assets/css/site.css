@@ -315,7 +315,7 @@ input[name="daterange"] {
 }
 
 .j-suites {
-    background-image: url('../images/home/Bangkok-Suites-Studio-1200-thin.jpg');
+    background-image: url('../images/contentImages/room-features.png');
     background-repeat: no-repeat;
 }
 
@@ -407,7 +407,7 @@ input[name="daterange"] {
 }
 
 .card>.lead {
-    height: 100px;
+    height: 160px;
 }
 
 

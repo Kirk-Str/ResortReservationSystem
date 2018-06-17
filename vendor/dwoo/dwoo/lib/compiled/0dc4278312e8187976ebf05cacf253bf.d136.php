@@ -3,10 +3,10 @@
 /* end template head */ ob_start(); /* template body */ ?><footer id="footer-base" class="footer-distributed">
 
     <div class="text-center" style="margin-bottom: 180px;">
-        <img src="<?php echo Config::get('application_path') . './assets/images/LogosIcons/no-one-restaurrant-in-kalpitiya.png'; ?>" style="margin: 40px;">
-        <img src="<?php echo Config::get('application_path') . './assets/images/LogosIcons/kitesurfing-logo.png'; ?>"  style="margin: 40px;">
-        <img src="<?php echo Config::get('application_path') . './assets/images/LogosIcons/wilpattu-logo.png'; ?>"  style="margin: 40px;">
-        <img src="<?php echo Config::get('application_path') . './assets/images/LogosIcons/excellence.png'; ?>"  style="margin: 40px;">
+        <img src="<?php echo Config::get('application_path') . './assets/images/logosIcons/no-one-restaurrant-in-kalpitiya.png'; ?>" style="margin: 40px;">
+        <img src="<?php echo Config::get('application_path') . './assets/images/logosIcons/kitesurfing-logo.png'; ?>"  style="margin: 40px;">
+        <img src="<?php echo Config::get('application_path') . './assets/images/logosIcons/wilpattu-logo.png'; ?>"  style="margin: 40px;">
+        <img src="<?php echo Config::get('application_path') . './assets/images/logosIcons/excellence.png'; ?>"  style="margin: 40px;">
     </div>
 
         <div class="footer-left">
