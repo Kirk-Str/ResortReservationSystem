@@ -16,7 +16,7 @@
         <tr>
         <tr>
             <td align="center" height="300">
-                <img src="http://orcabeach.ezyro.com/assets/images/logosicons/cake.png" height="150px" width="150px" border="0" alt="Orca Beach Resort Logo"/> 
+                <img src="http://orcabeach.ezyro.com/assets/images/logosIcons/cake.png" height="150px" width="150px" border="0" alt="Orca Beach Resort Logo"/> 
             </td>
         </tr>
     </tbody>
