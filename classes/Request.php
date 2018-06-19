@@ -40,7 +40,7 @@ class Request {
 			$field = 'id';
 			$where = array($field, "=", $requestId);
 
-			$data = $this ->_db->action('SELECT user.user_id, user.email_id, user.firstname, user.lastname, user.address_line_one, user.contact_no, offer_request.offer_id, offer_request.event_start_date, offer_request.event_end_date, offer_request.note, offer_request.guests, offer_request.rate, offer_request.approval_status, offer.offer_name' , 'offer_request INNER JOIN user ON (offer_request.user_id = user.user_id) INNER JOIN offer ON (offer.offer_id = offer_request.offer_id)', $where);
+			$data = $this ->_db->action('SELECT user.user_id, user.email_id, user.firstname, user.lastname, user.address_line_one, user.contact_no, offer_request.offer_id, offer_request.event_start_date, offer_request.event_end_date, offer_request.note, offer_request.guests, offer_request.rate, offer_request.approval_status, offer.offer_name, offer_request.request_timestamp, offer_request.approval_timestamp' , 'offer_request INNER JOIN user ON (offer_request.user_id = user.user_id) INNER JOIN offer ON (offer.offer_id = offer_request.offer_id)', $where);
 
 			if($data->count()){
 				$this->_data = $data->first();

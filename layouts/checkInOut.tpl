@@ -1,224 +1,225 @@
-<div>
-    <h3>CONFIRM RESERVATION</h3>
-</div>
+<div class="container">
+    <div>
+        <h3>CONFIRM RESERVATION</h3>
+    </div>
 
-<div class="row block {$inputBlockStyle} col-md-7">
-    <div class="col-md-12  text-center clear-padding">
-        <div class="header {$inputHeaderStyle}"><h4>{$formHeader}</h4></div>
-        <div class="body">
-            <div class="row">
-                <div class="col-md-12">
-                    <form id="check-in-form" method="POST" action="./actions/confirmation.php?requestId={$reservationId}">
-                        <input type="hidden" name="type" id="type" value="{$type}" />
-                        <div class="form-horizontal">
-                            <div class="text-danger validation-summary-valid" data-valmsg-summary="true">
-                                <ul>
-                                    <li style="display:none"></li>
-                                </ul>
-                            </div>
-                            <div class="form-group">
-                                <label for="email_id" class="col-md-3 control-label">Reservation Id</label>
-                                <div class="col-md-2">
-                                    <input class="form-control" type="text" value="{$reservationId}" id="reservation_id" name="reservation_id" {$disabled}>
+    <div class="row block {$inputBlockStyle} col-md-7">
+        <div class="col-md-12  text-center clear-padding">
+            <div class="header {$inputHeaderStyle}"><h4>{$formHeader}</h4></div>
+            <div class="body">
+                <div class="row">
+                    <div class="col-md-12">
+                        <form id="check-in-form" method="POST" action="./actions/confirmation.php?requestId={$reservationId}">
+                            <input type="hidden" name="type" id="type" value="{$type}" />
+                            <div class="form-horizontal">
+                                <div class="text-danger validation-summary-valid" data-valmsg-summary="true">
+                                    <ul>
+                                        <li style="display:none"></li>
+                                    </ul>
                                 </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="firstname" class="col-md-3 control-label">Firstname</label>
-                                <div class="col-md-6">
-                                    <input class="form-control" type="text" value="{$firstname}" id="firstname" name="firstname" {$disabled}>
-                                </div>
-                            </div>
-                            <div class="form-group">
-
-                                <label for="lastname" class="col-md-3 control-label">Lastname</label>
-                                <div class="col-md-6">
-                                    <input class="form-control" type="text" value="{$lastname}" id="lastname" name="lastname" {$disabled}>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="actual_adults" class="col-md-3 control-label">Adults</label>
-                                <div class="col-md-2">
-                                    <input class="form-control" type="number" value="{$actualAdults}" id="actual_adults" name="actual_adults" data-val="true" data-val-required="The Adults field is required." 
-                                    min="1" max="6" data-val-min="Minimum 1 guest should present"
-                                    {$disabledAdults}>
-                                </div>
-                                <div class="d-block">
-                                <span class="text-danger field-validation-valid" data-valmsg-for="actual_adults" data-valmsg-replace="true"></span>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="actual_children" class="col-md-3 control-label">Children</label>
-                                <div class="col-md-2">
-                                    <input class="form-control" type="number" value="{$actualChildren}" id="actual_children" name="actual_children" max="6" data-val-max="Minimum 6 children should present" {$disabledChildren}>
-                                </div>
-                                <div>
-                               <span class="text-danger field-validation-valid" data-valmsg-for="actual_children" data-valmsg-replace="true"></span>
-                               </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="check_in_single" class="col-md-3 control-label">Check In</label>
-                                <div class="col-md-3">
-                                    <input name="check_in_single" class="form-control" id="check_in_single" type="text" value="{$actualCheckIn}" data-val="true" data-val-required="The Check In field is required." {$requiredCheckIn} {$disabledCheckIn}/>
-                                </div>
-                                <div class="d-block">
-                                <span class="text-danger field-validation-valid" data-valmsg-for="check_in_single" data-valmsg-replace="true"></span>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="check_out_single" class="col-md-3 control-label">Check Out</label>
-                                <div class="col-md-3">
-                                    <input name="check_out_single" data-val="true" data-val-required="The Check Out field is required." class="form-control" id="check_out_single" type="text" value="{$actualCheckOut}" {$requiredCheckOut} {$disabledCheckOut}/>
-                                </div>
-                                  <div class="d-block">
-                                <span class="text-danger field-validation-valid" data-valmsg-for="check_out_single" data-valmsg-replace="true"></span>
-                                </div>
-                            </div>
-                            <div class="form-group"> 
-                                <label for="actualStayNights" class="col-md-3 control-label">Actual Night Stay(s)</label>
-                                <div class="col-md-3">
-                                    <input class="form-control" type="number" id="actualStayNights" name="actualStayNights" value="{$actualNightStays}" {$disabled}>
-                                </div>
-                            </div>
-                            <hr>
-
-                            {if $visibleOnCheckIn }
-
                                 <div class="form-group">
-                                    <label for="room_no" class="col-md-3 control-label">Room No.</label>
-                                    <div class="col-md-3">
-                                        <select class="form-control" name="room_no" id="room_no" data-val="true" data-val-required="The Room No. field is required.">
+                                    <label for="email_id" class="col-md-3 control-label">Reservation Id</label>
+                                    <div class="col-md-2">
+                                        <input class="form-control" type="text" value="{$reservationId}" id="reservation_id" name="reservation_id" {$disabled}>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="firstname" class="col-md-3 control-label">Firstname</label>
+                                    <div class="col-md-6">
+                                        <input class="form-control" type="text" value="{$firstname}" id="firstname" name="firstname" {$disabled}>
+                                    </div>
+                                </div>
+                                <div class="form-group">
 
-                                        {foreach $roomList row}
-                                            <option value="{$row.room_no}">{$row.door_no}</option>
-                                        {/foreach}
-
-                                        </select>
-                                       
+                                    <label for="lastname" class="col-md-3 control-label">Lastname</label>
+                                    <div class="col-md-6">
+                                        <input class="form-control" type="text" value="{$lastname}" id="lastname" name="lastname" {$disabled}>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="actual_adults" class="col-md-3 control-label">Adults</label>
+                                    <div class="col-md-2">
+                                        <input class="form-control" type="number" value="{$actualAdults}" id="actual_adults" name="actual_adults" data-val="true" data-val-required="The Adults field is required." 
+                                        min="1" max="6" data-val-min="Minimum 1 guest should present"
+                                        {$disabledAdults}>
                                     </div>
                                     <div class="d-block">
-                                <span class="text-danger field-validation-valid" data-valmsg-for="room_no" data-valmsg-replace="true"></span>
+                                    <span class="text-danger field-validation-valid" data-valmsg-for="actual_adults" data-valmsg-replace="true"></span>
+                                    </div>
                                 </div>
-                                </div>
-                            
-                            {else}
-
                                 <div class="form-group">
-                                    <label for="door_no_x" class="col-md-3 control-label">Room No.</label>
+                                    <label for="actual_children" class="col-md-3 control-label">Children</label>
+                                    <div class="col-md-2">
+                                        <input class="form-control" type="number" value="{$actualChildren}" id="actual_children" name="actual_children" max="6" data-val-max="Minimum 6 children should present" {$disabledChildren}>
+                                    </div>
+                                    <div>
+                                <span class="text-danger field-validation-valid" data-valmsg-for="actual_children" data-valmsg-replace="true"></span>
+                                </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="check_in_single" class="col-md-3 control-label">Check In</label>
                                     <div class="col-md-3">
-                                        <input class="form-control" type="text" id="door_no_x" name="door_no_x" value="{$doorNo}" readonly>
+                                        <input name="check_in_single" class="form-control" id="check_in_single" type="text" value="{$actualCheckIn}" data-val="true" data-val-required="The Check In field is required." {$requiredCheckIn} {$disabledCheckIn}/>
+                                    </div>
+                                    <div class="d-block">
+                                    <span class="text-danger field-validation-valid" data-valmsg-for="check_in_single" data-valmsg-replace="true"></span>
                                     </div>
                                 </div>
-
-                            {/if}
-
-                            <hr>
-                            <div class="form-group">
-                                <label for="{$disabled}" class="col-md-3 control-label">Total Payable</label>
-                                <div class="col-md-3">
-                                    <input class="form-control text-right" type="text" value="{$totalPayable}" data-val="false" id="total-payable" name="total-payable" {$disabled}>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="additional-charges" class="col-md-3 control-label">Additional Charges</label>
-                                <div class="col-md-3">
-                                    <input class="form-control text-right" type="text" value="{$additionalCharges}" data-val="false" id="additional-charges" name="additional-charges" {$disabledAdditionalCharges}>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="balance-amount" class="col-md-3 control-label">{$balanceAmountLabel}</label>
-                                <div class="col-md-3">
-                                    <input class="form-control text-right" type="text" value="{$balanceAmount}" data-val="false" id="balance-amount" name="balance-amount" {$disabled}>
-                                </div>
-                            </div>
-                            <div class="form-group">
-
-                                <div class="col-md-3 col-md-offset-3">
-                                    <input type="submit" name="action" value="{$checkActionButton}" class="btn btn-block btn-info" />
-                                </div>
-
-                                {if $cancelled }
-
+                                <div class="form-group">
+                                    <label for="check_out_single" class="col-md-3 control-label">Check Out</label>
                                     <div class="col-md-3">
-                                        <input type="submit" name="action" value="Cancel" class="btn btn-block btn-danger" formnovalidate/>
+                                        <input name="check_out_single" data-val="true" data-val-required="The Check Out field is required." class="form-control" id="check_out_single" type="text" value="{$actualCheckOut}" {$requiredCheckOut} {$disabledCheckOut}/>
                                     </div>
-                               
+                                    <div class="d-block">
+                                    <span class="text-danger field-validation-valid" data-valmsg-for="check_out_single" data-valmsg-replace="true"></span>
+                                    </div>
+                                </div>
+                                <div class="form-group"> 
+                                    <label for="actualStayNights" class="col-md-3 control-label">Actual Night Stay(s)</label>
+                                    <div class="col-md-3">
+                                        <input class="form-control" type="number" id="actualStayNights" name="actualStayNights" value="{$actualNightStays}" {$disabled}>
+                                    </div>
+                                </div>
+                                <hr>
+
+                                {if $visibleOnCheckIn }
+
+                                    <div class="form-group">
+                                        <label for="room_no" class="col-md-3 control-label">Room No.</label>
+                                        <div class="col-md-3">
+                                            <select class="form-control" name="room_no" id="room_no" data-val="true" data-val-required="The Room No. field is required.">
+
+                                            {foreach $roomList row}
+                                                <option value="{$row.room_no}">{$row.door_no}</option>
+                                            {/foreach}
+
+                                            </select>
+                                        
+                                        </div>
+                                        <div class="d-block">
+                                    <span class="text-danger field-validation-valid" data-valmsg-for="room_no" data-valmsg-replace="true"></span>
+                                    </div>
+                                    </div>
+                                
+                                {else}
+
+                                    <div class="form-group">
+                                        <label for="door_no_x" class="col-md-3 control-label">Room No.</label>
+                                        <div class="col-md-3">
+                                            <input class="form-control" type="text" id="door_no_x" name="door_no_x" value="{$doorNo}" readonly>
+                                        </div>
+                                    </div>
+
                                 {/if}
 
-                            </div>                            
-                        </div>
-                    </form>
+                                <hr>
+                                <div class="form-group">
+                                    <label for="{$disabled}" class="col-md-3 control-label">Total Payable</label>
+                                    <div class="col-md-3">
+                                        <input class="form-control text-right" type="text" value="{$totalPayable}" data-val="false" id="total-payable" name="total-payable" {$disabled}>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="additional-charges" class="col-md-3 control-label">Additional Charges</label>
+                                    <div class="col-md-3">
+                                        <input class="form-control text-right" type="text" value="{$additionalCharges}" data-val="false" id="additional-charges" name="additional-charges" {$disabledAdditionalCharges}>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="balance-amount" class="col-md-3 control-label">{$balanceAmountLabel}</label>
+                                    <div class="col-md-3">
+                                        <input class="form-control text-right" type="text" value="{$balanceAmount}" data-val="false" id="balance-amount" name="balance-amount" {$disabled}>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+
+                                    <div class="col-md-3 col-md-offset-3">
+                                        <input type="submit" name="action" value="{$checkActionButton}" class="btn btn-block btn-info" />
+                                    </div>
+
+                                    {if $cancelled }
+
+                                        <div class="col-md-3">
+                                            <input type="submit" name="action" value="Cancel" class="btn btn-block btn-danger" formnovalidate/>
+                                        </div>
+                                
+                                    {/if}
+
+                                </div>                            
+                            </div>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
 
-<div class="row block col-md-4" style="margin-left:20px">
-    <div class="col-md-12 text-center clear-padding">
-        <div class="header"><h4>BOOKING SUMMARY</h4></div>
-        <div class="body">
-            <table class="margin-offset-1 text-left">
-                <tr>
-                <td class="label-1" style="width: 200px">Booked Date: </td>
-                <td class="label-1-sub">{$requestedDate}</td>
-                </tr>
-            </table>
-            <hr class="featurette-divider">
-            <table class="margin-offset-1 text-left">
-                <tr>
-                    <td class="label-1" style="width: 200px">Check In: </td>
-                    <td class="label-1-sub">{$checkIn}</td>
-                </tr>
-                <tr>
-                    <td class="label-1">Check Out: </td>
-                    <td class="label-1-sub">{$checkOut}</td>
-                </tr>
-                <tr>
-                    <td class="label-1">Night Stay(s):</td>
-                    <td class="label-1-sub">{$nightStay}</td>
-                </tr>
-                <tr>
-                    <td class="label-1">Adults:</td>
-                    <td class="label-1-sub">{$adults}</td>
-                </tr>
-                <tr>
-                    <td class="label-1">Children:</td>
-                    <td class="label-1-sub">{$children}</td>
-                </tr>
-            </table>
-            <hr class="featurette-divider">
-            <table class="margin-offset-1 text-left">
-                <tr>
-                    <td class="label-1" style="width: 200px">Room Selected: </td>
-                    <td class="label-1-sub">{$roomSelected}</td>
-                </tr>
-                <tr>
-                    <td class="label-1" style="width: 200px">Rate per Night: </td>
-                    <td id="roomRate" class="label-1-sub">{$roomRate}</td>
-                </tr>
-            </table>
-            <hr class="featurette-divider">
-            <table class="margin-offset-1 text-left">
-                <tr>
-                    <td class="label-1 font-weight-bold" style="width: 200px">Total Amount: </td>
-                    <td class="label-1-sub font-weight-bold text-right">{$totalAmount}</td>
-                </tr>
-                <tr>
-                    <td class="label-1" style="width: 200px">Amount Paid: </td>
-                    <td class="label-1-sub text-right">{$minPayable}</td>
-                </tr>
-                <!-- <tr>
-                    <td class="label-1" style="width: 200px">Balance To be Paid: </td>
-                    <td class="label-1-sub text-right">{$balanceToBePaid}</td>
-                </tr> -->
-            </table>
+    <div class="row block col-md-4" style="margin-left:20px">
+        <div class="col-md-12 text-center clear-padding">
+            <div class="header"><h4>BOOKING SUMMARY</h4></div>
+            <div class="body">
+                <table class="margin-offset-1 text-left">
+                    <tr>
+                    <td class="label-1" style="width: 200px">Booked Date: </td>
+                    <td class="label-1-sub">{$requestedDate}</td>
+                    </tr>
+                </table>
+                <hr class="featurette-divider">
+                <table class="margin-offset-1 text-left">
+                    <tr>
+                        <td class="label-1" style="width: 200px">Check In: </td>
+                        <td class="label-1-sub">{$checkIn}</td>
+                    </tr>
+                    <tr>
+                        <td class="label-1">Check Out: </td>
+                        <td class="label-1-sub">{$checkOut}</td>
+                    </tr>
+                    <tr>
+                        <td class="label-1">Night Stay(s):</td>
+                        <td class="label-1-sub">{$nightStay}</td>
+                    </tr>
+                    <tr>
+                        <td class="label-1">Adults:</td>
+                        <td class="label-1-sub">{$adults}</td>
+                    </tr>
+                    <tr>
+                        <td class="label-1">Children:</td>
+                        <td class="label-1-sub">{$children}</td>
+                    </tr>
+                </table>
+                <hr class="featurette-divider">
+                <table class="margin-offset-1 text-left">
+                    <tr>
+                        <td class="label-1" style="width: 200px">Room Selected: </td>
+                        <td class="label-1-sub">{$roomSelected}</td>
+                    </tr>
+                    <tr>
+                        <td class="label-1" style="width: 200px">Rate per Night: </td>
+                        <td id="roomRate" class="label-1-sub">{$roomRate}</td>
+                    </tr>
+                </table>
+                <hr class="featurette-divider">
+                <table class="margin-offset-1 text-left">
+                    <tr>
+                        <td class="label-1 font-weight-bold" style="width: 200px">Total Amount: </td>
+                        <td class="label-1-sub font-weight-bold text-right">{$totalAmount}</td>
+                    </tr>
+                    <tr>
+                        <td class="label-1" style="width: 200px">Amount Paid: </td>
+                        <td class="label-1-sub text-right">{$minPayable}</td>
+                    </tr>
+                    <!-- <tr>
+                        <td class="label-1" style="width: 200px">Balance To be Paid: </td>
+                        <td class="label-1-sub text-right">{$balanceToBePaid}</td>
+                    </tr> -->
+                </table>
+
+            </div>
+        </div>
+        <div class="col-md-8">
 
         </div>
     </div>
-    <div class="col-md-8">
-
-    </div>
 </div>
-
 
 

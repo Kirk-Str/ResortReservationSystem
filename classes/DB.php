@@ -193,7 +193,7 @@ class DB{
 			}else{
 
 				$updateRecordField = 'id';
-				$updateRecordValue = $id;
+				$updateRecordValue = $where;
 
 			}				
 
