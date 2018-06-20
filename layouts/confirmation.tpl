@@ -216,6 +216,16 @@
                                                 </div>
                                             </div>
                                             <div class="form-group">
+                                                <label for="cvv" class="col-md-3 control-label">CVV
+                                                    <span class="validation">*</span>
+                                                </label>
+                                                <div class="col-md-6">
+                                                    <input class="form-control" type="number" data-val="true" minlength="3" maxlength="4" data-val-required="The CVV field is required." id="cvv"
+                                                        name="cvv">
+                                                    <span class="text-danger field-validation-valid" data-valmsg-for="cvv" data-valmsg-replace="true"></span>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
                                                 <label for="expiry_month" class="col-md-3 control-label">Expiry Month
                                                     <span class="validation">*</span>
                                                 </label>

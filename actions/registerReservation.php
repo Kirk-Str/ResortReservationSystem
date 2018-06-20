@@ -58,6 +58,11 @@ if (Input::exists()){
 				'required' => true,
 				'min' => 16,
 				'max' => 16,
+			),
+			'cvv' => array(
+				'required' => true,
+				'min' => 3,
+				'max' => 4,
             ),
 			'card_holders_name' => array(
 				'required' => true,
@@ -133,6 +138,7 @@ if (Input::exists()){
 						'balance_amount' => $balancePayable,
 						'card_type' => Input::get('card_type'),
 						'card_no' => Input::get('card_no'),
+						'cvv' => Input::get('cvv'),
 						'holders_name' => Input::get('card_holders_name'),
 						'card_expiry_month' => Input::get('expiry_month'),
 						'card_expiry_year' => Input::get('expiry_year'),
